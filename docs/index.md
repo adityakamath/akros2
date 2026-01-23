@@ -2,7 +2,6 @@
 layout: page
 title: AKROS2
 subtitle: Next-generation ROS 2 stack for mecanum-wheeled mobile robots
-cover-img: /akros2/assets/img/header_image.png
 ---
 
 <div style="text-align: center; margin: 2em 0;">
