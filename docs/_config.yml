@@ -1,3 +1,52 @@
+# Site settings
 title: AKROS2
 description: ROS 2 software stack for mecanum-wheeled mobile robots
-theme: jekyll-theme-minimal
+author: Aditya Kamath
+
+# Beautiful Jekyll theme
+remote_theme: daattali/beautiful-jekyll@6.0.1
+
+# Personalization
+avatar: /assets/img/avatar-icon.png
+round-avatar: true
+
+# Social network links
+social-network-links:
+  github: adityakamath
+  twitter: adityakamath
+  linkedin: adityakamath
+  youtube: adityakamath
+
+# URL configuration
+url: "https://adityakamath.github.io"
+baseurl: "/akros2"
+
+# Markdown and syntax highlighting
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Timezone
+timezone: America/Vancouver
+
+# Permalink structure
+permalink: /:year-:month-:day-:title/
+
+# Excerpt settings
+excerpt_length: 50
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Pagination
+paginate: 5
+
+# Post settings
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
