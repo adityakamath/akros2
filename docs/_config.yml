@@ -6,16 +6,18 @@ author: Aditya Kamath
 # Beautiful Jekyll theme
 remote_theme: daattali/beautiful-jekyll@6.0.1
 
-# Personalization
-avatar: /assets/img/avatar-icon.png
-round-avatar: true
+# Personalization - disable title in navbar
+navbar-links: {}
 
 # Social network links
 social-network-links:
+  website: https://kamathrobotics.com
+  email: adityakamath@live.com
   github: adityakamath
-  twitter: adityakamath
+  twitter: kamathsblog
   linkedin: adityakamath
-  youtube: adityakamath
+  youtube: AdityaKamath2405
+  rss: true
 
 # URL configuration
 url: "https://adityakamath.github.io"

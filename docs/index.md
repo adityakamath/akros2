@@ -1,6 +1,7 @@
 ---
 layout: default
 title: AKROS2 - Interactive 3D Visualization
+bigimg: /akros2/assets/img/header_image.png
 ---
 
 # AKROS2
