@@ -14,9 +14,16 @@ AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled
 
 Try out the AKROS2 mecanum drive kinematics in your browser:
 
+[![AKROS2 3D Visualization](https://shots.codepen.io/adityakamath/pen/qENNvxe-800.jpg?version=1737644400)](https://codepen.io/adityakamath/full/qENNvxe)
+
+*Click the image above to try the interactive 3D visualization*
+
+<!-- GitHub Pages only: Embed the interactive visualization -->
+<div class="codepen-embed">
 <iframe height="600" style="width: 100%;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
 </iframe>
+</div>
 
 ## Features
 
