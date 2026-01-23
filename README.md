@@ -10,6 +10,14 @@ ROS 2 software stack for the AKROS mecanum-wheeled mobile robot platform, inspir
 
 AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled mobile robots. It provides a complete software stack including robot description, sensor fusion, teleoperation, and system integration capabilities. The platform supports distributed deployment across multiple devices and offers flexible visualization options through Foxglove Studio, RViz, and ROSBridge.
 
+## Interactive 3D Visualization
+
+Try out the AKROS2 mecanum drive kinematics in your browser:
+
+<iframe height="600" style="width: 100%;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
 ## Features
 
 - **Mecanum Drive Control** - Full holonomic motion control for 4-wheeled mecanum platforms
