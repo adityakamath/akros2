@@ -77,8 +77,8 @@ subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
   <a href="https://github.com/adityakamath/akros2" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #333; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
     Source Repository
   </a>
-  <a href="architecture.html" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #555; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
-    System Architecture
+  <a href="design.html" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #555; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
+    System Design
   </a>
 </div>
 
