@@ -4,7 +4,7 @@
   <name>akros2_description</name>
   <version>0.0.0</version>
   <description>AKROS2 description files</description>
-  <maintainer email="adityakamath@live.com">ubuntu</maintainer>
+  <maintainer email="adityakamath@live.com">Aditya Kamath</maintainer>
   <license>Apache License 2.0</license>
 
   <test_depend>ament_copyright</test_depend>

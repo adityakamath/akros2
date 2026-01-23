@@ -189,7 +189,8 @@ Launches `joy` and `teleop_twist_joy` nodes.
 **Configuration Files:**
 
 Located in `config/` directory (per controller):
-- `<controller>_mapping.yaml` - Button/axis mappings
+
+- `<controller>_mapping.md` - Button/axis mapping documentation
 - `<controller>_mode_config.yaml` - Mode button mappings
 - `<controller>_twist_config.yaml` - Twist command scaling
 
