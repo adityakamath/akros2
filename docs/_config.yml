@@ -7,7 +7,7 @@ author: Aditya Kamath
 remote_theme: daattali/beautiful-jekyll@6.0.1
 
 # Personalization - use header image as logo in top left
-title-img: /akros2/assets/img/header_image.png
+title-img: /assets/img/header_image.png
 navbar-links: {}
 
 # Social network links
