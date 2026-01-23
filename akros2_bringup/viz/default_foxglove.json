@@ -1,0 +1,403 @@
+{
+  "layout": {
+    "first": {
+      "first": {
+        "first": {
+          "first": "RawMessages!3euseuh",
+          "second": "Indicator!fxujwa",
+          "direction": "column",
+          "splitPercentage": 100
+        },
+        "second": {
+          "first": "RawMessages!43gzrku",
+          "second": {
+            "first": "Indicator!2c1zzh8",
+            "second": {
+              "first": "Indicator!322h4yb",
+              "second": "Indicator!2068rwm",
+              "direction": "column"
+            },
+            "direction": "column",
+            "splitPercentage": 0
+          },
+          "direction": "row"
+        },
+        "direction": "column",
+        "splitPercentage": 52.33812949640287
+      },
+      "second": {
+        "first": "Indicator!c1pjyp",
+        "second": "Indicator!3gmwnz2",
+        "direction": "row"
+      },
+      "direction": "column",
+      "splitPercentage": 78.75354107648725
+    },
+    "second": "3D!2rdqaqe",
+    "direction": "row",
+    "splitPercentage": 38.13387423935091
+  },
+  "globalVariables": {
+    "globalVariable": 0
+  },
+  "userNodes": {
+    "16b48e01-b738-419b-939b-1ddc50c709d0": {
+      "sourceCode": "import { Input, Messages } from \"ros\";\n\ntype Output = {};\ntype GlobalVariables = { id: number };\n\nexport const inputs = [];\nexport const output = \"/webviz_node/\";\n\n// Populate 'Input' with a parameter to properly type your inputs, e.g. 'Input<\"/your_input_topic\">'\nconst publisher = (message: Input<>, globalVars: GlobalVariables): Output => {\n  return {};\n};\n\nexport default publisher;",
+      "name": "/webviz_node/16b48e01"
+    }
+  },
+  "linkedGlobalVariables": [],
+  "playbackConfig": {
+    "speed": 1,
+    "messageOrder": "receiveTime",
+    "timeDisplayMethod": "ROS"
+  },
+  "configById": {
+    "RawMessages!3euseuh": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/cmd_vel"
+    },
+    "Indicator!fxujwa": {
+      "path": "/joy.buttons[5]",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Off",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#68e24a",
+          "label": "On"
+        }
+      ],
+      "foxglovePanelTitle": "Throttle"
+    },
+    "RawMessages!43gzrku": {
+      "diffEnabled": false,
+      "diffMethod": "custom",
+      "diffTopicPath": "",
+      "showFullMessageForDiff": false,
+      "topicPath": "/joy_vel"
+    },
+    "Indicator!2c1zzh8": {
+      "path": "/joy.buttons[5]",
+      "style": "bulb",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "False",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#68e24a",
+          "label": "True"
+        }
+      ],
+      "foxglovePanelTitle": "Turbo"
+    },
+    "Indicator!322h4yb": {
+      "path": "/joy.buttons[5]",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Off",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "1",
+          "color": "#68e24a",
+          "label": "On"
+        }
+      ],
+      "foxglovePanelTitle": "Turbo"
+    },
+    "Indicator!2068rwm": {
+      "path": "/in_motion",
+      "style": "background",
+      "fallbackColor": "#a0a0a0",
+      "fallbackLabel": "Stopped",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "True",
+          "color": "#68e24a",
+          "label": "Moving"
+        }
+      ]
+    },
+    "Indicator!c1pjyp": {
+      "path": "/mode.estop",
+      "style": "background",
+      "fallbackColor": "#00ff37",
+      "fallbackLabel": "Go",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#ff0000",
+          "label": "Stop"
+        }
+      ],
+      "foxglovePanelTitle": "E-Stop"
+    },
+    "Indicator!3gmwnz2": {
+      "path": "/mode.auto_t",
+      "style": "background",
+      "fallbackColor": "#00ff37",
+      "fallbackLabel": "Teleop",
+      "rules": [
+        {
+          "operator": "=",
+          "rawValue": "true",
+          "color": "#0037ff",
+          "label": "Auto"
+        }
+      ],
+      "foxglovePanelTitle": "Mode"
+    },
+    "3D!2rdqaqe": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 0.9936887246411851,
+        "phi": 73.30195724069367,
+        "thetaOffset": -169.2282434375184,
+        "targetOffset": [
+          0.05347234893294273,
+          0.08696406742822253,
+          -4.655019301938313e-19
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.5,
+        "far": 5000
+      },
+      "followMode": "follow-pose",
+      "scene": {
+        "meshUpAxis": "z_up",
+        "labelScaleFactor": 0.2,
+        "enableStats": true,
+        "syncCamera": false,
+        "ignoreColladaUpAxis": true,
+        "transforms": {
+          "editable": true,
+          "labelSize": 0.1,
+          "axisScale": 0.5
+        }
+      },
+      "transforms": {
+        "frame:odom_frame": {
+          "visible": false
+        },
+        "frame:t265_pose_frame": {
+          "visible": false
+        },
+        "frame:base_link": {
+          "visible": false
+        },
+        "frame:base_footprint": {
+          "visible": true
+        },
+        "frame:base_link_inertial": {
+          "visible": false
+        },
+        "frame:nav_link": {
+          "visible": false
+        },
+        "frame:laser_link": {
+          "visible": true
+        },
+        "frame:laser_frame": {
+          "visible": false
+        },
+        "frame:t265_link": {
+          "visible": false
+        },
+        "frame:t265_accel_frame": {
+          "visible": false
+        },
+        "frame:t265_pose_inertial": {
+          "visible": false
+        },
+        "frame:t265_gyro_optical_frame": {
+          "visible": false
+        },
+        "frame:t265_gyro_frame": {
+          "visible": false
+        },
+        "frame:t265_accel_optical_frame": {
+          "visible": false
+        },
+        "frame:wheel_lb": {
+          "visible": false,
+          "rpyOffset": [
+            0,
+            2.751132655021138e-13,
+            0
+          ]
+        },
+        "frame:wheel_lf": {
+          "visible": false,
+          "rpyOffset": [
+            0,
+            -2.751132655021138e-13,
+            0
+          ]
+        },
+        "frame:wheel_rb": {
+          "visible": false,
+          "rpyOffset": [
+            0,
+            2.751132655021138e-13,
+            0
+          ]
+        },
+        "frame:wheel_rf": {
+          "visible": false,
+          "rpyOffset": [
+            0,
+            2.751132655021138e-13,
+            0
+          ]
+        },
+        "frame:imu_link": {
+          "visible": false
+        },
+        "frame:imu_frame": {
+          "visible": false
+        },
+        "frame:cam_frame": {
+          "visible": false
+        },
+        "frame:cam_link": {
+          "visible": false
+        },
+        "frame:imu_odom": {
+          "visible": false
+        },
+        "frame:wheel_f": {
+          "visible": false
+        },
+        "frame:wheel_l": {
+          "visible": false
+        },
+        "frame:wheel_r": {
+          "visible": false
+        }
+      },
+      "topics": {
+        "/ld06/scan": {
+          "visible": true,
+          "colorField": "range",
+          "colorMode": "colormap",
+          "colorMap": "rainbow",
+          "pointSize": 2.5,
+          "decayTime": 0
+        },
+        "/mesh_array": {
+          "visible": false
+        },
+        "/move_base_simple/goal": {
+          "visible": false
+        },
+        "/initialpose": {
+          "visible": false
+        },
+        "/robot_description": {
+          "visible": false
+        },
+        "/scan": {
+          "visible": true,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 5,
+          "decayTime": 0
+        },
+        "/lidar/scan": {
+          "visible": true,
+          "colorField": "range",
+          "colorMode": "colormap",
+          "colorMap": "rainbow",
+          "pointSize": 3,
+          "decayTime": 0,
+          "explicitAlpha": 0.20000000000000015
+        },
+        "/scan_filtered": {
+          "visible": true,
+          "colorField": "_auto_distance",
+          "colorMode": "colormap",
+          "colorMap": "rainbow",
+          "pointSize": 5,
+          "minValue": -1,
+          "maxValue": 1
+        },
+        "/lidar/scan_filtered": {
+          "visible": false,
+          "colorField": "range",
+          "colorMode": "colormap",
+          "colorMap": "rainbow",
+          "pointShape": "square"
+        },
+        "/image_raw/compressed": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "2f7cf8c5-3661-450d-90cd-1d2df870f2ac": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "Grid",
+          "instanceId": "2f7cf8c5-3661-450d-90cd-1d2df870f2ac",
+          "layerId": "foxglove.Grid",
+          "size": 10,
+          "divisions": 10,
+          "lineWidth": 1,
+          "color": "#248eff",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "order": 1,
+          "frameId": "odom"
+        },
+        "d5cfd9a8-d69e-4c6d-be15-1b56c4f92a16": {
+          "visible": true,
+          "frameLocked": true,
+          "label": "AKROS2",
+          "instanceId": "d5cfd9a8-d69e-4c6d-be15-1b56c4f92a16",
+          "layerId": "foxglove.Urdf",
+          "url": "https://raw.githubusercontent.com/adityakamath/akros_3d_assets/akros2_urdf/akros2_mecanum/robot.urdf",
+          "order": 2
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "followTf": "base_link",
+      "imageMode": {}
+    }
+  }
+}

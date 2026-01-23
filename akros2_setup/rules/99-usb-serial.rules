@@ -1,0 +1,27 @@
+# To install, type this command in a terminal:
+# sudo cp 99-usb-serial.rules /etc/udev/rules.d/99-usb-serial.rules
+
+# Sensors
+KERNEL=="ttyUSB*", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", SYMLINK+="ttyLIDAR"
+KERNEL=="video*", ATTRS{idVendor}=="0ac8", ATTRS{idProduct}=="0345", SYMLINK+="videoUSBCAM"
+
+# Microcontrollers
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0483", ATTRS{serial}=="11062590", SYMLINK+="ttyTEENSY"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0483", ATTRS{serial}=="11156570", SYMLINK+="ttyTEENSY_MICROMOD"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2886", ATTRS{idProduct}=="802d", SYMLINK+="ttyWIO_TERMINAL"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="8108", SYMLINK+="ttyMACROPAD"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="025b", SYMLINK+="ttyPORTENTA"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="0005", SYMLINK+="ttyRPI_PICOW"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="005e", SYMLINK+="ttyNANO_RP2040"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2e8a", ATTRS{idProduct}=="000a", SYMLINK+="ttyRPI_PICO"
+
+# Teensy
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04*", ENV{ID_MM_DEVICE_IGNORE}="1", ENV{ID_MM_PORT_IGNORE}="1"
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789a]*", ENV{MTP_NO_PROBE}="1"
+KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04*", MODE:="0666", RUN:="/bin/stty -F /dev/%k raw -echo"
+KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04*", MODE:="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04*", MODE:="0666"
+
+# BlueTooth
+KERNEL=="hidraw*", ATTRS{idVendor}=="1fc9", ATTRS{idProduct}=="013*", MODE:="0666"
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="1fc9", ATTRS{idProduct}=="013*", MODE:="0666"

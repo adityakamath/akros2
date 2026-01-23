@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=StopUbuntu
+Exec=/home/deck/.local/bin/distrobox stop ros2 --yes
+Type=Application
+Icon=/home/deck/Setup/steamdeck_desktop/icons/ubuntu_bw.png
+Comment=Exits Distrobox and stops ROS 2 container
+Categories=ROS2;Distrobox;Ubuntu;
+Terminal=false
+NoDisplay=false
+StartupNotify=true
+

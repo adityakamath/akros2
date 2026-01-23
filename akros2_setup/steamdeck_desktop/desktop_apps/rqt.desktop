@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=RQt
+Exec=/home/deck/Setup/steamdeck_desktop/shell_scripts/rqt_app.sh
+Type=Application
+Icon=/home/deck/Setup/steamdeck_desktop/icons/rqt.png
+Comment=Launches RQt for AKROS2 on Steam Deck (from Distrobox)
+Categories=ROS2;RQt;
+Terminal=false
+NoDisplay=false
+StartupNotify=true
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=OLED Display
+After=jupyter.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/ubuntu/Setup/oled.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

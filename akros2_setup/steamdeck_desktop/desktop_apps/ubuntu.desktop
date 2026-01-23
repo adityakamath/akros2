@@ -1,0 +1,13 @@
+[Desktop Entry]
+Categories=Distrobox;System;Utility;Ubuntu;ROS2;
+Comment=Terminal entering ROS 2
+Exec=/home/deck/.local/bin/distrobox enter ros2
+GenericName=Terminal entering ROS 2
+Icon=/home/deck/Setup/steamdeck_desktop/icons/ubuntu.png
+Keywords=distrobox;ubuntu;ros2;
+Name[en_US]=Ubuntu
+Name=Ubuntu
+NoDisplay=false
+Terminal=true
+TryExec=/home/deck/.local/bin/distrobox
+Type=Application
