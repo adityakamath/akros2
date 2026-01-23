@@ -1,26 +1,27 @@
 ---
 layout: page
 title: AKROS2
-subtitle: Next-generation ROS 2 stack for mecanum-wheeled mobile robots
+subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
 ---
 
-<div style="text-align: center; margin: 2em 0;">
-  <p style="font-size: 1.3em; color: #555; margin-bottom: 1.5em;">
-    A comprehensive, modular robotics platform built on ROS 2 Humble with full holonomic control, advanced sensor fusion, and seamless hardware integration.
+<div style="margin: 2em 0; padding: 1.5em; background: #f8f9fa; border-left: 4px solid #404040;">
+  <p style="font-size: 1.1em; color: #333; margin: 0;">
+    Modular ROS 2 Humble software stack providing holonomic drive control, sensor fusion, and hardware abstraction for mecanum-wheeled platforms. Developed for distributed robotics systems with real-time control requirements.
   </p>
-  <div style="margin: 2em 0;">
-    <img src="https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue" alt="ROS 2 Humble" style="margin: 0.2em;">
-    <img src="https://img.shields.io/github/license/adityakamath/akros2" alt="GitHub License" style="margin: 0.2em;">
-  </div>
+</div>
+
+<div style="margin: 1em 0;">
+  <img src="https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue" alt="ROS 2 Humble" style="margin: 0.2em;">
+  <img src="https://img.shields.io/github/license/adityakamath/akros2" alt="GitHub License" style="margin: 0.2em;">
 </div>
 
 ---
 
-## See It In Action
+## Interactive Kinematics Model
 
-<div style="text-align: center; margin: 2em 0;">
-  <p style="font-size: 1.1em; margin-bottom: 1em;">
-    Experience the mecanum drive kinematics with our interactive 3D visualization
+<div style="margin: 1.5em 0;">
+  <p style="color: #555;">
+    Interactive visualization demonstrating mecanum wheel inverse kinematics and omnidirectional motion capabilities.
   </p>
 </div>
 
@@ -32,79 +33,104 @@ subtitle: Next-generation ROS 2 stack for mecanum-wheeled mobile robots
 
 ---
 
-## Why AKROS2?
+## System Capabilities
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; margin: 2em 0;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1em; margin: 2em 0;">
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
-  <h3 style="margin-top: 0; color: #007bff;">🎮 Holonomic Control</h3>
-  <p>Full 4-directional mecanum drive control with precision kinematics. Move in any direction without rotating.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Holonomic Drive Control</h3>
+  <p style="font-size: 0.95em; margin: 0;">4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.</p>
 </div>
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #28a745;">
-  <h3 style="margin-top: 0; color: #28a745;">🔬 Advanced Fusion</h3>
-  <p>Extended Kalman Filter fuses IMU and wheel odometry for accurate state estimation and navigation.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Sensor Fusion</h3>
+  <p style="font-size: 0.95em; margin: 0;">EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.</p>
 </div>
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ffc107;">
-  <h3 style="margin-top: 0; color: #ffc107;">🔌 Plug & Play</h3>
-  <p>Multi-controller support: PS4, Stadia, 8BitDo, Steam Deck. Connect your favorite gamepad and drive.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Hardware Abstraction</h3>
+  <p style="font-size: 0.95em; margin: 0;">micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.</p>
 </div>
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #17a2b8;">
-  <h3 style="margin-top: 0; color: #17a2b8;">📊 Rich Visualization</h3>
-  <p>Choose your workflow: Foxglove Studio for modern web-based viz or classic RViz2. ROSBridge included.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Teleoperation</h3>
+  <p style="font-size: 0.95em; margin: 0;">Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.</p>
 </div>
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #6f42c1;">
-  <h3 style="margin-top: 0; color: #6f42c1;">⚡ micro-ROS Ready</h3>
-  <p>Seamless low-level control via Teensy microcontroller. Real-time performance where it matters.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Visualization Support</h3>
+  <p style="font-size: 0.95em; margin: 0;">Foxglove Studio and RViz2 integration. ROSBridge server for web-based monitoring and control interfaces.</p>
 </div>
 
-<div style="padding: 1.5em; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e83e8c;">
-  <h3 style="margin-top: 0; color: #e83e8c;">🧩 Modular Design</h3>
-  <p>Independent packages for description, control, teleop, and integration. Customize to your needs.</p>
+<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
+  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Modular Architecture</h3>
+  <p style="font-size: 0.95em; margin: 0;">Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.</p>
 </div>
 
-</div>
-
----
-
-## Get Started
-
-<div style="text-align: center; margin: 2em 0;">
-  <a href="https://github.com/adityakamath/akros2" style="display: inline-block; padding: 12px 30px; margin: 0.5em; background: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em;">
-    📦 View on GitHub
-  </a>
-  <a href="architecture.html" style="display: inline-block; padding: 12px 30px; margin: 0.5em; background: #28a745; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em;">
-    📚 Architecture Docs
-  </a>
 </div>
 
 ---
 
-## Platform Overview
+## Documentation & Source
 
-AKROS2 is designed for **mecanum-wheeled mobile robots** running **ROS 2 Humble** on **Ubuntu 22.04**. The stack handles everything from low-level motor control through micro-ROS to high-level navigation and visualization.
+<div style="margin: 2em 0;">
+  <a href="https://github.com/adityakamath/akros2" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #333; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
+    Source Repository
+  </a>
+  <a href="architecture.html" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #555; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
+    System Architecture
+  </a>
+</div>
 
-**Hardware Foundation:**
-- Raspberry Pi 4 (or equivalent) running the ROS 2 stack
-- Teensy microcontroller with [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware)
-- 4x mecanum wheels with encoders for omnidirectional mobility
-- 9-DOF IMU for orientation and acceleration sensing
-- Optional: LD06 LIDAR and USB camera for perception
+---
 
-**Software Stack:**
-- `akros2_description` - Robot models, URDF, meshes, and kinematics
-- `akros2_base` - Core drivers, sensor fusion, and odometry
-- `akros2_teleop` - Gamepad support and command mixing
-- `akros2_bringup` - System launch files and configurations
-- `akros2_msgs` - Custom message definitions
-- `akros2_setup` - System services and development tools
+## Technical Specifications
 
-<div style="text-align: center; margin: 2em 0; padding: 1.5em; background: #fffbea; border-radius: 8px; border: 2px solid #ffc107;">
-  <p style="font-size: 1.1em; margin: 0;">
-    <strong>💡 Built for makers, researchers, and robotics enthusiasts</strong><br>
-    Open source, modular, and ready to deploy
+### System Requirements
+
+**Software Platform:**
+- ROS 2 Humble Hawksbill
+- Ubuntu 22.04 LTS (primary), Ubuntu 20.04 LTS (limited support)
+- Python 3.10+ and C++17
+
+**Compute:**
+- Raspberry Pi 4 (4GB minimum) or equivalent ARM64/x86_64 system
+- Validated on: RPi 4, RPi Zero 2 W, Steam Deck (via Distrobox)
+
+### Hardware Configuration
+
+**Required Components:**
+- Teensy microcontroller running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware)
+- 4x mecanum wheels with quadrature encoders
+- 9-DOF IMU (accelerometer, gyroscope, magnetometer)
+- Motor drivers compatible with Teensy GPIO
+
+**Optional Sensors:**
+- LD06 LIDAR (or compatible 2D laser scanner)
+- USB camera (v4l2 compatible)
+
+### Software Architecture
+
+| Package | Function |
+|---------|----------|
+| `akros2_description` | URDF/Xacro robot models, meshes, kinematics definitions |
+| `akros2_base` | Motor controllers, sensor drivers, EKF localization |
+| `akros2_teleop` | Joy node integration, velocity command multiplexing |
+| `akros2_bringup` | Launch file hierarchies, parameter configurations |
+| `akros2_msgs` | Custom message and service interfaces |
+| `akros2_setup` | System configuration, systemd services, development tools |
+
+### Communication Protocols
+
+- **Robot-Microcontroller:** micro-ROS agent via serial (UART/USB)
+- **Inter-node:** DDS (FastDDS/CycloneDDS) over shared memory or network
+- **Visualization:** Native ROS 2 topics, ROSBridge WebSocket server
+- **Distributed Systems:** Multi-host ROS 2 network with configurable domain ID
+
+---
+
+<div style="margin: 2em 0; padding: 1em; background: #f0f0f0; border-left: 3px solid #666;">
+  <p style="font-size: 0.95em; color: #555; margin: 0;">
+    <strong>Project Status:</strong> Active development | Apache 2.0 License | Open source
   </p>
 </div>
