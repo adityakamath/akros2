@@ -6,7 +6,8 @@ author: Aditya Kamath
 # Beautiful Jekyll theme
 remote_theme: daattali/beautiful-jekyll@6.0.1
 
-# Personalization - disable title in navbar
+# Personalization - use header image as logo in top left
+title-img: /akros2/assets/img/header_image.png
 navbar-links: {}
 
 # Social network links
