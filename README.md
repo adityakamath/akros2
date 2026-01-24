@@ -5,7 +5,7 @@
 ![Repository](https://img.shields.io/badge/Repository-adityakamath%2Fakros2-purple?style=flat&logo=github&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
-![Blog](https://img.shields.io/badge/Blog-AKROS%20Series-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros)
+![Blog](https://img.shields.io/badge/Blog-AKROS%20Series-darkorange?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros)
 ![License](https://img.shields.io/github/license/adityakamath/akros2?label=License)
 
 > **⚠️ This project is archived and no longer in active development.**
