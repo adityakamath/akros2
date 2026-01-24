@@ -104,7 +104,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     </div>
   </div>
   <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="font-size: 1.8em;">📐</span>
+    <span style="font-size: 1.8em;">🤖</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
       <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
