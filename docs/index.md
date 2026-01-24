@@ -15,35 +15,35 @@ subtitle: ROS 2 stack for the AKROS platform
 ---
 
 <div style="display: flex; flex-direction: column; gap: 0.9em; margin: 2em 0;">
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #9ca3af; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
       <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #9ca3af; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧭</span>
     <div>
       <strong>Sensor Fusion</strong><br/>
       <span style="font-size: 0.95em;">EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #9ca3af; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🔌</span>
     <div>
       <strong>Hardware Abstraction</strong><br/>
       <span style="font-size: 0.95em;">micro-ROS agent for Teensy microcontroller communication via serial.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #9ca3af; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎮</span>
     <div>
       <strong>Teleoperation</strong><br/>
       <span style="font-size: 0.95em;">Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #9ca3af; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
