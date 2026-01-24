@@ -1,9 +1,12 @@
 # AKROS2
 
-![Project Status](https://img.shields.io/badge/Status-Archived-red)
-![ROS 2 Humble](https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue)
+![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
+![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
-![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/kamathsblog)
+![Website](https://img.shields.io/badge/Website-kamathrobotics.com-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com&link=https%3A%2F%2Fkamathrobotics.com)
+![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
 > **⚠️ This project is archived and no longer in active development.**
 
@@ -11,7 +14,7 @@ ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Overview
 
-AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled mobile robots. It provides a complete software stack including robot description, sensor fusion, teleoperation, and system integration capabilities. The platform supports distributed deployment across multiple devices for remote control and visualization.
+AKROS2 is a comprehensive ROS 2 Humble-based system designed for the AKROS mecanum-wheeled mobile robot. It provides a complete software stack including robot description, sensor fusion, teleoperation, and system integration capabilities. The platform supports distributed deployment across multiple devices for remote control and visualization.
 
 ## Features
 
@@ -74,13 +77,13 @@ ros2 launch akros2_bringup bringup_launch.py \
   camera:=false
 ```
 
-**Launch base station (on remote device):**
+**Launch base station (on remote control/monitoring device):**
 ```bash
 ros2 launch akros2_bringup basestation_launch.py \
   joy_config:=steamdeck
 ```
 
-### Configuration
+### System Configuration (EXPERIMENTAL)
 
 Copy the bash configuration from setup:
 ```bash
@@ -96,16 +99,7 @@ This provides convenient aliases:
 
 ## Documentation
 
-📚 **[Complete Design Documentation](docs/design.md)** - Detailed system design, data flow diagrams, and component descriptions
-
-### Key Topics
-
-- **[Robot Description](docs/design.md#akros2_description)** - URDF structure, meshes, and joint configuration
-- **[Sensor Fusion](docs/design.md#sensor-fusion-pipeline)** - IMU filtering and EKF-based odometry fusion
-- **[Teleoperation](docs/design.md#teleoperation-flow)** - Controller support and command mixing
-- **[System Integration](docs/design.md#akros2_bringup)** - Launch file configuration and usage
-- **[Data Flow](docs/design.md#data-flow)** - System-level data flow diagrams
-- **[Hardware Integration](docs/design.md#hardware-integration)** - Microcontroller communication and sensor interfaces
+📚 **[Complete Design Documentation](docs/design.md)** - Detailed system design (including the micro-ROS firmware), data flow diagrams, and component descriptions
 
 ## Hardware Requirements
 
@@ -117,7 +111,7 @@ This provides convenient aliases:
 - **Motor Drivers:** 2x Cytron MDD3A motor drivers
 - **Power:** Appropriate power system for motors and electronics
 
-### Recommended Sensors
+### Recommended (but optional) Sensors
 - **LIDAR:** LDLidar LD06 or compatible
 - **Camera:** USB camera (v4l2 compatible)
 
@@ -129,15 +123,9 @@ This provides convenient aliases:
 
 ## Platform Support
 
-**Tested On:**
-- Raspberry Pi 4 (4GB/8GB)
-- Raspberry Pi Zero 2 W
-
-**Operating System:**
-- Ubuntu 22.04 LTS
-
-**ROS 2 Distribution:**
-- Humble Hawksbill (recommended)
+**Tested On:** Raspberry Pi 4 (4GB/8GB)
+**Operating System:** Ubuntu 22.04 LTS
+**ROS 2 Distribution:** Humble Hawksbill (recommended)
 
 ## Architecture
 
@@ -156,7 +144,7 @@ This provides convenient aliases:
 └────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
 ```
 
-See [Design Documentation](docs/design.md) for detailed component descriptions and data flow diagrams.
+See [Design Documentation](docs/design.md) for detailed component descriptions and details (including firmware) and data flow diagrams.
 
 ## Network Configuration
 
@@ -164,71 +152,14 @@ AKROS2 supports distributed deployment across multiple devices. Configure your R
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+This project has been archived and is no longer actively maintained. If you wish to contribute, check out the [Linorobot2](https://github.com/linorobot/linorobot2) project which AKROS2 was based on, and consider submitting issues and PRs there.
 
 ## License
 
 Apache License 2.0
-
-## Acknowledgments
-
-- Inspired by [Linorobot2](https://github.com/linorobot/linorobot2)
-- Built with ROS 2 Humble Hawksbill
-- Utilizes micro-ROS for microcontroller integration
 
 ## Contact
 
 - **Website:** [kamathrobotics.com](https://kamathrobotics.com)
 - **Twitter:** [@kamathsblog](https://twitter.com/kamathsblog)
 - **GitHub:** [adityakamath](https://github.com/adityakamath)
-
-## Firmware
-
-The [akros2_firmware](akros2_firmware/) package contains micro-ROS firmware for the Teensy 4.1 microcontroller. Based on [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware), it provides low-level control for mecanum drive kinematics, motor control, and sensor data acquisition.
-
-### Key Features
-
-- **Dual Transport Support** - Configurable serial (USB/UART) or native ethernet (UDP4) communication
-- **ROS Domain ID Configuration** - Set ROS_DOMAIN_ID for multi-robot deployments
-- **Visual Status Indicators** - Neopixel LEDs show system status and operating mode using FastLED
-- **Custom Message Support** - Implements `akros2_msgs/Mode` for operating mode control (stop/auto/teleop)
-- **Dual Joint State Publishing** - Separate topics for measured vs. required joint states (velocities and positions)
-- **Runtime PID Tuning** - Parameter server allows tuning PID gains (`kp`, `ki`, `kd`, `scale`) without recompilation
-- **Coordinate Frame Conversion** - Optional NED to ENU IMU coordinate conversion (REP-103 compliant)
-
-### Hardware Configuration
-
-- **Microcontroller:** Teensy 4.1 with expansion board
-- **Motors:** 4x DC motors with quadrature encoders (mecanum wheels)
-- **Motor Drivers:** 2x Cytron MDD3A motor drivers
-- **IMU:** 9-DOF sensor (accelerometer, gyroscope, magnetometer)
-- **Connectivity:** Native ethernet or USB serial
-
-### Communication
-
-The firmware communicates with ROS 2 via micro-ROS agent:
-
-**Published Topics:**
-
-- `/joint_states` - Measured wheel positions and velocities
-- `/req_states` - Required (commanded) wheel positions and velocities
-- `/imu` - Raw IMU measurements
-- `/odometry` - Wheel-based odometry
-
-**Subscribed Topics:**
-
-- `/cmd_vel` - Velocity commands (converted to individual wheel velocities)
-- `/mode_status` - Operating mode commands (akros2_msgs/Mode)
-
-**Parameters:**
-
-- `kp`, `ki`, `kd` - PID gain values for motor control
-- `scale` - Global velocity scaling factor [0.0-1.0]
-- `ned_to_enu` - Enable IMU coordinate conversion (default: false)
-
-See [akros2_firmware/README.md](akros2_firmware/README.md) for detailed firmware documentation and setup instructions.
-
-## Related Repositories
-
-- [akros2_firmware](https://github.com/adityakamath/akros2_firmware) - Upstream micro-ROS firmware repository
-- [akros_3d_assets](https://github.com/adityakamath/akros_3d_assets) - 3D models and meshes
