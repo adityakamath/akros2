@@ -5,22 +5,33 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <style>
-  .container,
-  .main-content,
-  .page-content,
-  article,
-  .post-content {
+  body .container,
+  body .main-content,
+  body .page-content,
+  body article,
+  body .post-content,
+  body main,
+  body .content,
+  body section {
     max-width: none !important;
-    width: 95% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
   }
 
-  @media (min-width: 768px) {
-    .container,
-    .main-content,
-    .page-content,
-    article,
-    .post-content {
-      width: 90% !important;
+  @media (min-width: 1200px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section {
+      padding-left: 5% !important;
+      padding-right: 5% !important;
     }
   }
 </style>
