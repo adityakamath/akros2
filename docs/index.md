@@ -14,35 +14,45 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 ![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
+
 ## System Capabilities
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1em; margin: 2em 0;">
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Holonomic Drive Control</h3>
-  <p style="font-size: 0.95em; margin: 0;">4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.</p>
-</div>
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Sensor Fusion</h3>
-  <p style="font-size: 0.95em; margin: 0;">EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.</p>
-</div>
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Hardware Abstraction</h3>
-  <p style="font-size: 0.95em; margin: 0;">micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.</p>
-</div>
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Teleoperation</h3>
-  <p style="font-size: 0.95em; margin: 0;">Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.</p>
-</div>
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Modular Architecture</h3>
-  <p style="font-size: 0.95em; margin: 0;">Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.</p>
-</div>
-
+<div style="display: flex; flex-direction: column; gap: 1.2em; margin: 2em 0;">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🛞</span>
+    <div>
+      <strong>Holonomic Drive Control</strong><br/>
+      4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🧭</span>
+    <div>
+      <strong>Sensor Fusion</strong><br/>
+      EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🔌</span>
+    <div>
+      <strong>Hardware Abstraction</strong><br/>
+      micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🎮</span>
+    <div>
+      <strong>Teleoperation</strong><br/>
+      Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🧩</span>
+    <div>
+      <strong>Modular Architecture</strong><br/>
+      Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.
+    </div>
+  </div>
 </div>
 
 ---
