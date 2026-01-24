@@ -23,7 +23,6 @@ setup(
     maintainer_email='adityakamath@live.com',
     description='AKROS2 bringup files',
     license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
         ],

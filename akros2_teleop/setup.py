@@ -21,7 +21,6 @@ setup(
     maintainer_email='adityakamath@live.com',
     description='Nodes to teleoperate the AKROS2 robot',
     license='Apache License 2.0',
-    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
             'twist_mixer = akros2_teleop.twist_mixer_node:main',
