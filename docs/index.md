@@ -12,8 +12,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 </style>
 
 ![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
-![Repo](https://img.shields.io/badge/ROS%202%20Package-akros2-purple?style=flat&logo=github&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
-![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-purple?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
+![Repository](https://img.shields.io/badge/Repository-adityakamath%2Fakros2-purple?style=flat&logo=github&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
 ![Docs](https://img.shields.io/badge/Design-grey?style=flat&logo=githubpages&logoSize=auto&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign)
@@ -29,81 +28,69 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
-      <span style="font-size: 0.95em;">Mecanum wheel kinematics for motion with motor controllers, IMU drivers, and EKF-based odometry.</span>
-      <br/><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>akros2_base</code></strong>
-        </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_base</code></span>
       </a>
+      <br/><br/>
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics for motion with motor controllers, sensor drivers, and EKF-based odometry.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
-      <span style="font-size: 0.95em;">URDF/Xacro models with meshes and kinematics for robot visualization and simulation.</span>
-      <br/><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>akros2_description</code></strong>
-        </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_description</code></span>
       </a>
+      <br/><br/>
+      <span style="font-size: 0.95em;">URDF/Xacro models with meshes and kinematics for robot visualization and simulation.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎛️</span>
     <div style="flex: 1;">
       <strong>Low-level Firmware</strong><br/>
-      <span style="font-size: 0.95em;">micro-ROS firmware for Teensy 4.1 with motor control and sensor interfacing over serial.</span>
-      <br/><br/>
-      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>akros2_firmware</code></strong>
-        </div>
+      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_firmware</code></span>
       </a>
+      <br/><br/>
+      <span style="font-size: 0.95em;">micro-ROS firmware for Teensy 4.1 with motor control and sensor interfacing over serial.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; margin-right: 0.5em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
+      </a>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
+      </a>
       <br/><br/>
-      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; display: flex; gap: 0.8em;">
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: inherit;">
-          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_teleop</code></strong>
-        </a>
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: inherit;">
-          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_msgs</code></strong>
-        </a>
-      </div>
+      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
-      <span style="font-size: 0.95em;">Launch files and parameter configurations for system bringup.</span>
-      <br/><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong>
-        </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_bringup</code></span>
       </a>
+      <br/><br/>
+      <span style="font-size: 0.95em;">Launch files and parameter configurations for system bringup.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
-      <span style="font-size: 0.95em;">Services, configs, scripts, and misc. development tools.</span>
-      <br/><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>setup</code></strong>
-        </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>setup</code></span>
       </a>
+      <br/><br/>
+      <span style="font-size: 0.95em;">Services, configs, scripts, and misc. development tools.</span>
     </div>
   </div>
 </div>
