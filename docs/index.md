@@ -1,7 +1,7 @@
 ---
 layout: page
-title: AKROS2
-subtitle: ROS 2 stack for the AKROS platform
+title: AKROS
+subtitle: A mecanum-wheeled holonomic robot platform using ROS 2
 ---
 
 <style>

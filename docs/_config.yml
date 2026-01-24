@@ -1,6 +1,6 @@
 # Site settings
-title: AKROS2
-description: ROS 2 software stack for mecanum-wheeled mobile robots
+title: AKROS
+description: A mecanum-wheeled holonomic robot platform using ROS 2
 author: Aditya Kamath
 
 # Beautiful Jekyll theme
@@ -18,7 +18,6 @@ social-network-links:
   twitter: kamathsblog
   linkedin: adityakamath
   youtube: AdityaKamath2405
-  rss: true
 
 # URL configuration
 url: "https://adityakamath.github.io"
@@ -38,18 +37,5 @@ permalink: /:year-:month-:day-:title/
 # Excerpt settings
 excerpt_length: 50
 
-# Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
-
-# Pagination
-paginate: 5
-
-# Post settings
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      comments: true
