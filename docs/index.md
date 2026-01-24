@@ -65,9 +65,7 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 
 ---
 
-## Specifications
-
-### Requirements
+## Requirements
 
 **Software Configuration:**
 - ROS 2 Humble Hawksbill
@@ -85,7 +83,7 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
 
-### Architecture
+## Architecture
 
 | Package | Function |
 |---------|----------|
