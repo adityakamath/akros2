@@ -10,7 +10,7 @@ The architecture is organized into six primary packages, each handling specific 
 ## System Architecture
 
 <div align="center">
-  <img src="assets/img/system_architecture.svg" alt="System Architecture" width="600"/>
+  <img src="/akros2/assets/img/system_architecture.svg" alt="System Architecture" width="600"/>
 </div>
 
 ---
@@ -30,7 +30,7 @@ The architecture is organized into six primary packages, each handling specific 
 
 **URDF Structure:**
 <div align="center">
-  <img src="assets/img/urdf_structure.svg" alt="URDF Structure" width="500"/>
+  <img src="/akros2/assets/img/urdf_structure.svg" alt="URDF Structure" width="500"/>
 </div>
 
 **Meshes:**
