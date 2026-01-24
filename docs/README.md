@@ -99,13 +99,13 @@ This provides convenient aliases:
 
 ## Documentation
 
-📚 **[Complete Design Documentation](docs/design.md)** - Detailed system design (including the micro-ROS firmware), data flow diagrams, and component descriptions
+📚 **[Complete Design Documentation](design.md)** - Detailed system design (including the micro-ROS firmware), data flow diagrams, and component descriptions
 
 ## Hardware Requirements
 
 ### Minimum Configuration
 - **Computer:** Raspberry Pi 4 (4GB) or equivalent
-- **Microcontroller:** Teensy 4.1 with [expansion board](https://www.tindie.com/products/cburgess129/arduino-teensy41-teensy-41-expansion-board/) running [akros2_firmware](akros2_firmware/)
+- **Microcontroller:** Teensy 4.1 with [expansion board](https://www.tindie.com/products/cburgess129/arduino-teensy41-teensy-41-expansion-board/) running [akros2_firmware](../akros2_firmware/)
 - **Wheels:** 4x Mecanum wheels and DC motors with quadrature encoders
 - **IMU:** 9-DOF inertial measurement unit (accelerometer, gyroscope, magnetometer)
 - **Motor Drivers:** 2x Cytron MDD3A motor drivers
@@ -144,7 +144,7 @@ This provides convenient aliases:
 └────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
 ```
 
-See [Design Documentation](docs/design.md) for detailed component descriptions and details (including firmware) and data flow diagrams.
+See [Design Documentation](design.md) for detailed component descriptions and details (including firmware) and data flow diagrams.
 
 ## Network Configuration
 

@@ -1,0 +1,31 @@
+{%- assign social = site.social-network-links -%}
+{%- if social -%}
+  <div class="footer-social-icons">
+    {%- for entry in social -%}
+      {%- assign key = entry[0] -%}
+      {%- assign val = entry[1] -%}
+      {%- if val -%}
+        <a href="{{ val }}" target="_blank" rel="noopener" aria-label="{{ key }}">
+          {%- case key -%}
+            {%- when "website" -%}
+              <i class="fa-solid fa-robot"></i>
+            {%- when "email" -%}
+              <i class="fa-solid fa-envelope"></i>
+            {%- when "github" -%}
+              <i class="fa-brands fa-github"></i>
+            {%- when "twitter" -%}
+              <i class="fa-brands fa-x-twitter"></i>
+            {%- when "linkedin" -%}
+              <i class="fa-brands fa-linkedin"></i>
+            {%- when "youtube" -%}
+              <i class="fa-brands fa-youtube"></i>
+            {%- when "rss" -%}
+              <i class="fa-solid fa-rss"></i>
+            {%- else -%}
+              <i class="fa-solid fa-circle"></i>
+          {%- endcase -%}
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
