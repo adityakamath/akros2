@@ -58,41 +58,42 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <span style="font-size: 0.95em;">Joy node and teleop_twist_joy for gamepad control. Velocity command multiplexing for teleop/auto mode switching.</span>
+      <span style="font-size: 0.95em;">Joy node and teleop_twist_joy for gamepad control. Twist command multiplexing for switching between teleoperation and autonomous modes defined by custom Mode message.</span>
       <br/><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: inherit;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
-          <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong>
-        </div>
-      </a>
+      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; display: flex; gap: 0.8em;">
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: inherit;">
+          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_teleop</code></strong>
+        </a>
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: inherit;">
+          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_msgs</code></strong>
+        </a>
+      </div>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
-      <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
+      <span style="font-size: 0.95em;">Launch file hierarchies and parameter configurations for bringing up the complete robot stack.</span>
       <br/><br/>
-      <div style="display: flex; flex-direction: column; gap: 0.6em; width: 100%;">
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: inherit;">
-          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
-            <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
-            <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
-          </div>
-        </a>
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: inherit;">
-          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
-            <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
-            <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
-          </div>
-        </a>
-        <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: inherit;">
-          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
-            <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
-            <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
-          </div>
-        </a>
-      </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">⚙️</span>
+    <div style="flex: 1;">
+      <strong>System Configuration</strong><br/>
+      <span style="font-size: 0.95em;">System-level configuration including systemd services for auto-start, development tools, environment setup, and Steamdeck-specific configurations.</span>
+      <br/><br/>
+      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>setup</code></strong>
+        </div>
+      </a>
     </div>
   </div>
 </div>
