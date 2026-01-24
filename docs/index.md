@@ -54,7 +54,7 @@ subtitle: ROS 2 stack for the AKROS platform
 
 ---
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&theme-id=dark" frameborder="no" loading="lazy">
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&editable=true" frameborder="no" loading="lazy">
 </iframe>
 
 ---
