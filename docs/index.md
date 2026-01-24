@@ -19,48 +19,52 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🛞</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
-      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities. EKF-based odometry using robot_localization package fuses IMU and wheel encoder data.</span>
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Motor controllers, sensor drivers, and EKF-based odometry using robot_localization package fuses IMU and wheel encoder data.</span>
       <br/><br/>
-      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%;">
-        <strong style="font-size: 0.9em;"><code>akros2_base</code></strong><br/>
-        <span style="font-size: 0.85em; color: #666;">Motor controllers, sensor drivers, EKF localization</span>
-      </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>akros2_base</code></strong>
+        </div>
+      </a>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>URDF Robot Model</strong><br/>
-      <span style="font-size: 0.95em;">Unified Robot Description Format with Xacro macros. Defines robot geometry, joints, links, sensors, and physical properties for visualization and simulation.</span>
+      <span style="font-size: 0.95em;">Unified Robot Description Format with Xacro macros, meshes, and kinematics definitions. Defines robot geometry, joints, links, sensors, and physical properties for visualization and simulation.</span>
       <br/><br/>
-      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%;">
-        <strong style="font-size: 0.9em;"><code>akros2_description</code></strong><br/>
-        <span style="font-size: 0.85em; color: #666;">URDF/Xacro robot models, meshes, kinematics definitions</span>
-      </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>akros2_description</code></strong>
+        </div>
+      </a>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🔌</span>
     <div style="flex: 1;">
       <strong>Hardware Abstraction</strong><br/>
-      <span style="font-size: 0.95em;">micro-ROS agent for Teensy microcontroller communication via serial.</span>
+      <span style="font-size: 0.95em;">micro-ROS firmware for Teensy 4.1 microcontroller with motor control and sensor interfacing. Communicates with ROS 2 via micro-ROS agent over serial.</span>
       <br/><br/>
-      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%;">
-        <strong style="font-size: 0.9em;"><code>akros2_firmware</code></strong><br/>
-        <span style="font-size: 0.85em; color: #666;">micro-ROS firmware for Teensy 4.1, motor control, sensor interfacing</span>
-      </div>
+      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>akros2_firmware</code></strong>
+        </div>
+      </a>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <span style="font-size: 0.95em;">Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.</span>
+      <span style="font-size: 0.95em;">Joy node and teleop_twist_joy for gamepad control. Velocity command multiplexing for teleop/auto mode switching.</span>
       <br/><br/>
-      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%;">
-        <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong><br/>
-        <span style="font-size: 0.85em; color: #666;">Joy node, teleop_twist_joy node, velocity command multiplexing</span>
-      </div>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: inherit;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
+          <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong>
+        </div>
+      </a>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -70,18 +74,24 @@ subtitle: ROS 2 stack for the AKROS platform
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
       <br/><br/>
       <div style="display: flex; flex-direction: column; gap: 0.6em; width: 100%;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px;">
-          <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
-          <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
-        </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px;">
-          <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
-          <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
-        </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px;">
-          <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
-          <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
-        </div>
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: inherit;">
+          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
+            <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
+            <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
+          </div>
+        </a>
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: inherit;">
+          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
+            <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
+            <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
+          </div>
+        </a>
+        <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: inherit;">
+          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
+            <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
+            <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
+          </div>
+        </a>
       </div>
     </div>
   </div>
