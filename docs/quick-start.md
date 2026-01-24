@@ -1,8 +1,4 @@
----
-layout: page
-title: Quick Start
-subtitle: Getting started with AKROS2
----
+# AKROS2
 
 ![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
