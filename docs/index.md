@@ -5,10 +5,13 @@ title: AKROS2 - Interactive 3D Visualization
 
 # AKROS2
 
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
 ![ROS 2 Humble](https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 
-ROS 2 software stack for the AKROS mecanum-wheeled mobile robot platform.
+> **⚠️ This project is archived and no longer in active development.**
+
+ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Interactive 3D Visualization
 
