@@ -68,7 +68,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
         <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
       </a>
       <br/><br/>
-      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
+      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between modes.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
