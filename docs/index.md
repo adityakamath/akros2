@@ -5,6 +5,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <style>
+  /* Universal override for all screen sizes */
   body .container,
   body .main-content,
   body .page-content,
@@ -31,6 +32,44 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     padding-right: 2.5% !important;
   }
 
+  /* Override for every possible breakpoint to prevent reversion */
+  @media (min-width: 576px),
+         (min-width: 768px),
+         (min-width: 992px),
+         (min-width: 1024px),
+         (min-width: 1200px),
+         (min-width: 1366px),
+         (min-width: 1400px),
+         (min-width: 1440px),
+         (min-width: 1536px),
+         (min-width: 1600px),
+         (min-width: 1920px),
+         (min-width: 2560px),
+         (min-width: 3840px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    div[class*="container"],
+    .row,
+    body > div,
+    #main-content {
+      max-width: none !important;
+      width: 100% !important;
+    }
+  }
+
+  /* Adjust padding for larger screens */
   @media (min-width: 1200px) {
     body .container,
     body .main-content,
@@ -50,86 +89,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     .row,
     body > div,
     #main-content {
-      max-width: none !important;
-      width: 100% !important;
-      padding-left: 5% !important;
-      padding-right: 5% !important;
-    }
-  }
-
-  @media (min-width: 1400px) {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
-      max-width: none !important;
-      width: 100% !important;
-      padding-left: 5% !important;
-      padding-right: 5% !important;
-    }
-  }
-
-  @media (min-width: 1920px) {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
-      max-width: none !important;
-      width: 100% !important;
-      padding-left: 5% !important;
-      padding-right: 5% !important;
-    }
-  }
-
-  @media (min-width: 2560px) {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
-      max-width: none !important;
-      width: 100% !important;
       padding-left: 5% !important;
       padding-right: 5% !important;
     }
