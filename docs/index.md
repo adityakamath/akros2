@@ -4,9 +4,9 @@ title: AKROS2
 subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ---
 
-![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-blue?style=flat&logo=ros&logoSize=auto)
-![ROS 2 Package](https://img.shields.io/badge/ROS%202%20Package-akros2-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
-![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
+![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
+![ROS 2 Package](https://img.shields.io/badge/ROS%202%20Package-akros2-purple?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
+![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-purple?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
 ![Documentation](https://img.shields.io/badge/Design-grey?style=flat&logo=githubpages&logoSize=auto&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign)
 ![Website](https://img.shields.io/badge/Website-kamathrobotics.com-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com&link=https%3A%2F%2Fkamathrobotics.com)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
@@ -20,35 +20,35 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
     <span style="font-size: 2em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
-      4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.
+      Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧭</span>
     <div>
       <strong>Sensor Fusion</strong><br/>
-      EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.
+      EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🔌</span>
     <div>
       <strong>Hardware Abstraction</strong><br/>
-      micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.
+      micro-ROS agent for Teensy microcontroller communication via serial.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🎮</span>
     <div>
       <strong>Teleoperation</strong><br/>
-      Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.
+      Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧩</span>
     <div>
       <strong>Modular Architecture</strong><br/>
-      Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.
+      Separate packages for description, base control, teleoperation, and system integration.
     </div>
   </div>
 </div>
