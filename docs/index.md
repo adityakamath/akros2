@@ -25,16 +25,35 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
       4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.
     </div>
   </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🧭</span>
+    <div>
+      <strong>Sensor Fusion</strong><br/>
+      EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🔌</span>
+    <div>
+      <strong>Hardware Abstraction</strong><br/>
+      micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🎮</span>
+    <div>
+      <strong>Teleoperation</strong><br/>
+      Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.
+    </div>
+  </div>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
+    <span style="font-size: 2em;">🧩</span>
+    <div>
+      <strong>Modular Architecture</strong><br/>
+      Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.
+    </div>
+  </div>
 </div>
-## System Capabilities
-
-- **Autonomous navigation:** Waypoint following, obstacle avoidance, and path planning using ROS 2 navigation stack.
-- **Modular hardware support:** Interfaces for motors, sensors, and other hardware components; extensible via ROS 2 nodes.
-- **ROS 2 Humble compatibility:** Designed for Ubuntu 22.04, using standard ROS 2 tools and conventions.
-- **Diagnostics and logging:** Publishes system status, errors, and logs for monitoring and debugging.
-- **Real-time control:** Supports low-latency motor and sensor control where hardware permits.
-
-For more technical details, see the [design documentation](design.md) or the source code.
 
 ---
 
