@@ -27,7 +27,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="text-decoration: none; color: #666;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_base</code></span>
       </a>
       <br/><br/>
@@ -38,7 +38,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: #666;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_description</code></span>
       </a>
       <br/><br/>
@@ -49,7 +49,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🎛️</span>
     <div style="flex: 1;">
       <strong>Low-level Firmware</strong><br/>
-      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="text-decoration: none; color: #666;">
+      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_firmware</code></span>
       </a>
       <br/><br/>
@@ -60,13 +60,15 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: #666;">
-        <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
-      </a>
-      <span style="font-size: 0.85em; color: #999;"> • </span>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: #666;">
-        <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
-      </a>
+      <span style="display: inline-block; margin-top: 0.3em;">
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; cursor: pointer;">
+          <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
+        </a>
+        <span style="font-size: 0.85em; color: #999; margin: 0 0.3em;"> • </span>
+        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; cursor: pointer;">
+          <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
+        </a>
+      </span>
       <br/><br/>
       <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
     </div>
@@ -75,7 +77,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: #666;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_bringup</code></span>
       </a>
       <br/><br/>
@@ -86,7 +88,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: #666;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>setup</code></span>
       </a>
       <br/><br/>
