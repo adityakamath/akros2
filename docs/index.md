@@ -41,9 +41,14 @@ subtitle: ROS 2 stack for the AKROS platform
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🔌</span>
-    <div>
+    <div style="flex: 1;">
       <strong>Hardware Abstraction</strong><br/>
       <span style="font-size: 0.95em;">micro-ROS agent for Teensy microcontroller communication via serial.</span>
+      <br/><br/>
+      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%;">
+        <strong style="font-size: 0.9em;"><code>akros2_firmware</code></strong><br/>
+        <span style="font-size: 0.85em; color: #666;">micro-ROS firmware for Teensy 4.1, motor control, sensor interfacing</span>
+      </div>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
