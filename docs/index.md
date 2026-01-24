@@ -12,7 +12,16 @@ subtitle: A mecanum-wheel robot platform using ROS 2
   body .post-content,
   body main,
   body .content,
-  body section {
+  body section,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  div[class*="container"],
+  .row,
+  body > div,
+  #main-content {
     max-width: none !important;
     width: 100% !important;
     margin-left: auto !important;
@@ -29,7 +38,16 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     body .post-content,
     body main,
     body .content,
-    body section {
+    body section,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    div[class*="container"],
+    .row,
+    body > div,
+    #main-content {
       padding-left: 5% !important;
       padding-right: 5% !important;
     }
