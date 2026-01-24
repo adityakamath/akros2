@@ -20,35 +20,35 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
     <span style="font-size: 2em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
-      4-wheel mecanum kinematics with full omnidirectional control. Independent translation and rotation for precise maneuvering.
+      Inverse kinematics solver for 4-wheel mecanum drive configuration. Decoupled X/Y translation and Z rotation control via differential wheel velocities.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧭</span>
     <div>
       <strong>Sensor Fusion</strong><br/>
-      EKF-based fusion of IMU and wheel odometry. Robot localization package integration for state estimation.
+      Extended Kalman Filter implementation fusing 9-DOF IMU data with wheel encoder odometry. Implements robot_localization package for pose estimation.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🔌</span>
     <div>
       <strong>Hardware Abstraction</strong><br/>
-      micro-ROS interface for Teensy-based low-level control. Serial communication protocol for motor commands and sensor data.
+      micro-ROS agent interface to Teensy 4.1 microcontroller. UART-based serial protocol for real-time motor control and sensor telemetry.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🎮</span>
     <div>
       <strong>Teleoperation</strong><br/>
-      Multi-device joystick support (PS4, Stadia, 8BitDo, Steam Deck) with command mixing and safety limits.
+      joy and teleop_twist_joy ROS 2 nodes supporting multiple HID-compliant controllers. Velocity command multiplexing with configurable rate limiting.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧩</span>
     <div>
       <strong>Modular Architecture</strong><br/>
-      Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.
+      Package-based architecture with separated URDF description, base drivers, teleoperation, and launch file hierarchy. Follows ROS 2 composition patterns.
     </div>
   </div>
 </div>
