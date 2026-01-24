@@ -48,17 +48,41 @@ subtitle: ROS 2 stack for the AKROS platform
     <div>
       <strong>Modular Architecture</strong><br/>
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
+      <br/><br/>
+      <table style="width: 100%; font-size: 0.9em;">
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_description</code></td>
+          <td style="padding: 0.3em 0;">URDF/Xacro robot models, meshes, kinematics definitions</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_base</code></td>
+          <td style="padding: 0.3em 0;">Motor controllers, sensor drivers, EKF localization</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_teleop</code></td>
+          <td style="padding: 0.3em 0;">Joy node, teleop_twist_joy node, velocity command multiplexing</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_bringup</code></td>
+          <td style="padding: 0.3em 0;">Launch file hierarchies, parameter configurations</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_msgs</code></td>
+          <td style="padding: 0.3em 0;">Custom messages/interfaces</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>setup</code></td>
+          <td style="padding: 0.3em 0;">System configuration, systemd services, development tools, Steamdeck configuration</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
 
 ---
 
-<div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
-  </iframe>
-</div>
+<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&editable=true" frameborder="no" loading="lazy">
+</iframe>
 
 ---
 
@@ -79,17 +103,6 @@ subtitle: ROS 2 stack for the AKROS platform
 **Optional Sensors:**
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
-
-## Architecture
-
-| Package | Function |
-|---------|----------|
-| `akros2_description` | URDF/Xacro robot models, meshes, kinematics definitions |
-| `akros2_base` | Motor controllers, sensor drivers, EKF localization |
-| `akros2_teleop` | Joy node, teleop_twist_joy node, velocity command multiplexing |
-| `akros2_bringup` | Launch file hierarchies, parameter configurations |
-| `akros2_msgs` | Custom messagesinterfaces |
-| `setup` | System configuration, systemd services, development tools, Steamdeck configuration |
 
 ---
 
