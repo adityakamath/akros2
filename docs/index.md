@@ -86,6 +86,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 ---
 
+<div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 <div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin: 2em 0; align-items: stretch;">
   <div class="capability-box" style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">🧭</span>
@@ -157,6 +158,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">Services, configs, scripts, and misc. development tools.</span>
     </div>
   </div>
+</div>
 </div>
 
 ---
