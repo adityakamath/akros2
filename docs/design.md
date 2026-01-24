@@ -253,7 +253,12 @@ Remote base station launch file for off-board control and visualization.
 **Usage:**
 Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none`.
 
+
 ### akros2_firmware
+
+The [akros2_firmware](../akros2_firmware/) package contains micro-ROS firmware for the Teensy 4.1 microcontroller. Based on [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware), it provides low-level control for mecanum drive kinematics, motor control, and sensor data acquisition.
+
+See [akros2_firmware/README.md](../akros2_firmware/README.md) for detailed firmware documentation and setup instructions.
 
 **Purpose:** micro-ROS firmware for Teensy 4.1 microcontroller providing low-level robot control
 
