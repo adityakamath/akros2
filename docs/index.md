@@ -171,7 +171,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 <table style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 2em auto; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15); border: none;">
   <thead>
     <tr>
-      <th colspan="3" style="text-align: center; padding: 0.8em; background: #f8f9fa; font-size: 1.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: none;">Hardware Configuration</th>
+      <th colspan="3" style="text-align: center; padding: 0.6em; background: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: none;">Hardware Configuration</th>
     </tr>
     <tr>
       <th style="text-align: left; padding: 0.6em; background: #e9ecef; border: none;">Component</th>
