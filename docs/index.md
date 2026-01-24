@@ -48,6 +48,33 @@ subtitle: ROS 2 stack for the AKROS platform
     <div>
       <strong>Modular Architecture</strong><br/>
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
+      <br/><br/>
+      <table style="width: 100%; font-size: 0.9em;">
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_description</code></td>
+          <td style="padding: 0.3em 0;">URDF/Xacro robot models, meshes, kinematics definitions</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_base</code></td>
+          <td style="padding: 0.3em 0;">Motor controllers, sensor drivers, EKF localization</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_teleop</code></td>
+          <td style="padding: 0.3em 0;">Joy node, teleop_twist_joy node, velocity command multiplexing</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_bringup</code></td>
+          <td style="padding: 0.3em 0;">Launch file hierarchies, parameter configurations</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>akros2_msgs</code></td>
+          <td style="padding: 0.3em 0;">Custom messages/interfaces</td>
+        </tr>
+        <tr>
+          <td style="padding: 0.3em 0;"><code>setup</code></td>
+          <td style="padding: 0.3em 0;">System configuration, systemd services, development tools, Steamdeck configuration</td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>
@@ -76,17 +103,6 @@ subtitle: ROS 2 stack for the AKROS platform
 **Optional Sensors:**
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
-
-## Architecture
-
-| Package | Function |
-|---------|----------|
-| `akros2_description` | URDF/Xacro robot models, meshes, kinematics definitions |
-| `akros2_base` | Motor controllers, sensor drivers, EKF localization |
-| `akros2_teleop` | Joy node, teleop_twist_joy node, velocity command multiplexing |
-| `akros2_bringup` | Launch file hierarchies, parameter configurations |
-| `akros2_msgs` | Custom messagesinterfaces |
-| `setup` | System configuration, systemd services, development tools, Steamdeck configuration |
 
 ---
 
