@@ -225,7 +225,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="padding: 0.6em; border: none;">Mini UPS with buck converters and monitoring circuitry</td>
     </tr>
     <tr style="background: #f0f0f0;">
-      <td style="padding: 0.6em; border: none;">Indicator LEDs</td>
+      <td style="padding: 0.6em; border: none;">Neopixel LEDs</td>
       <td style="text-align: center; padding: 0.6em; border: none;">-</td>
       <td style="padding: 0.6em; border: none;">Status indicators <em>(Optional)</em></td>
     </tr>
