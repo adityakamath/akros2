@@ -12,8 +12,7 @@ subtitle: ROS 2 stack for the AKROS platform
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 ![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
-
-## Capabilities
+---
 
 <div style="display: flex; flex-direction: column; gap: 1.2em; margin: 2em 0;">
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
@@ -54,8 +53,6 @@ subtitle: ROS 2 stack for the AKROS platform
 </div>
 
 ---
-
-## Playground
 
 <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
