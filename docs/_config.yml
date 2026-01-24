@@ -1,8 +1,7 @@
 # Site settings
 title: AKROS2
-description: ROS 2 stack for the AKROS mecanum-wheeled mobile robot
+description: ROS 2 software stack for mecanum-wheeled mobile robots
 author: Aditya Kamath
-status: Archived
 
 # Beautiful Jekyll theme
 remote_theme: daattali/beautiful-jekyll@6.0.1
