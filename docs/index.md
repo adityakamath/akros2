@@ -1,7 +1,7 @@
 ---
 layout: page
 title: AKROS2
-subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
+subtitle: ROS 2 stack for the AKROS platform
 ---
 
 ![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-blue?style=flat&logo=ros&logoSize=auto)
