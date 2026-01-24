@@ -5,90 +5,60 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <style>
-  /* Universal override for all screen sizes */
-  body .container,
-  body .main-content,
-  body .page-content,
-  body article,
-  body .post-content,
-  body main,
-  body .content,
-  body section,
-  .container-fluid,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl,
-  div[class*="container"],
-  .row,
-  body > div,
-  #main-content {
-    max-width: none !important;
-    width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 2.5% !important;
-    padding-right: 2.5% !important;
-  }
-
-  /* Override for every possible breakpoint to prevent reversion */
-  @media (min-width: 576px),
-         (min-width: 768px),
-         (min-width: 992px),
-         (min-width: 1024px),
-         (min-width: 1200px),
-         (min-width: 1366px),
-         (min-width: 1400px),
-         (min-width: 1440px),
-         (min-width: 1536px),
-         (min-width: 1600px),
-         (min-width: 1920px),
-         (min-width: 2560px),
-         (min-width: 3840px) {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
+  /* Ultra-aggressive override using @media all for universal application */
+  @media all {
+    html body .container,
+    html body .main-content,
+    html body .page-content,
+    html body article,
+    html body .post-content,
+    html body main,
+    html body .content,
+    html body section,
+    html body .container-fluid,
+    html body .container-lg,
+    html body .container-md,
+    html body .container-sm,
+    html body .container-xl,
+    html body .container-xxl,
+    html body div[class*="container"],
+    html body .row,
+    html body > div,
+    html body #main-content,
+    html body div.container,
+    html body div.main-content {
       max-width: none !important;
       width: 100% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 2.5% !important;
+      padding-right: 2.5% !important;
+      box-sizing: border-box !important;
     }
   }
 
-  /* Adjust padding for larger screens */
-  @media (min-width: 1200px) {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
+  /* Larger screen padding */
+  @media all and (min-width: 1200px) {
+    html body .container,
+    html body .main-content,
+    html body .page-content,
+    html body article,
+    html body .post-content,
+    html body main,
+    html body .content,
+    html body section,
+    html body .container-fluid,
+    html body .container-lg,
+    html body .container-md,
+    html body .container-sm,
+    html body .container-xl,
+    html body .container-xxl,
+    html body div[class*="container"],
+    html body .row,
+    html body > div,
+    html body #main-content,
+    html body div.container,
+    html body div.main-content {
       padding-left: 5% !important;
       padding-right: 5% !important;
     }
