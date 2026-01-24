@@ -144,14 +144,11 @@ This provides convenient aliases:
 └────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
 ```
 
-See [Design Documentation](design.md) for detailed component descriptions and data flow diagrams.
+See [Design Documentation](design.md) for detailed component descriptions and details (including firmware) and data flow diagrams.
 
 ## Network Configuration
 
 AKROS2 supports distributed deployment across multiple devices. Configure your ROS 2 network settings (DDS domain ID, RMW implementation, etc.) according to your deployment requirements.
-
-
-For firmware details, see the [Design Documentation](design.md#akros2_firmware).
 
 ## Contributing
 
