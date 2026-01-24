@@ -49,32 +49,32 @@ subtitle: ROS 2 stack for the AKROS platform
       <strong>Modular Architecture</strong><br/>
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
       <br/><br/>
-      <table style="width: 100%; font-size: 0.9em; border-collapse: collapse; border: none;">
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>akros2_description</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">URDF/Xacro robot models, meshes, kinematics definitions</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>akros2_base</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">Motor controllers, sensor drivers, EKF localization</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>akros2_teleop</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">Joy node, teleop_twist_joy node, velocity command multiplexing</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>akros2_bringup</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">Launch file hierarchies, parameter configurations</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>akros2_msgs</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">Custom messages/interfaces</td>
-        </tr>
-        <tr>
-          <td style="padding: 0.4em 1em 0.4em 0; border: none; vertical-align: top; width: 35%;"><code>setup</code></td>
-          <td style="padding: 0.4em 0; border: none; vertical-align: top;">System configuration, systemd services, development tools, Steamdeck configuration</td>
-        </tr>
-      </table>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6em;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>akros2_description</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">URDF/Xacro robot models, meshes, kinematics definitions</span>
+        </div>
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>akros2_base</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Motor controllers, sensor drivers, EKF localization</span>
+        </div>
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Joy node, teleop_twist_joy node, velocity command multiplexing</span>
+        </div>
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
+        </div>
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
+        </div>
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
+          <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
