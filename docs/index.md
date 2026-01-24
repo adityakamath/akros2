@@ -72,6 +72,15 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
   }
+
+  .hardware-table {
+    transition: all 0.2s ease;
+  }
+
+  .hardware-table:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25) !important;
+  }
 </style>
 
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;" markdown="1">
@@ -168,10 +177,10 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 
-<table style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 2em auto; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: none;">
+<table class="hardware-table" style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 2em auto; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border: none;">
   <thead>
     <tr>
-      <th colspan="3" style="text-align: center; padding: 0.6em; background: #f8f9fa; border: none;">🧰 Hardware Configuration</th>
+      <th colspan="3" style="text-align: center; padding: 0.6em; background: #f8f9fa; border: none;">🧰  Hardware Configuration</th>
     </tr>
     <tr>
       <th style="text-align: left; padding: 0.6em; background: #e9ecef; border: none;">Component</th>
