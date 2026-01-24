@@ -11,6 +11,7 @@ title-img: /assets/img/header_image.png
 navbar-links:
   README: "quick-start"
   DESIGN: "design"
+  BLOG: "blog"
 
 # Social network links
 social-network-links:

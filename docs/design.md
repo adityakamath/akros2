@@ -1,24 +1,25 @@
-# AKROS2 Architecture Documentation
-
-## Overview
+# AKROS2 Design
 
 AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot platform. The architecture is organized into six primary packages, each handling specific aspects of robot functionality.
 
 ## System Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        akros2_bringup                           │
-│                    (System Integration)                          │
-└───────────┬─────────────────────────────────────────────────────┘
-            │
-    ┌───────┴───────┬──────────┬──────────┬──────────┬───────────┬──────────┐
-    │               │          │          │          │           │          │
-┌───▼────┐  ┌───────▼──┐  ┌───▼─────┐ ┌─▼──────┐ ┌─▼──────┐ ┌──▼──────┐ ┌─▼──────┐
-│akros2_ │  │ akros2_  │  │akros2_  │ │akros2_ │ │akros2_ │ │ akros2_ │ │ akros2_│
-│descrip-│  │   base   │  │teleop   │ │ msgs   │ │firmware│ │ setup  │ │ 3d     │
-│tion    │  │          │  │         │ │        │ │(Teensy)│ │        │ │ assets │
-└────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └────────┘ └────────┘
+
+```mermaid
+flowchart TD
+   A[akros2_bringup]
+   B[akros2_description]
+   C[akros2_base]
+   D[akros2_teleop]
+   E[akros2_msgs]
+   F[akros2_firmware]
+   G[setup]
+   A --> B
+   A --> C
+   A --> D
+   A --> E
+   A --> F
+   A --> G
 ```
 
 ## Package Details
@@ -33,12 +34,14 @@ AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot
 - Joint state publishing
 - Robot state publishing
 
+
 **URDF Structure:**
-```
-robot.urdf.xacro           # Main URDF with xacro macros
-├── robot.common.xacro     # Common properties and macros
-├── robot.control.xacro    # ros2_control configuration
-└── robot.gazebo.xacro     # Gazebo plugins and simulation
+```mermaid
+graph TD
+   A[robot.urdf.xacro]
+   A --> B[robot.common.xacro]
+   A --> C[robot.control.xacro]
+   A --> D[robot.gazebo.xacro]
 ```
 
 **Meshes:**
@@ -388,51 +391,34 @@ The firmware is compiled and uploaded using Arduino IDE:
 4. Compile and upload to Teensy 4.1
 5. Tune PID parameters via ROS 2 parameter server
 
-**Communication Architecture:**
 
-```
-┌──────────────────────────────────────────────────┐
-│              ROS 2 Host (Raspberry Pi)           │
-│                                                  │
-│  ┌────────────────────────────────────────┐     │
-│  │      micro-ROS Agent                   │     │
-│  │      (Serial or Ethernet)              │     │
-│  └─────────────────┬──────────────────────┘     │
-│                    │                             │
-└────────────────────┼─────────────────────────────┘
-                     │ Serial (USB/UART)
-                     │ or Ethernet (UDP4)
-┌────────────────────▼─────────────────────────────┐
-│              Teensy 4.1 Microcontroller          │
-│                                                  │
-│  ┌────────────────────────────────────────┐     │
-│  │      akros2_firmware                   │     │
-│  │                                        │     │
-│  │  ┌──────────────────────────────┐     │     │
-│  │  │  Mecanum Kinematics          │     │     │
-│  │  └──────────┬───────────────────┘     │     │
-│  │             │                          │     │
-│  │  ┌──────────▼───────────────────┐     │     │
-│  │  │  PID Controllers (4x)        │     │     │
-│  │  └──────────┬───────────────────┘     │     │
-│  │             │                          │     │
-│  │  ┌──────────▼───────────────────┐     │     │
-│  │  │  Motor Drivers Interface     │     │     │
-│  │  └──────────────────────────────┘     │     │
-│  │                                        │     │
-│  │  ┌──────────────────────────────┐     │     │
-│  │  │  Encoder Readers (4x)        │     │     │
-│  │  └──────────────────────────────┘     │     │
-│  │                                        │     │
-│  │  ┌──────────────────────────────┐     │     │
-│  │  │  IMU Interface               │     │     │
-│  │  └──────────────────────────────┘     │     │
-│  └────────────────────────────────────────┘     │
-│                                                  │
-└──────────────────────────────────────────────────┘
-         │           │              │
-         ▼           ▼              ▼
-    Motor Drivers  Encoders       IMU
+**Communication Architecture:**
+```mermaid
+flowchart TD
+   A["ROS 2 Host<br/>(Raspberry Pi)"]
+   B["micro-ROS Agent<br/>(Serial or Ethernet)"]
+   C["Teensy 4.1<br/>Microcontroller"]
+   D[akros2_firmware]
+   E[Mecanum Kinematics]
+   F[PID Controllers (4x)]
+   G[Motor Drivers Interface]
+   H[Encoder Readers (4x)]
+   I[IMU Interface]
+   J[Motor Drivers]
+   K[Encoders]
+   L[IMU]
+
+   A --> B
+   B --> C
+   C --> D
+   D --> E
+   E --> F
+   F --> G
+   G --> J
+   F --> H
+   H --> K
+   D --> I
+   I --> L
 ```
 
 **Status Indicators:**
@@ -505,66 +491,54 @@ command="sudo husarnet daemon restart && sudo service udev start"
 ## Data Flow
 
 ### Sensor Fusion Pipeline
-```
-┌─────────┐     ┌──────────┐     ┌─────────────┐
-│   IMU   ├────►│ Madgwick ├────►│  Motion     │
-└─────────┘     │  Filter  │     │  Detector   │
-                └────┬─────┘     └─────────────┘
-                     │
-                     ▼
-             ┌───────────────┐
-             │      EKF      │
-             │  (Sensor      │
-             │   Fusion)     │◄────────┐
-             └───────┬───────┘         │
-                     │            ┌────────┐
-                     ▼            │  Wheel │
-            /odometry/filtered    │Odometry│
-                                  └────────┘
+```mermaid
+flowchart TD
+   IMU[IMU]
+   Madgwick[Madgwick Filter]
+   Motion[Motion Detector]
+   EKF[EKF (Sensor Fusion)]
+   Wheel[Wheel Odometry]
+   IMU --> Madgwick
+   Madgwick --> Motion
+   Madgwick --> EKF
+   Motion --> EKF
+   Wheel --> EKF
+   EKF --> Odometry[/odometry/filtered/]
 ```
 
 ### Teleoperation Flow
-```
-┌────────────┐     ┌──────────┐     ┌─────────┐
-│ Controller ├────►│   Joy    ├────►│  Mode   │
-└────────────┘     │  Node    │     │ Handler │
-                   └────┬─────┘     └────┬────┘
-                        │                │
-                        │                ▼
-                        │           /mode_status
-                        │                │
-                        ▼                │
-                 /joy_teleop/cmd_vel     │
-                        │                │
-                   ┌────▼────────────────▼────┐
-                   │     Twist Mixer          │
-                   └────────┬─────────────────┘
-                            │
-                            ▼
-                      /cmd_vel_out
-                            │
-                            ▼
-                   ┌────────────────┐
-                   │  micro-ROS     │
-                   │     Agent      │
-                   └────────┬───────┘
-                            │
-                            ▼
-                     /dev/ttyTEENSY
+```mermaid
+flowchart TD
+    Controller[Controller]
+    Joy[Joy Node]
+    Mode[Mode Handler]
+    Mixer[Twist Mixer]
+    MicroROS[micro-ROS Agent]
+    TEENSY[/dev/ttyTEENSY]
+    Controller --> Joy
+    Joy --> Mode
+    Mode -- "/mode_status" --> Mixer
+    Joy -- "/joy_teleop/cmd_vel" --> Mixer
+    Mixer -- "/cmd_vel_out" --> MicroROS
+    MicroROS --> TEENSY
 ```
 
 ### Control Flow
-```
-/cmd_vel_out ─────► micro-ROS Agent ─────► Teensy MCU
-                    (Serial)                    │
-                                                ▼
-                                          Motor Drivers
-                                                │
-                                                ▼
-                                          Mecanum Wheels
-                                                │
-                                                ▼
-/joint_states ◄─── micro-ROS Agent ◄──── Wheel Encoders
+```mermaid
+flowchart TD
+    CMD[/cmd_vel_out/]
+    AGENT[micro-ROS Agent]
+    TEENSY[Teensy MCU]
+    DRIVERS[Motor Drivers]
+    WHEELS[Mecanum Wheels]
+    ENCODERS[Wheel Encoders]
+    JOINTS[/joint_states/]
+    CMD --> AGENT
+    AGENT --> TEENSY
+    TEENSY --> DRIVERS
+    DRIVERS --> WHEELS
+    ENCODERS --> AGENT
+    AGENT --> JOINTS
 ```
 
 ## Hardware Integration
@@ -668,7 +642,6 @@ Located in `setup/`:
 ## Dependencies
 
 ### ROS 2 Packages
-### ROS 2 Packages
 `robot_state_publisher`
 `joint_state_publisher`
 `imu_filter_madgwick`
@@ -690,12 +663,9 @@ Located in `setup/`:
 
 **Operating System:**
 - Ubuntu 22.04 LTS (primary)
-- Ubuntu 20.04 LTS (limited support)
 
 **ROS 2 Distribution:**
-- Humble Hawksbill (primary)
-- Galactic Geochelone (akros2_msgs only)
-- Jazzy Jalisco (akros2_msgs only)
+- Humble Hawksbill
 
 ## Recommended Setup
 
