@@ -4,6 +4,13 @@ title: AKROS2
 subtitle: ROS 2 stack for the AKROS platform
 ---
 
+<style>
+  .container {
+    max-width: 100% !important;
+    width: 95% !important;
+  }
+</style>
+
 ![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
 ![ROS 2 Package](https://img.shields.io/badge/ROS%202%20Package-akros2-purple?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
 ![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-purple?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
@@ -17,7 +24,7 @@ subtitle: ROS 2 stack for the AKROS platform
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 0.9em; margin: 2em 0;">
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
@@ -30,7 +37,7 @@ subtitle: ROS 2 stack for the AKROS platform
       </a>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
@@ -43,7 +50,7 @@ subtitle: ROS 2 stack for the AKROS platform
       </a>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎛️</span>
     <div style="flex: 1;">
       <strong>Low-level Firmware</strong><br/>
@@ -56,7 +63,7 @@ subtitle: ROS 2 stack for the AKROS platform
       </a>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
@@ -72,7 +79,7 @@ subtitle: ROS 2 stack for the AKROS platform
       </div>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
@@ -85,7 +92,7 @@ subtitle: ROS 2 stack for the AKROS platform
       </a>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 250px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
