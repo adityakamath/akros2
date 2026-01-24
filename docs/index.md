@@ -5,31 +5,30 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <style>
-  @media all {
-    body .container,
-    body .main-content,
-    body .page-content,
-    body article,
-    body .post-content,
-    body main,
-    body .content,
-    body section,
-    .container-fluid,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    div[class*="container"],
-    .row,
-    body > div,
-    #main-content {
-      max-width: none !important;
-      width: 100% !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
-      padding-left: 2.5% !important;
-      padding-right: 2.5% !important;
-    }
+  body .container,
+  body .main-content,
+  body .page-content,
+  body article,
+  body .post-content,
+  body main,
+  body .content,
+  body section,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl,
+  div[class*="container"],
+  .row,
+  body > div,
+  #main-content {
+    max-width: none !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
   }
 
   @media (min-width: 1200px) {
@@ -46,10 +45,91 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     .container-md,
     .container-sm,
     .container-xl,
+    .container-xxl,
     div[class*="container"],
     .row,
     body > div,
     #main-content {
+      max-width: none !important;
+      width: 100% !important;
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    div[class*="container"],
+    .row,
+    body > div,
+    #main-content {
+      max-width: none !important;
+      width: 100% !important;
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    div[class*="container"],
+    .row,
+    body > div,
+    #main-content {
+      max-width: none !important;
+      width: 100% !important;
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section,
+    .container-fluid,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl,
+    div[class*="container"],
+    .row,
+    body > div,
+    #main-content {
+      max-width: none !important;
+      width: 100% !important;
       padding-left: 5% !important;
       padding-right: 5% !important;
     }
