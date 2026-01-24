@@ -66,7 +66,7 @@ The robot has 4 continuous joints for the mecanum wheels:
 
 **URDF Generation:**
 
-For visualization in Unity or Foxglove, convert xacro to URDF:
+For visualization in Unity, convert xacro to URDF:
 ```bash
 cd src/akros2/akros2_description
 xacro urdf/robot.urdf.xacro nopath:=False > urdf/robot.urdf
@@ -221,7 +221,6 @@ Main robot bringup launch file.
 
 **Launch Arguments:**
 - `joy_config` (Default: `steamdeck`) - Controller configuration (ps4/stadia/sn30pro/steamdeck/none)
-- `viz_config` (Default: `none`) - Visualization config (foxglove/rosbridge/rviz/none)
 - `desc` (Default: `True`) - Enable URDF description
 - `laser` (Default: `True`) - Enable LIDAR
 - `camera` (Default: `True`) - Enable camera
@@ -239,7 +238,6 @@ Main robot bringup launch file.
 - `akros2_base/sensor_fusion_launch.py`
 - `akros2_base/teleop_launch.py`
 - `akros2_base/twist_mixer_launch.py`
-- `akros2_bringup/viz_launch.py`
 
 **Note:** Due to launch timing issues, it's recommended to launch with `control:=false camera:=false` and launch those separately in different terminals.
 
@@ -251,27 +249,9 @@ Remote base station launch file for off-board control and visualization.
 
 **Launch Arguments:**
 - `joy_config` (Default: `steamdeck`) - Controller configuration
-- `viz_config` (Default: `foxglove`) - Visualization config
 
 **Usage:**
-Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none viz_config:=none`.
-
-#### viz_launch.py
-Visualization package launcher.
-
-**Launch Arguments:**
-- `viz_config` (Default: `foxglove`) - Visualization config
-
-**Visualization Options:**
-- `foxglove` - [Foxglove Bridge](https://github.com/foxglove/ros-foxglove-bridge) (localhost:8765)
-- `rosbridge` - [ROSBridge Server](https://github.com/RobotWebTools/rosbridge_suite) (localhost:9000)
-- `rviz` - [RViz2](https://github.com/ros2/rviz) with default config
-- `none` - Disabled
-
-**Foxglove Configuration:**
-- Located at `viz/default_foxglove.json`
-- Includes AKROS2 URDF visualization layer
-- URDF URL: `https://raw.githubusercontent.com/adityakamath/akros_3d_assets/akros2_urdf/akros2_mecanum/robot.urdf`
+Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none`.
 
 ### setup
 
@@ -297,15 +277,11 @@ ROS_VERSION=2
 - `build_resume` - Resume interrupted build
 - `dep_install` - Install rosdep dependencies
 
-**Tool Aliases:**
-- `fgb` - Launch Foxglove Bridge
-
 **Launch Aliases:**
 - `bringup` - Main robot bringup (minimal sensors)
 - `bringup_local` - Robot bringup with local control
 - `basestation` - Base station control
 - `control` - Low-level control only
-- `viz` - Visualization only
 - `unity` - Unity ROS TCP endpoint
 
 #### Steam Deck Desktop Apps
@@ -413,12 +389,6 @@ command="sudo husarnet daemon restart && sudo service udev start"
 ### Actuators
 - **4x Mecanum Wheels** with independent motor control
 
-## Network Communication
-
-### Visualization Bridges
-- **Foxglove Bridge:** Port 8765 (WebSocket)
-- **ROSBridge Server:** Port 9000 (WebSocket)
-
 ## Development Workflow
 
 ### Building
@@ -456,11 +426,6 @@ ros2 launch akros2_teleop drive_launch.py joy_config:=steamdeck
 **Control:**
 ```bash
 ros2 launch akros2_base control_launch.py
-```
-
-**Visualization:**
-```bash
-ros2 launch akros2_bringup viz_launch.py viz_config:=foxglove
 ```
 
 ### Full System Launch
@@ -508,25 +473,17 @@ Located in `setup/`:
 ## Dependencies
 
 ### ROS 2 Packages
-- `robot_state_publisher`
-- `joint_state_publisher`
-- `imu_filter_madgwick`
-- `robot_localization`
-- `laser_filters`
-- `v4l2_camera`
-- `micro_ros_agent`
-- `joy`
-- `teleop_twist_joy`
-- `foxglove_bridge` (optional)
-- `rosbridge_suite` (optional)
-- `rviz2` (optional)
-
-### External Packages
-- `ldlidar` - LIDAR driver
-
-### Development Tools
-- Foxglove Studio - Web-based visualization
-- RViz2 - Traditional ROS visualization
+### ROS 2 Packages
+`robot_state_publisher`
+`joint_state_publisher`
+`imu_filter_madgwick`
+`robot_localization`
+`laser_filters`
+`v4l2_camera`
+`micro_ros_agent`
+`joy`
+`teleop_twist_joy`
+`ldlidar`
 
 ## Platform Support
 
@@ -554,10 +511,9 @@ Located in `setup/`:
 5. Test individual subsystems before full launch
 6. Launch robot with `bringup` and control with `control` in separate terminals
 
+
 ## Notes
 
 - Launch `control` and `camera` separately due to timing issues
 - Use `js_ext:=True` when micro-ROS firmware is running
-- Remote mesh paths work in RViz/Foxglove but may not work in Unity
-- Foxglove Bridge is preferred over ROSBridge for performance
 - Steam Deck requires Distrobox with Ubuntu 22.04 container

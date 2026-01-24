@@ -11,14 +11,13 @@ ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Overview
 
-AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled mobile robots. It provides a complete software stack including robot description, sensor fusion, teleoperation, and system integration capabilities. The platform supports distributed deployment across multiple devices and offers flexible visualization options through Foxglove Studio, RViz, and ROSBridge.
+AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled mobile robots. It provides a complete software stack including robot description, sensor fusion, teleoperation, and system integration capabilities. The platform supports distributed deployment across multiple devices for remote control and visualization.
 
 ## Features
 
 - **Mecanum Drive Control** - Full holonomic motion control for 4-wheeled mecanum platforms
 - **Sensor Fusion** - IMU and wheel odometry fusion using Extended Kalman Filter
 - **Multi-Controller Support** - PS4, Stadia, 8BitDo SN30 Pro, and Steam Deck controllers
-- **Flexible Visualization** - Foxglove Studio, RViz2, and ROSBridge support
 - **micro-ROS Integration** - Low-level control via serial communication with Teensy microcontroller
 - **Modular Architecture** - Independent packages for easy customization and extension
 
@@ -70,7 +69,6 @@ ros2 launch akros2_bringup bringup_launch.py
 ```bash
 ros2 launch akros2_bringup bringup_launch.py \
   joy_config:=steamdeck \
-  viz_config:=foxglove \
   laser:=true \
   camera:=false
 ```
@@ -78,8 +76,7 @@ ros2 launch akros2_bringup bringup_launch.py \
 **Launch base station (on remote device):**
 ```bash
 ros2 launch akros2_bringup basestation_launch.py \
-  joy_config:=steamdeck \
-  viz_config:=foxglove
+  joy_config:=steamdeck
 ```
 
 ### Configuration
@@ -95,7 +92,6 @@ This provides convenient aliases:
 - `bringup_local` - Launch robot with local control
 - `basestation` - Launch base station
 - `control` - Launch low-level control only
-- `viz` - Launch visualization only
 
 ## Documentation
 
@@ -143,12 +139,6 @@ This provides convenient aliases:
 
 **ROS 2 Distribution:**
 - Humble Hawksbill (recommended)
-
-## Development Tools
-
-The system includes integrations with popular robotics development tools:
-- **Foxglove Studio** - Advanced web-based visualization
-- **RViz2** - Traditional ROS visualization
 
 ## Architecture
 

@@ -49,11 +49,6 @@ subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
 </div>
 
 <div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
-  <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Visualization Support</h3>
-  <p style="font-size: 0.95em; margin: 0;">Foxglove Studio and RViz2 integration. ROSBridge server for web-based monitoring and control interfaces.</p>
-</div>
-
-<div style="padding: 1.2em; background: #f8f9fa; border-left: 3px solid #404040;">
   <h3 style="margin-top: 0; font-size: 1.1em; color: #333;">Modular Architecture</h3>
   <p style="font-size: 0.95em; margin: 0;">Independent ROS 2 packages for robot description, base control, teleop, and system integration. Extensible design.</p>
 </div>
@@ -115,7 +110,7 @@ subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
 
 - **Robot-Microcontroller:** micro-ROS agent via serial (UART/USB)
 - **Inter-node:** DDS (FastDDS/CycloneDDS) over shared memory or network
-- **Visualization:** Native ROS 2 topics, ROSBridge WebSocket server
+- **Visualization:** Native ROS 2 topics
 - **Distributed Systems:** Multi-host ROS 2 network with configurable domain ID
 
 ---

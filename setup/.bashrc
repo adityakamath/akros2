@@ -13,9 +13,6 @@ alias build_only_stats='MAKEFLAGS="-j1 -l1" colcon build --symlink-install --exe
 alias build_resume='MAKEFLAGS=¨-j1 -l1" colcon build --symlink-install --executor sequential --packages-skip-build-finished'
 alias dep_install='rosdep install --from-paths src --ignore-src -r -y'
 
-# ros2 tools
-alias fgb='srs && ros2 launch foxglove_bridge foxglove_bridge_launch.xml port:=8765'
-
 # AKROS2 launch
 alias bringup='rosws && sls && ros2 launch akros2_bringup bringup_launch.py laser:=false joy_config:=none control:=false viz_config:=none'
 alias bringup_local='rosws && sls && ros2 launch akros2_bringup bringup_launch.py laser:=false control:=false joy_config:=sn30pro viz_config:=foxglove'
