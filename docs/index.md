@@ -60,16 +60,12 @@ subtitle: ROS 2 stack for the AKROS platform
       <strong>Teleoperation</strong><br/>
       <span style="font-size: 0.95em;">Joy node and teleop_twist_joy for gamepad control. Twist command multiplexing for switching between teleoperation and autonomous modes defined by custom Mode message.</span>
       <br/><br/>
-      <div style="display: flex; flex-direction: column; gap: 0.6em; width: 100%;">
+      <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; display: flex; gap: 0.8em;">
         <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: inherit;">
-          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
-            <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong>
-          </div>
+          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_teleop</code></strong>
         </a>
         <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: inherit;">
-          <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; cursor: pointer;">
-            <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong>
-          </div>
+          <strong style="font-size: 0.9em; cursor: pointer;"><code>akros2_msgs</code></strong>
         </a>
       </div>
     </div>
