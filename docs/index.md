@@ -5,22 +5,33 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <style>
-  .container,
-  .main-content,
-  .page-content,
-  article,
-  .post-content {
+  body .container,
+  body .main-content,
+  body .page-content,
+  body article,
+  body .post-content,
+  body main,
+  body .content,
+  body section {
     max-width: none !important;
-    width: 95% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2.5% !important;
+    padding-right: 2.5% !important;
   }
 
-  @media (min-width: 768px) {
-    .container,
-    .main-content,
-    .page-content,
-    article,
-    .post-content {
-      width: 90% !important;
+  @media (min-width: 1200px) {
+    body .container,
+    body .main-content,
+    body .page-content,
+    body article,
+    body .post-content,
+    body main,
+    body .content,
+    body section {
+      padding-left: 5% !important;
+      padding-right: 5% !important;
     }
   }
 </style>
@@ -38,7 +49,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin: 2em 0; align-items: stretch;">
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
@@ -49,7 +60,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">Mecanum wheel kinematics with motor controllers, sensor drivers, and odometry.</span>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
@@ -60,7 +71,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">URDF/Xacro models with meshes and kinematics for robot visualization and simulation.</span>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">🎛️</span>
     <div style="flex: 1;">
       <strong>Low-level Firmware</strong><br/>
@@ -71,7 +82,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">micro-ROS firmware for Teensy 4.1 with motor control and sensor interfacing over serial.</span>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
@@ -86,7 +97,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between modes.</span>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
@@ -97,7 +108,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <span style="font-size: 0.95em;">Launch files and parameter configurations for system bringup.</span>
     </div>
   </div>
-  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 300px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <div style="flex: 1 1 calc(16.666% - 0.5em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
@@ -116,13 +127,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 </iframe>
 
 ---
-
-## Requirements
-
-**Software Configuration:**
-- ROS 2 Humble Hawksbill
-- Ubuntu 22.04 LTS
-- Python 3.10+ and C++17
 
 **Hardware Configuration:**
 - Raspberry Pi 4 (4GB minimum) or equivalent ARM64/x86_64 system
