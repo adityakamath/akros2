@@ -1,6 +1,4 @@
 
-# AKROS2 Design
-
 AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot platform.
 The architecture is organized into six primary packages, each handling specific aspects of robot functionality.
 

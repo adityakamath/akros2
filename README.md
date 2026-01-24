@@ -129,20 +129,9 @@ This provides convenient aliases:
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        akros2_bringup                           │
-│                    (System Integration)                          │
-└───────────┬─────────────────────────────────────────────────────┘
-            │
-    ┌───────┴───────┬──────────┬──────────┬──────────┬───────────┐
-    │               │          │          │          │           │
-┌───▼────┐  ┌───────▼──┐  ┌───▼─────┐ ┌─▼──────┐ ┌─▼──────┐ ┌──▼──────┐
-│akros2_ │  │ akros2_  │  │akros2_  │ │akros2_ │ │akros2_ │ │ akros2_ │
-│descrip-│  │   base   │  │teleop   │ │ msgs   │ │ setup  │ │firmware │
-│tion    │  │          │  │         │ │        │ │        │ │(ext)    │
-└────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
-```
+<div align="center">
+  <img src="docs/assets/img/system_architecture.svg" alt="System Architecture" width="600"/>
+</div>
 
 See [Design Documentation](docs/design.md) for detailed component descriptions and details (including firmware) and data flow diagrams.
 
