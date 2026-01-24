@@ -20,35 +20,35 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
     <span style="font-size: 2em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
-      Inverse kinematics solver for 4-wheel mecanum drive configuration. Decoupled X/Y translation and Z rotation control via differential wheel velocities.
+      Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧭</span>
     <div>
       <strong>Sensor Fusion</strong><br/>
-      Extended Kalman Filter implementation fusing 9-DOF IMU data with wheel encoder odometry. Implements robot_localization package for pose estimation.
+      EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🔌</span>
     <div>
       <strong>Hardware Abstraction</strong><br/>
-      micro-ROS agent interface to Teensy 4.1 microcontroller. UART-based serial protocol for real-time motor control and sensor telemetry.
+      micro-ROS agent for Teensy microcontroller communication via serial.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🎮</span>
     <div>
       <strong>Teleoperation</strong><br/>
-      joy and teleop_twist_joy ROS 2 nodes supporting multiple HID-compliant controllers. Velocity command multiplexing with configurable rate limiting.
+      Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
     <span style="font-size: 2em;">🧩</span>
     <div>
       <strong>Modular Architecture</strong><br/>
-      Package-based architecture with separated URDF description, base drivers, teleoperation, and launch file hierarchy. Follows ROS 2 composition patterns.
+      Separate packages for description, base control, teleoperation, and system integration.
     </div>
   </div>
 </div>
