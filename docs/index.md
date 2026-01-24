@@ -1,7 +1,7 @@
 ---
 layout: page
 title: AKROS2
-subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
+subtitle: ROS 2 stack for the AKROS platform
 ---
 
 ![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
@@ -13,55 +13,75 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
 
-## Capabilities
-
-<div style="display: flex; flex-direction: column; gap: 1.2em; margin: 2em 0;">
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🛞</span>
+<div style="display: flex; flex-direction: column; gap: 0.9em; margin: 2em 0;">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #a855f7; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
-      Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🧭</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #06b6d4; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">🧭</span>
     <div>
       <strong>Sensor Fusion</strong><br/>
-      EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.
+      <span style="font-size: 0.95em;">EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🔌</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #22c55e; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">🔌</span>
     <div>
       <strong>Hardware Abstraction</strong><br/>
-      micro-ROS agent for Teensy microcontroller communication via serial.
+      <span style="font-size: 0.95em;">micro-ROS agent for Teensy microcontroller communication via serial.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🎮</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #ec4899; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">🎮</span>
     <div>
       <strong>Teleoperation</strong><br/>
-      Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.
+      <span style="font-size: 0.95em;">Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🧩</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #f59e0b; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <span style="font-size: 1.8em;">🧩</span>
     <div>
       <strong>Modular Architecture</strong><br/>
-      Separate packages for description, base control, teleoperation, and system integration.
+      <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
+      <br/><br/>
+      <div style="display: flex; flex-direction: column; gap: 0.6em; align-items: center;">
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>akros2_description</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">URDF/Xacro robot models, meshes, kinematics definitions</span>
+        </div>
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>akros2_base</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Motor controllers, sensor drivers, EKF localization</span>
+        </div>
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Joy node, teleop_twist_joy node, velocity command multiplexing</span>
+        </div>
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
+        </div>
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
+        </div>
+        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+          <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
+          <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 ---
 
-## Playground
-
-<div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
-  </iframe>
-</div>
+<iframe height="500" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy">
+</iframe>
 
 ---
 
@@ -82,17 +102,6 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 **Optional Sensors:**
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
-
-## Architecture
-
-| Package | Function |
-|---------|----------|
-| `akros2_description` | URDF/Xacro robot models, meshes, kinematics definitions |
-| `akros2_base` | Motor controllers, sensor drivers, EKF localization |
-| `akros2_teleop` | Joy node, teleop_twist_joy node, velocity command multiplexing |
-| `akros2_bringup` | Launch file hierarchies, parameter configurations |
-| `akros2_msgs` | Custom messagesinterfaces |
-| `setup` | System configuration, systemd services, development tools, Steamdeck configuration |
 
 ---
 
