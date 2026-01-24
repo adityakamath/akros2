@@ -111,12 +111,12 @@ This provides convenient aliases:
 ### Minimum Configuration
 - **Computer:** Raspberry Pi 4 (4GB) or equivalent
 - **Microcontroller:** Teensy with [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware)
-- **Wheels:** 4x Mecanum wheels with encoders
+- **Wheels:** 4x Mecanum wheels and DC motors with encoders
 - **IMU:** 9-DOF inertial measurement unit
 - **Power:** Appropriate power system for motors and electronics
 
 ### Recommended Sensors
-- **LIDAR:** LD06 or compatible
+- **LIDAR:** LDLidar LD06 or compatible
 - **Camera:** USB camera (v4l2 compatible)
 
 ### Supported Controllers
@@ -130,12 +130,9 @@ This provides convenient aliases:
 **Tested On:**
 - Raspberry Pi 4 (4GB/8GB)
 - Raspberry Pi Zero 2 W
-- Valve Steam Deck (Ubuntu 22.04 via Distrobox)
-- WSL2 (partial support)
 
 **Operating System:**
-- Ubuntu 22.04 LTS (primary)
-- Ubuntu 20.04 LTS (limited)
+- Ubuntu 22.04 LTS
 
 **ROS 2 Distribution:**
 - Humble Hawksbill (recommended)
