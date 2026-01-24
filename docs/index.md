@@ -111,7 +111,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
         <span style="font-size: 0.85em;"><code>akros2_description</code></span>
       </a>
       <br/><br/>
-      <span style="font-size: 0.95em;">URDF/Xacro models with meshes and kinematics for robot visualization and simulation.</span>
+      <span style="font-size: 0.95em;">URDF and Xacro models with meshes and kinematics for robot visualization and simulation.</span>
     </div>
   </div>
   <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
