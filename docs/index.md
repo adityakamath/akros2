@@ -211,6 +211,16 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="padding: 0.6em; border: none;">Dual channel motor controllers</td>
     </tr>
     <tr style="background: #ffffff;">
+      <td style="padding: 0.6em; border: none;">Power Supply</td>
+      <td style="text-align: center; padding: 0.6em; border: none;">1</td>
+      <td style="padding: 0.6em; border: none;">Mini UPS with buck converters and monitoring circuitry</td>
+    </tr>
+    <tr style="background: #f8f9fa;">
+      <td style="padding: 0.6em; border: none;">Indicator LEDs</td>
+      <td style="text-align: center; padding: 0.6em; border: none;">-</td>
+      <td style="padding: 0.6em; border: none;">Status indicators <em>(Optional)</em></td>
+    </tr>
+    <tr style="background: #ffffff;">
       <td style="padding: 0.6em; border: none;">LDLidar LD06</td>
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">Or compatible 2D laser scanner <em>(Optional)</em></td>
