@@ -185,7 +185,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">4GB minimum or equivalent ARM64/x86_64 system</td>
     </tr>
-    <tr style="background: #f8f9fa;">
+    <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">Teensy Microcontroller</td>
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">Running <a href="https://github.com/adityakamath/akros2_firmware" target="_blank">micro-ROS firmware</a> connected via serial (UART/USB)</td>
@@ -195,7 +195,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="text-align: center; padding: 0.6em; border: none;">4</td>
       <td style="padding: 0.6em; border: none;">Omnidirectional drive wheels</td>
     </tr>
-    <tr style="background: #f8f9fa;">
+    <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">DC Motors with Encoders</td>
       <td style="text-align: center; padding: 0.6em; border: none;">4</td>
       <td style="padding: 0.6em; border: none;">Quadrature encoders for odometry</td>
@@ -205,7 +205,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">Accelerometer, gyroscope, magnetometer</td>
     </tr>
-    <tr style="background: #f8f9fa;">
+    <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">Cytron MDD3A Motor Drivers</td>
       <td style="text-align: center; padding: 0.6em; border: none;">2</td>
       <td style="padding: 0.6em; border: none;">Dual channel motor controllers</td>
@@ -215,7 +215,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">Mini UPS with buck converters and monitoring circuitry</td>
     </tr>
-    <tr style="background: #f8f9fa;">
+    <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">Indicator LEDs</td>
       <td style="text-align: center; padding: 0.6em; border: none;">-</td>
       <td style="padding: 0.6em; border: none;">Status indicators <em>(Optional)</em></td>
@@ -225,7 +225,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">Or compatible 2D laser scanner <em>(Optional)</em></td>
     </tr>
-    <tr style="background: #f8f9fa;">
+    <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">USB Camera</td>
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
       <td style="padding: 0.6em; border: none;">v4l2 compatible <em>(Optional)</em></td>
