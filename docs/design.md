@@ -572,3 +572,7 @@ Located in `setup/`:
 - Launch `control` and `camera` separately due to timing issues
 - Use `js_ext:=True` when micro-ROS firmware is running
 - Steam Deck requires Distrobox with Ubuntu 22.04 container
+
+---
+
+*This documentation was AI-generated and may not be complete or correct. Please verify all technical details and configurations before implementation.*
