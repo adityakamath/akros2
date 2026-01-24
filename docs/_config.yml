@@ -9,8 +9,7 @@ remote_theme: daattali/beautiful-jekyll@6.0.1
 # Personalization - use header image as logo in top left
 title-img: /assets/img/header_image.png
 navbar-links:
-  README: "quick-start"
-  DESIGN: "design"
+  Kamath Robotics: "https://kamathrobotics.com"
 
 # Social network links
 social-network-links:

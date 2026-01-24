@@ -1,0 +1,13 @@
+flowchart TD
+    Controller[Controller]
+    Joy[Joy Node]
+    Mode[Mode Handler]
+    Mixer[Twist Mixer]
+    MicroROS[micro-ROS Agent]
+    TEENSY[dev_ttyTEENSY]
+    Controller --> Joy
+    Joy --> Mode
+    Mode -- mode_status --> Mixer
+    Joy -- joy_teleop_cmd_vel --> Mixer
+    Mixer -- cmd_vel_out --> MicroROS
+    MicroROS --> TEENSY

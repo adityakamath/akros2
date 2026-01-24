@@ -1,0 +1,14 @@
+flowchart TD
+    CMD[/cmd_vel_out/]
+    AGENT[micro-ROS Agent]
+    TEENSY[Teensy MCU]
+    DRIVERS[Motor Drivers]
+    WHEELS[Mecanum Wheels]
+    ENCODERS[Wheel Encoders]
+    JOINTS[/joint_states/]
+    CMD --> AGENT
+    AGENT --> TEENSY
+    TEENSY --> DRIVERS
+    DRIVERS --> WHEELS
+    ENCODERS --> AGENT
+    AGENT --> JOINTS

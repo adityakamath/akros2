@@ -1,152 +1,118 @@
 
----
-layout: default
----
-
 # AKROS2 Design
 
-AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot platform. The architecture is organized into six primary packages, each handling specific aspects of robot functionality.
+AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot platform.
+The architecture is organized into six primary packages, each handling specific aspects of robot functionality.
+
+---
+
 
 ## System Architecture
 
+<div align="center">
+  <img src="assets/img/system_architecture.svg" alt="System Architecture" width="600"/>
+</div>
 
-```mermaid
-flowchart TD
-   A[akros2_bringup]
-   B[akros2_description]
-   C[akros2_base]
-   D[akros2_teleop]
-   E[akros2_msgs]
-   F[akros2_firmware]
-   G[setup]
-   A --> B
-   A --> C
-   A --> D
-   A --> E
-   A --> F
-   A --> G
-```
+---
 
 ## Package Details
+
 
 ### akros2_description
 
 **Purpose:** Robot description and kinematics
 
 **Key Components:**
-- URDF/Xacro files defining robot structure
-- STL mesh files for visualization
-- Joint state publishing
-- Robot state publishing
-
+  - URDF/Xacro files defining robot structure
+  - STL mesh files for visualization
+  - Joint state publishing
+  - Robot state publishing
 
 **URDF Structure:**
-```mermaid
-graph TD
-   A[robot.urdf.xacro]
-   A --> B[robot.common.xacro]
-   A --> C[robot.control.xacro]
-   A --> D[robot.gazebo.xacro]
-```
+<div align="center">
+  <img src="assets/img/urdf_structure.svg" alt="URDF Structure" width="500"/>
+</div>
 
 **Meshes:**
-- `base_module.stl` - Robot base platform
-- `navigation_module.stl` - Top navigation/sensor platform
-- `wheel_lf/rf/lb/rb.stl` - Four mecanum wheels
-- `ld06.stl` - LIDAR sensor
-- `cam_module.stl` - Camera module
-- `wireless_charger_tx.stl` - Wireless charging transmitter
+  - `base_module.stl` — Robot base platform
+  - `navigation_module.stl` — Top navigation/sensor platform
+  - `wheel_lf/rf/lb/rb.stl` — Four mecanum wheels
+  - `ld06.stl` — LIDAR sensor
+  - `cam_module.stl` — Camera module
+  - `wireless_charger_tx.stl` — Wireless charging transmitter
 
 **Joints:**
-The robot has 4 continuous joints for the mecanum wheels:
-- `joint_lf` - Left front wheel
-- `joint_rf` - Right front wheel
-- `joint_lb` - Left back wheel
-- `joint_rb` - Right back wheel
+  - `joint_lf` — Left front wheel
+  - `joint_rf` — Right front wheel
+  - `joint_lb` — Left back wheel
+  - `joint_rb` — Right back wheel
 
 **Topics:**
-- `/joint_states` or `/req_states` - Combined joint state messages
-- `/robot_description` - Robot URDF
+  - `/joint_states` or `/req_states` — Combined joint state messages
+  - `/robot_description` — Robot URDF
 
 **Launch Arguments:**
-- `js_ext` (Default: `True`) - Enable external joint states (e.g., from micro-ROS)
-- `js_topic` (Default: `joint_states`) - Joint states topic name
+  - `js_ext` (Default: `True`) — Enable external joint states (e.g., from micro-ROS)
+  - `js_topic` (Default: `joint_states`) — Joint states topic name
 
 **URDF Generation:**
-
 For visualization in Unity, convert xacro to URDF:
-```bash
-cd src/akros2/akros2_description
-xacro urdf/robot.urdf.xacro nopath:=False > urdf/robot.urdf
-```
+
+    cd src/akros2/akros2_description
+    xacro urdf/robot.urdf.xacro nopath:=False > urdf/robot.urdf
 
 The `nopath` argument fixes mesh paths for external applications.
 
 **Remote Mesh Paths:**
-
 Meshes can be referenced from remote repositories:
-```bash
-ros2 launch akros2_description description_launch.py \
-  mesh_path:=https://github.com/adityakamath/akros_3d_assets/raw/main/akros2_mecanum/
-```
+
+    ros2 launch akros2_description description_launch.py \
+      mesh_path:=https://github.com/adityakamath/akros_3d_assets/raw/main/akros2_mecanum/
+
+---
 
 ### akros2_base
 
 **Purpose:** Core robot functionality including drivers, sensors, and sensor fusion
 
-**Key Nodes:**
-- `motion_detector` - Detects robot motion from IMU data
+**Key Node:** `motion_detector` - Detects robot motion from IMU data
 
-**Launch Files:**
+#### **Launch Files:**
 
-#### twist_mixer_launch.py
-Launches the `twist_mixer` executable for command velocity mixing. No launch arguments.
+- **twist_mixer_launch.py:** Launches the `twist_mixer` executable for command velocity mixing. No launch arguments.
 
-#### teleop_launch.py
-Launches teleoperation-related nodes:
-- `joy` and `teleop_twist_joy` nodes via joy_launch.py
-- `joy_mode_handler` node from akros2_teleop
+- **teleop_launch.py:** Launches teleoperation-related nodes:
+  - `joy` and `teleop_twist_joy` nodes via joy_launch.py
+  - `joy_mode_handler` node from akros2_teleop
+  - **Launch Argument:** `joy_config` - Controller configuration (ps4/stadia/sn30pro/steamdeck)
 
-**Launch Arguments:**
-- `joy_config` - Controller configuration (ps4/stadia/sn30pro/steamdeck)
+- **sensor_fusion_launch.py:** Launches sensor fusion pipeline:
+  - [Madgwick Filter](https://github.com/CCNYRoboticsLab/imu_tools/tree/humble/imu_filter_madgwick) - IMU filtering
+  - [Extended Kalman Filter](https://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html) - Fuses filtered IMU and wheel odometry
+  - `motion_detector` - Motion detection based on IMU angular velocities
+  - **Subscribed Topics:**
+    - `/imu` - Raw IMU data
+    - `/mag` - Magnetometer data (if available)
+    - `/odometry` - Wheel odometry
+  - **Published Topics:**
+    - `/imu/filtered` - Filtered IMU data
+    - `/odometry/filtered` - Fused odometry
+        - `/in_motion` - Motion detection status
+  - Transform: `odom->base_footprint`
 
-#### sensor_fusion_launch.py
-Launches sensor fusion pipeline:
-- [Madgwick Filter](https://github.com/CCNYRoboticsLab/imu_tools/tree/humble/imu_filter_madgwick) - IMU filtering
-- [Extended Kalman Filter](https://docs.ros.org/en/melodic/api/robot_localization/html/state_estimation_nodes.html) - Fuses filtered IMU and wheel odometry
-- `motion_detector` - Motion detection based on IMU angular velocities
+- **laser_launch.py:** Launches LIDAR packages:
+  - [ldlidar](https://github.com/linorobot/ldlidar) driver
+  - [laser_filters](https://github.com/ros-perception/laser_filters) package
+  - **Launch Argument:** `laser_filter` (Default: `True`) - Enable/disable LIDAR filter chain
 
-**Subscribed Topics:**
-- `/imu` - Raw IMU data
-- `/mag` - Magnetometer data (if available)
-- `/odometry` - Wheel odometry
+- **camera_launch.py:** Launches camera driver:
+  - [v4l2_camera](https://gitlab.com/boldhearts/ros2_v4l2_camera) node
+  - **Launch Argument:** `compose` (Default: `False`) - Run as composable container or standalone node
 
-**Published Topics:**
-- `/imu/filtered` - Filtered IMU data
-- `/odometry/filtered` - Fused odometry
-- `/in_motion` - Motion detection status
-- Transform: `odom->base_footprint`
+- **control_launch.py:** Launches low-level control:
+  - [micro-ROS agent](https://github.com/micro-ROS/micro-ROS-Agent) - Serial communication with microcontroller (`/dev/ttyTEENSY`)
 
-#### laser_launch.py
-Launches LIDAR packages:
-- [ldlidar](https://github.com/linorobot/ldlidar) driver
-- [laser_filters](https://github.com/ros-perception/laser_filters) package
-
-**Launch Arguments:**
-- `laser_filter` (Default: `True`) - Enable/disable LIDAR filter chain
-
-#### camera_launch.py
-Launches camera driver:
-- [v4l2_camera](https://gitlab.com/boldhearts/ros2_v4l2_camera) node
-
-**Launch Arguments:**
-- `compose` (Default: `False`) - Run as composable container or standalone node
-
-#### control_launch.py
-Launches low-level control:
-- [micro-ROS agent](https://github.com/micro-ROS/micro-ROS-Agent) - Serial communication with microcontroller (`/dev/ttyTEENSY`)
-
-**Configuration Files:**
+#### Configuration Files:
 
 Located in `config/` directory:
 - `camera_config.yaml` - Camera parameters
@@ -155,6 +121,8 @@ Located in `config/` directory:
 - `imu_filter_config.yaml` - Madgwick filter parameters
 - `motion_detector_config.yaml` - Motion detection thresholds
 - `laser_filter_config.yaml` - LIDAR filter chain
+
+---
 
 ### akros2_teleop
 
@@ -171,30 +139,22 @@ Located in `config/` directory:
 - [8BitDo SN30 Pro](https://www.8bitdo.com/sn30-pro-g-classic-or-sn30-pro-sn/)
 - [Valve Steam Deck](https://store.steampowered.com/steamdeck)
 
-**Launch Files:**
+#### Launch Files:
 
-#### drive_launch.py
-Main teleoperation launch file.
+- **drive_launch.py:** Main teleoperation launch file:
+  - **Launch Arguments:**
+    - `joy` (Default: `True`) - Enable/disable joy-related packages
+    - `joy_config` (Default: `steamdeck`) - Controller mapping (ps4/stadia/sn30pro/steamdeck)
+    - `executor` - If True, runs `drive_node` composed executable; if False, runs nodes separately
 
-**Launch Arguments:**
-- `joy` (Default: `True`) - Enable/disable joy-related packages
-- `joy_config` (Default: `steamdeck`) - Controller mapping (ps4/stadia/sn30pro/steamdeck)
-- `executor` - If True, runs `drive_node` composed executable; if False, runs nodes separately
+- **joy_launch.py:** Launches `joy` and `teleop_twist_joy` nodes:
+  - **Launch Argument:** `joy_config` - Controller configuration
+  - **Mode Handler Parameters:**
+    - `estop_button` - E-Stop button mapping
+    - `auto_button` - Auto/Teleop toggle button mapping
+  - **Twist Mixer Parameter:** `timer_period` (Default: 0.01s) - Update rate
 
-#### joy_launch.py
-Launches `joy` and `teleop_twist_joy` nodes.
-
-**Launch Arguments:**
-- `joy_config` - Controller configuration
-
-**Mode Handler Parameters:**
-- `estop_button` - E-Stop button mapping
-- `auto_button` - Auto/Teleop toggle button mapping
-
-**Twist Mixer Parameters:**
-- `timer_period` (Default: 0.01s) - Update rate
-
-**Configuration Files:**
+#### Configuration Files:
 
 Located in `config/` directory (per controller):
 
@@ -202,65 +162,57 @@ Located in `config/` directory (per controller):
 - `<controller>_mode_config.yaml` - Mode button mappings
 - `<controller>_twist_config.yaml` - Twist command scaling
 
+---
+
 ### akros2_msgs
 
 **Purpose:** Custom message definitions
 
-**Messages:**
+**Messages:** **Mode.msd** (Robot operation mode status)
 
-#### Mode.msg
-Robot operation mode status:
 ```
 bool estop      # Emergency stop status
 bool auto_t     # Autonomous mode (True) vs Teleop mode (False)
 ```
 
-**Usage:**
-Published by `joy_mode_handler`, consumed by `twist_mixer` to determine command routing.
+**Usage:** Published by `joy_mode_handler`, consumed by `twist_mixer` to determine command routing.
+
+---
 
 ### akros2_bringup
 
 **Purpose:** System-level launch files integrating all packages
 
-**Launch Files:**
+#### Launch Files:
 
-#### bringup_launch.py
-Main robot bringup launch file.
+- **bringup_launch.py:** Main robot bringup launch file:
+  - **Launch Arguments:**
+    - `joy_config` (Default: `steamdeck`) - Controller configuration (ps4/stadia/sn30pro/steamdeck/none)
+    - `desc` (Default: `True`) - Enable URDF description
+    - `laser` (Default: `True`) - Enable LIDAR
+    - `camera` (Default: `True`) - Enable camera
+    - `control` (Default: `True`) - Enable low-level control
+    - `fusion` (Default: `True`) - Enable sensor fusion
+    - `teleop` (Default: `True`) - Enable teleoperation
+    - `js_topic` (Default: `joint_states`) - Joint states topic (joint_states/req_states)
+    - `js_ext` (Default: `True`) - Enable external joint states (e.g., micro-ROS)
+  - **Included Launch Files:**
+    - `akros2_description/description_launch.py`
+    - `akros2_base/laser_launch.py`
+    - `akros2_base/camera_launch.py`
+    - `akros2_base/control_launch.py`
+    - `akros2_base/sensor_fusion_launch.py`
+    - `akros2_base/teleop_launch.py`
+    - `akros2_base/twist_mixer_launch.py`
+  - **Note:** Due to launch timing issues, it's recommended to launch with `control:=false camera:=false` and launch those separately in different terminals.
 
-**Launch Arguments:**
-- `joy_config` (Default: `steamdeck`) - Controller configuration (ps4/stadia/sn30pro/steamdeck/none)
-- `desc` (Default: `True`) - Enable URDF description
-- `laser` (Default: `True`) - Enable LIDAR
-- `camera` (Default: `True`) - Enable camera
-- `control` (Default: `True`) - Enable low-level control
-- `fusion` (Default: `True`) - Enable sensor fusion
-- `teleop` (Default: `True`) - Enable teleoperation
-- `js_topic` (Default: `joint_states`) - Joint states topic (joint_states/req_states)
-- `js_ext` (Default: `True`) - Enable external joint states (e.g., micro-ROS)
+- **bringup_local_launch.py:** Similar to `bringup_launch.py` but runs `teleop_node.py` directly instead of `teleop_launch.py`.
 
-**Included Launch Files:**
-- `akros2_description/description_launch.py`
-- `akros2_base/laser_launch.py`
-- `akros2_base/camera_launch.py`
-- `akros2_base/control_launch.py`
-- `akros2_base/sensor_fusion_launch.py`
-- `akros2_base/teleop_launch.py`
-- `akros2_base/twist_mixer_launch.py`
+- **basestation_launch.py:** Remote base station launch file for off-board control and visualization.
+  - **Launch Argument:** `joy_config` (Default: `steamdeck`) - Controller configuration
+  - **Usage:** Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none`.
 
-**Note:** Due to launch timing issues, it's recommended to launch with `control:=false camera:=false` and launch those separately in different terminals.
-
-#### bringup_local_launch.py
-Similar to `bringup_launch.py` but runs `teleop_node.py` directly instead of `teleop_launch.py`.
-
-#### basestation_launch.py
-Remote base station launch file for off-board control and visualization.
-
-**Launch Arguments:**
-- `joy_config` (Default: `steamdeck`) - Controller configuration
-
-**Usage:**
-Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none`.
-
+---
 
 ### akros2_firmware
 
@@ -398,33 +350,8 @@ The firmware is compiled and uploaded using Arduino IDE:
 
 
 **Communication Architecture:**
-```mermaid
-flowchart TD
-   A["ROS 2 Host<br/>(Raspberry Pi)"]
-   B["micro-ROS Agent<br/>(Serial or Ethernet)"]
-   C["Teensy 4.1<br/>Microcontroller"]
-   D[akros2_firmware]
-   E[Mecanum Kinematics]
-   F[PID Controllers (4x)]
-   G[Motor Drivers Interface]
-   H[Encoder Readers (4x)]
-   I[IMU Interface]
-   J[Motor Drivers]
-   K[Encoders]
-   L[IMU]
 
-   A --> B
-   B --> C
-   C --> D
-   D --> E
-   E --> F
-   F --> G
-   G --> J
-   F --> H
-   H --> K
-   D --> I
-   I --> L
-```
+![Communication Architecture](assets/img/communication_architecture.svg)
 
 **Status Indicators:**
 
@@ -496,55 +423,13 @@ command="sudo husarnet daemon restart && sudo service udev start"
 ## Data Flow
 
 ### Sensor Fusion Pipeline
-```mermaid
-flowchart TD
-   IMU[IMU]
-   Madgwick[Madgwick Filter]
-   Motion[Motion Detector]
-   EKF[EKF (Sensor Fusion)]
-   Wheel[Wheel Odometry]
-   IMU --> Madgwick
-   Madgwick --> Motion
-   Madgwick --> EKF
-   Motion --> EKF
-   Wheel --> EKF
-   EKF --> Odometry[/odometry/filtered/]
-```
+![Sensor Fusion Pipeline](assets/img/sensor_fusion_pipeline.svg)
 
 ### Teleoperation Flow
-```mermaid
-flowchart TD
-    Controller[Controller]
-    Joy[Joy Node]
-    Mode[Mode Handler]
-    Mixer[Twist Mixer]
-    MicroROS[micro-ROS Agent]
-    TEENSY[/dev/ttyTEENSY]
-    Controller --> Joy
-    Joy --> Mode
-    Mode -- "/mode_status" --> Mixer
-    Joy -- "/joy_teleop/cmd_vel" --> Mixer
-    Mixer -- "/cmd_vel_out" --> MicroROS
-    MicroROS --> TEENSY
-```
+![Teleoperation Flow](assets/img/teleoperation_flow.svg)
 
 ### Control Flow
-```mermaid
-flowchart TD
-    CMD[/cmd_vel_out/]
-    AGENT[micro-ROS Agent]
-    TEENSY[Teensy MCU]
-    DRIVERS[Motor Drivers]
-    WHEELS[Mecanum Wheels]
-    ENCODERS[Wheel Encoders]
-    JOINTS[/joint_states/]
-    CMD --> AGENT
-    AGENT --> TEENSY
-    TEENSY --> DRIVERS
-    DRIVERS --> WHEELS
-    ENCODERS --> AGENT
-    AGENT --> JOINTS
-```
+![Control Flow](assets/img/control_flow.svg)
 
 ## Hardware Integration
 

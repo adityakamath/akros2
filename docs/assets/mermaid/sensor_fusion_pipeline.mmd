@@ -1,0 +1,13 @@
+flowchart TD
+  IMU[IMU]
+  Madgwick[Madgwick Filter]
+  Motion[Motion Detector]
+  EKF[EKF Sensor Fusion]
+  Wheel[Wheel Odometry]
+
+  IMU --> Madgwick
+  Madgwick --> Motion
+  Madgwick --> EKF
+  Motion --> EKF
+  Wheel --> EKF
+  EKF --> OdometryFiltered

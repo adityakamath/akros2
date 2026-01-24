@@ -1,0 +1,25 @@
+flowchart TD
+   A[ROS2_Host]
+   B[microROS_Agent]
+   C[Teensy4_1]
+   D[akros2_firmware]
+   E[Mecanum_Kinematics]
+   F[PID_Controllers]
+   G[Motor_Drivers_Interface]
+   H[Encoder_Readers]
+   I[IMU_Interface]
+   J[Motor_Drivers]
+   K[Encoders]
+   L[IMU]
+
+   A <--> B
+   B <--> C
+   C <--> D
+   D --> E
+   E --> F
+   F --> G
+   G --> J
+   H --> F
+   K --> H
+   I --> D
+   L --> I

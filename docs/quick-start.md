@@ -1,14 +1,12 @@
 # AKROS2
 
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
 ![ROS 2](https://img.shields.io/badge/ROS%202-Humble%20(Ubuntu%2022.04)-purple?style=flat&logo=ros&logoSize=auto)
+![Repository](https://img.shields.io/badge/Repository-adityakamath%2Fakros2-purple?style=flat&logo=github&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
+![Blog](https://img.shields.io/badge/Blog-AKROS%20Series-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
-![Website](https://img.shields.io/badge/Website-kamathrobotics.com-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com&link=https%3A%2F%2Fkamathrobotics.com)
-![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
-![Project Status](https://img.shields.io/badge/Status-Archived-red)
-
-> **⚠️ This project is archived and no longer in active development.**
 
 ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
