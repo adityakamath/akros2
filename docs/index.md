@@ -45,7 +45,7 @@ subtitle: ROS 2 stack for the AKROS platform
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #f59e0b; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
-    <div>
+    <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
       <br/><br/>
