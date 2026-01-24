@@ -170,7 +170,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 ---
 
-<div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 **Hardware Configuration:**
 - Raspberry Pi 4 (4GB minimum) or equivalent ARM64/x86_64 system
 - Teensy microcontroller running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware) and connected to the computer via serial (UART/USB)
@@ -181,7 +180,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 **Optional Sensors:**
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
-</div>
 
 ---
 
