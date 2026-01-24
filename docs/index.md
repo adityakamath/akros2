@@ -86,8 +86,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 </div>
 
----
-
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 <div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin: 2em 0; align-items: stretch;">
   <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; display: flex; align-items: flex-start; gap: 0.8em; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
@@ -163,14 +161,10 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 </div>
 </div>
 
----
-
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 <iframe height="500" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy">
 </iframe>
 </div>
-
----
 
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;" markdown="1">
 
@@ -185,14 +179,4 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
 
-</div>
-
----
-
-<div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
-<div style="margin: 2em 0; padding: 1em; background: #f0f0f0; border-left: 3px solid #666;">
-  <p style="font-size: 0.95em; color: #555; margin: 0;">
-    <strong>Project Status:</strong> Archived (2025) | Apache 2.0 License | Open source
-  </p>
-</div>
 </div>
