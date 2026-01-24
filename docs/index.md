@@ -117,13 +117,6 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 ---
 
-## Requirements
-
-**Software Configuration:**
-- ROS 2 Humble Hawksbill
-- Ubuntu 22.04 LTS
-- Python 3.10+ and C++17
-
 **Hardware Configuration:**
 - Raspberry Pi 4 (4GB minimum) or equivalent ARM64/x86_64 system
 - Teensy microcontroller running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware) and connected to the computer via serial (UART/USB)
