@@ -81,7 +81,7 @@ subtitle: ROS 2 stack for the AKROS platform
 
 ---
 
-<iframe height="600" style="width: 100%;" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&editable=true" frameborder="no" loading="lazy">
+<iframe height="600" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" scrolling="no" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&editable=true" frameborder="no" loading="lazy">
 </iframe>
 
 ---
