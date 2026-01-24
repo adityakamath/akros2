@@ -6,6 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
 ![Blog](https://img.shields.io/badge/Blog-AKROS%20Series-darkorange?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros&link=https%3A%2F%2Fkamathrobotics.com%2Fseries%2Fakros)
+[![Ask DeepWiki (Experimental)](https://deepwiki.com/badge.svg)](https://deepwiki.com/adityakamath/akros2)
 ![License](https://img.shields.io/github/license/adityakamath/akros2?label=License)
 
 > **⚠️ This project is archived and no longer in active development.**
