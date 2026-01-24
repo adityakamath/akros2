@@ -168,7 +168,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 
-<table style="width: 100%; border-collapse: collapse;">
+<table style="width: 100%; border-collapse: collapse; margin: 2em auto;">
   <thead>
     <tr>
       <th colspan="3" style="text-align: center; padding: 0.8em; background: #f8f9fa; font-size: 1.3em; border: 1px solid #dee2e6;">Hardware Configuration</th>
