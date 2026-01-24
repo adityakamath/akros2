@@ -60,15 +60,12 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <span style="display: inline-block; margin-top: 0.3em;">
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; cursor: pointer;">
-          <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
-        </a>
-        <span style="font-size: 0.85em; color: #999; margin: 0 0.3em;"> • </span>
-        <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; cursor: pointer;">
-          <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
-        </a>
-      </span>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; margin-right: 0.5em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
+      </a>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+        <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
+      </a>
       <br/><br/>
       <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
     </div>
