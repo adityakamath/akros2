@@ -19,14 +19,14 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🛞</span>
     <div>
       <strong>Holonomic Drive Control</strong><br/>
-      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.</span>
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities. EKF-based odometry using robot_localization package fuses IMU and wheel encoder data.</span>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <span style="font-size: 1.8em;">🧭</span>
+    <span style="font-size: 1.8em;">📐</span>
     <div>
-      <strong>Sensor Fusion</strong><br/>
-      <span style="font-size: 0.95em;">EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.</span>
+      <strong>URDF Robot Model</strong><br/>
+      <span style="font-size: 0.95em;">Unified Robot Description Format with Xacro macros. Defines robot geometry, joints, links, sensors, and physical properties for visualization and simulation.</span>
     </div>
   </div>
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
