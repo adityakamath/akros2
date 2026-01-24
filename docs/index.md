@@ -1,12 +1,18 @@
 ---
 layout: page
 title: AKROS2
-subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
+subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ---
 
-![Project Status](https://img.shields.io/badge/Status-Archived-red)
-![ROS 2 Humble](https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue)
+
+
+![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-blue?style=flat&logo=ros&logoSize=auto)
+![ROS 2 Package](https://img.shields.io/badge/ROS%202%20Package-akros2-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
+![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
+![Documentation](https://img.shields.io/badge/Design-grey?style=flat&logo=githubpages&logoSize=auto&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign&link=https%3A%2F%2Fadityakamath.github.io%2Fakros2%2Fdesign)
+![Website](https://img.shields.io/badge/Website-kamathrobotics.com-white?style=flat&logo=hashnode&logoSize=auto&link=https%3A%2F%2Fkamathrobotics.com&link=https%3A%2F%2Fkamathrobotics.com)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
 ## System Capabilities
 
@@ -95,21 +101,12 @@ subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
 
 ---
 
-## Documentation & Source
 
-<div style="margin: 2em 0;">
-  <a href="https://github.com/adityakamath/akros2" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #333; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
-    Source Repository
-  </a>
-  <a href="design.html" style="display: inline-block; padding: 10px 24px; margin: 0.5em 0.5em 0.5em 0; background: #555; color: white; text-decoration: none; border-radius: 3px; font-size: 1em;">
-    System Design
-  </a>
-</div>
 
 ---
 
 <div style="margin: 2em 0; padding: 1em; background: #f0f0f0; border-left: 3px solid #666;">
   <p style="font-size: 0.95em; color: #555; margin: 0;">
-    <strong>Project Status:</strong> Archived (2025)| Apache 2.0 License | Open source
+    <strong>Project Status:</strong> Archived (2025) | Apache 2.0 License | Open source
   </p>
 </div>
