@@ -1,10 +1,13 @@
 # AKROS2
 
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
 ![ROS 2 Humble](https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue)
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 ![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/kamathsblog)
 
-ROS 2 software stack for the AKROS mecanum-wheeled mobile robot platform, inspired by Linorobot2.
+> **⚠️ This project is archived and no longer in active development.**
+
+ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Overview
 
