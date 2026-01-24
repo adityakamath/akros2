@@ -28,18 +28,18 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_base</code></span>
       </a>
       <br/><br/>
-      <span style="font-size: 0.95em;">Mecanum wheel kinematics for motion with motor controllers, sensor drivers, and EKF-based odometry.</span>
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics with motor controllers, sensor drivers, and odometry.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
       <strong>Robot Description</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_description</code></span>
       </a>
       <br/><br/>
@@ -50,7 +50,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <span style="font-size: 1.8em;">🎛️</span>
     <div style="flex: 1;">
       <strong>Low-level Firmware</strong><br/>
-      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_firmware</code></span>
       </a>
       <br/><br/>
@@ -61,21 +61,22 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <span style="font-size: 1.8em;">🎮</span>
     <div style="flex: 1;">
       <strong>Teleoperation</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; margin-right: 0.5em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_teleop" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_teleop</code></span>
       </a>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <span style="font-size: 0.85em; color: #999;"> </span>
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_msgs" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_msgs</code></span>
       </a>
       <br/><br/>
-      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between teleoperation and autonomous modes.</span>
+      <span style="font-size: 0.95em;">Gamepad control with twist command multiplexing for switching between modes.</span>
     </div>
   </div>
   <div style="flex: 1 1 calc(16.666% - 0.75em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🧩</span>
     <div style="flex: 1;">
       <strong>Modular Architecture</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/akros2_bringup" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>akros2_bringup</code></span>
       </a>
       <br/><br/>
@@ -86,7 +87,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
-      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="display: inline-block; text-decoration: none; color: inherit; background: #f8f9fa; padding: 0.4em 0.6em; border-radius: 4px; margin-top: 0.3em; cursor: pointer;">
+      <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: #666; cursor: pointer;">
         <span style="font-size: 0.85em;"><code>setup</code></span>
       </a>
       <br/><br/>
