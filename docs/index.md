@@ -59,12 +59,6 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 
 ## Interactive Kinematics Model
 
-<div style="margin: 1.5em 0;">
-  <p style="color: #555;">
-    Interactive visualization demonstrating mecanum wheel inverse kinematics and omnidirectional motion capabilities.
-  </p>
-</div>
-
 <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
     See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
@@ -77,25 +71,20 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 
 ### System Requirements
 
-**Software Platform:**
+**Software Configuration:**
 - ROS 2 Humble Hawksbill
 - Ubuntu 22.04 LTS
 - Python 3.10+ and C++17
 
-**Compute:**
+**Hardware Configuration:**
 - Raspberry Pi 4 (4GB minimum) or equivalent ARM64/x86_64 system
-- Validated on: RPi 4, RPi Zero 2 W
-
-### Hardware Configuration
-
-**Required Components:**
 - Teensy microcontroller running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware) and connected to the computer via serial (UART/USB)
 - 4x mecanum wheels with quadrature encoders
 - 9-DOF IMU (accelerometer, gyroscope, magnetometer)
-- Motor drivers compatible with Teensy GPIO
+- 2x Cytron MD33A motor drivers
 
 **Optional Sensors:**
-- LD06 LIDAR (or compatible 2D laser scanner)
+- LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
 
 ### Software Architecture
@@ -104,14 +93,10 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 |---------|----------|
 | `akros2_description` | URDF/Xacro robot models, meshes, kinematics definitions |
 | `akros2_base` | Motor controllers, sensor drivers, EKF localization |
-| `akros2_teleop` | Joy node integration, velocity command multiplexing |
+| `akros2_teleop` | Joy node, teleop_twist_joy node, velocity command multiplexing |
 | `akros2_bringup` | Launch file hierarchies, parameter configurations |
-| `akros2_msgs` | Custom message and service interfaces |
+| `akros2_msgs` | Custom messagesinterfaces |
 | `setup` | System configuration, systemd services, development tools, Steamdeck configuration |
-
----
-
-
 
 ---
 
