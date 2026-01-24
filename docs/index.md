@@ -4,18 +4,9 @@ title: AKROS2
 subtitle: ROS 2 software stack for mecanum-wheeled mobile robots
 ---
 
-<div style="margin: 2em 0; padding: 1.5em; background: #f8f9fa; border-left: 4px solid #404040;">
-  <p style="font-size: 1.1em; color: #333; margin: 0;">
-    Modular ROS 2 Humble software stack providing holonomic drive control, sensor fusion, and hardware abstraction for mecanum-wheeled platforms. Developed for distributed robotics systems with real-time control requirements.
-  </p>
-</div>
-
-<div style="margin: 1em 0;">
-  <img src="https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue" alt="ROS 2 Humble" style="margin: 0.2em;">
-  <img src="https://img.shields.io/github/license/adityakamath/akros2" alt="GitHub License" style="margin: 0.2em;">
-</div>
-
----
+![Project Status](https://img.shields.io/badge/Status-Archived-red)
+![ROS 2 Humble](https://img.shields.io/badge/ROS%202%20Humble-Ubuntu%2022.04-blue)
+![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 
 ## Interactive Kinematics Model
 
