@@ -4,8 +4,6 @@ title: AKROS2
 subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ---
 
-
-
 ![ROS 2 Distro](https://img.shields.io/badge/ROS%202%20Distro-Humble%20(Ubuntu%2022.04)-blue?style=flat&logo=ros&logoSize=auto)
 ![ROS 2 Package](https://img.shields.io/badge/ROS%202%20Package-akros2-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2)
 ![micro-ROS Firmware](https://img.shields.io/badge/micro--ROS-akros2__firmware-blue?style=flat&logo=ros&logoSize=auto&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware&link=https%3A%2F%2Fgithub.com%2Fadityakamath%2Fakros2_firmware)
@@ -15,7 +13,7 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 ![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
 
-## System Capabilities
+## Capabilities
 
 <div style="display: flex; flex-direction: column; gap: 1.2em; margin: 2em 0;">
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
@@ -57,7 +55,7 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 
 ---
 
-## Interactive Kinematics Model
+## Playground
 
 <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px;">
   <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
@@ -67,9 +65,9 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 
 ---
 
-## Technical Specifications
+## Specifications
 
-### System Requirements
+### Requirements
 
 **Software Configuration:**
 - ROS 2 Humble Hawksbill
@@ -87,7 +85,7 @@ subtitle: ROS 2 software stack for the AKROS mecanum-wheeled mobile robot
 - LDLidar LD06 (or compatible 2D laser scanner)
 - USB camera (v4l2 compatible)
 
-### Software Architecture
+### Architecture
 
 | Package | Function |
 |---------|----------|
