@@ -166,50 +166,20 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 </iframe>
 </div>
 
-<div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
-<h2>Hardware Configuration</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin: 2em 0; align-items: stretch;">
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <strong>Raspberry Pi 4</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">4GB minimum or equivalent ARM64/x86_64 system</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <strong>Teensy Microcontroller</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Running <a href="https://github.com/adityakamath/akros2_firmware" target="_blank">micro-ROS firmware</a> connected via serial (UART/USB)</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #3b82f6; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">4x</span>
-    <strong>Mecanum Wheels</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Omnidirectional drive wheels</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #3b82f6; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">4x</span>
-    <strong>DC Motors with Encoders</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Quadrature encoders for odometry</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <strong>9-DOF IMU</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Accelerometer, gyroscope, magnetometer</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #3b82f6; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">2x</span>
-    <strong>Cytron MDD3A Motor Drivers</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Dual channel motor controllers</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #f59e0b; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">Optional</span>
-    <strong>LDLidar LD06</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Or compatible 2D laser scanner</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #f59e0b; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">Optional</span>
-    <strong>USB Camera</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">v4l2 compatible</span>
-  </div>
-  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #f59e0b; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">Optional</span>
-    <strong>Additional Sensors</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">Custom sensors via ROS 2 integration</span>
-  </div>
-</div>
+<div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;" markdown="1">
+
+## Hardware Configuration
+
+| Component | Qty | Description |
+|-----------|-----|-------------|
+| Raspberry Pi 4 | 1 | 4GB minimum or equivalent ARM64/x86_64 system |
+| Teensy Microcontroller | 1 | Running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware) connected via serial (UART/USB) |
+| Mecanum Wheels | 4 | Omnidirectional drive wheels |
+| DC Motors with Encoders | 4 | Quadrature encoders for odometry |
+| 9-DOF IMU | 1 | Accelerometer, gyroscope, magnetometer |
+| Cytron MDD3A Motor Drivers | 2 | Dual channel motor controllers |
+| LDLidar LD06 | 1 | Or compatible 2D laser scanner *(Optional)* |
+| USB Camera | 1 | v4l2 compatible *(Optional)* |
+| Additional Sensors | - | Custom sensors via ROS 2 integration *(Optional)* |
+
 </div>
