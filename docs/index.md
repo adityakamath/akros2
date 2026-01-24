@@ -33,7 +33,7 @@ subtitle: ROS 2 stack for the AKROS platform
   <div style="flex: 1 1 calc(50% - 0.45em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">📐</span>
     <div style="flex: 1;">
-      <strong>URDF Robot Model</strong><br/>
+      <strong>Robot Description</strong><br/>
       <span style="font-size: 0.95em;">URDF/Xacro models with meshes and kinematics for robot visualization and simulation.</span>
       <br/><br/>
       <a href="https://github.com/adityakamath/akros2/tree/main/akros2_description" target="_blank" style="text-decoration: none; color: inherit;">
@@ -46,7 +46,7 @@ subtitle: ROS 2 stack for the AKROS platform
   <div style="flex: 1 1 calc(50% - 0.45em); min-width: 300px; display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #666; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     <span style="font-size: 1.8em;">🔌</span>
     <div style="flex: 1;">
-      <strong>Hardware Abstraction</strong><br/>
+      <strong>Low-level Firmware</strong><br/>
       <span style="font-size: 0.95em;">micro-ROS firmware for Teensy 4.1 with motor control and sensor interfacing over serial.</span>
       <br/><br/>
       <a href="https://github.com/adityakamath/akros2_firmware" target="_blank" style="text-decoration: none; color: inherit;">
