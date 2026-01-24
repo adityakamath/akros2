@@ -180,7 +180,12 @@ subtitle: A mecanum-wheel robot platform using ROS 2
   <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <span style="position: absolute; top: 0.5em; right: 0.5em; background: #3b82f6; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">4x</span>
     <strong>Mecanum Wheels</strong><br/>
-    <span style="font-size: 0.9em; color: #666;">With quadrature encoders</span>
+    <span style="font-size: 0.9em; color: #666;">Omnidirectional drive wheels</span>
+  </div>
+  <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <span style="position: absolute; top: 0.5em; right: 0.5em; background: #3b82f6; color: white; padding: 0.2em 0.5em; border-radius: 4px; font-size: 0.75em; font-weight: bold;">4x</span>
+    <strong>DC Motors with Encoders</strong><br/>
+    <span style="font-size: 0.9em; color: #666;">Quadrature encoders for odometry</span>
   </div>
   <div class="capability-box" style="flex: 1 1 calc(33.333% - 0.4em); min-width: 280px; position: relative; background: #ffffff; padding: 0.7em 0.9em; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
     <strong>9-DOF IMU</strong><br/>
