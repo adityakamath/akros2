@@ -99,16 +99,16 @@ This provides convenient aliases:
 
 ## Documentation
 
-📚 **[Complete Architecture Documentation](docs/architecture.md)** - Detailed system architecture, data flow diagrams, and component descriptions
+📚 **[Complete Design Documentation](docs/design.md)** - Detailed system design, data flow diagrams, and component descriptions
 
 ### Key Topics
 
-- **[Robot Description](docs/architecture.md#akros2_description)** - URDF structure, meshes, and joint configuration
-- **[Sensor Fusion](docs/architecture.md#sensor-fusion-pipeline)** - IMU filtering and EKF-based odometry fusion
-- **[Teleoperation](docs/architecture.md#teleoperation-flow)** - Controller support and command mixing
-- **[System Integration](docs/architecture.md#akros2_bringup)** - Launch file configuration and usage
-- **[Data Flow](docs/architecture.md#data-flow)** - System-level data flow diagrams
-- **[Hardware Integration](docs/architecture.md#hardware-integration)** - Microcontroller communication and sensor interfaces
+- **[Robot Description](docs/design.md#akros2_description)** - URDF structure, meshes, and joint configuration
+- **[Sensor Fusion](docs/design.md#sensor-fusion-pipeline)** - IMU filtering and EKF-based odometry fusion
+- **[Teleoperation](docs/design.md#teleoperation-flow)** - Controller support and command mixing
+- **[System Integration](docs/design.md#akros2_bringup)** - Launch file configuration and usage
+- **[Data Flow](docs/design.md#data-flow)** - System-level data flow diagrams
+- **[Hardware Integration](docs/design.md#hardware-integration)** - Microcontroller communication and sensor interfaces
 
 ## Hardware Requirements
 
@@ -167,7 +167,7 @@ The system includes integrations with popular robotics development tools:
 └────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
 ```
 
-See [Architecture Documentation](docs/architecture.md) for detailed component descriptions and data flow diagrams.
+See [Design Documentation](docs/design.md) for detailed component descriptions and data flow diagrams.
 
 ## Network Configuration
 
