@@ -14,40 +14,40 @@ subtitle: ROS 2 stack for the AKROS platform
 
 ---
 
-<div style="display: flex; flex-direction: column; gap: 1.2em; margin: 2em 0;">
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🛞</span>
+<div style="display: flex; flex-direction: column; gap: 0.9em; margin: 2em 0;">
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #1a1a1a; padding: 0.9em 1.1em; border-left: 2px solid #a855f7; border-radius: 4px; box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);">
+    <span style="font-size: 1.8em;">🛞</span>
     <div>
-      <strong>Holonomic Drive Control</strong><br/>
-      Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.
+      <strong style="font-family: 'Courier New', monospace; color: #e0e0e0;">Holonomic Drive Control</strong><br/>
+      <span style="color: #b0b0b0; font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion. Converts twist commands to individual wheel velocities.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🧭</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #1a1a1a; padding: 0.9em 1.1em; border-left: 2px solid #06b6d4; border-radius: 4px; box-shadow: 0 0 10px rgba(6, 182, 212, 0.15);">
+    <span style="font-size: 1.8em;">🧭</span>
     <div>
-      <strong>Sensor Fusion</strong><br/>
-      EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.
+      <strong style="font-family: 'Courier New', monospace; color: #e0e0e0;">Sensor Fusion</strong><br/>
+      <span style="color: #b0b0b0; font-size: 0.95em;">EKF-based odometry using robot_localization package. Fuses IMU and wheel encoder data.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🔌</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #1a1a1a; padding: 0.9em 1.1em; border-left: 2px solid #22c55e; border-radius: 4px; box-shadow: 0 0 10px rgba(34, 197, 94, 0.15);">
+    <span style="font-size: 1.8em;">🔌</span>
     <div>
-      <strong>Hardware Abstraction</strong><br/>
-      micro-ROS agent for Teensy microcontroller communication via serial.
+      <strong style="font-family: 'Courier New', monospace; color: #e0e0e0;">Hardware Abstraction</strong><br/>
+      <span style="color: #b0b0b0; font-size: 0.95em;">micro-ROS agent for Teensy microcontroller communication via serial.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🎮</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #1a1a1a; padding: 0.9em 1.1em; border-left: 2px solid #ec4899; border-radius: 4px; box-shadow: 0 0 10px rgba(236, 72, 153, 0.15);">
+    <span style="font-size: 1.8em;">🎮</span>
     <div>
-      <strong>Teleoperation</strong><br/>
-      Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.
+      <strong style="font-family: 'Courier New', monospace; color: #e0e0e0;">Teleoperation</strong><br/>
+      <span style="color: #b0b0b0; font-size: 0.95em;">Standard ROS 2 joy/teleop nodes for gamepad control. Twist command mixing for teleop/auto mode switching.</span>
     </div>
   </div>
-  <div style="display: flex; align-items: flex-start; gap: 1em; background: #f8f9fa; padding: 1.2em; border-left: 3px solid #404040; border-radius: 6px;">
-    <span style="font-size: 2em;">🧩</span>
+  <div style="display: flex; align-items: flex-start; gap: 1em; background: #1a1a1a; padding: 0.9em 1.1em; border-left: 2px solid #f59e0b; border-radius: 4px; box-shadow: 0 0 10px rgba(245, 158, 11, 0.15);">
+    <span style="font-size: 1.8em;">🧩</span>
     <div>
-      <strong>Modular Architecture</strong><br/>
-      Separate packages for description, base control, teleoperation, and system integration.
+      <strong style="font-family: 'Courier New', monospace; color: #e0e0e0;">Modular Architecture</strong><br/>
+      <span style="color: #b0b0b0; font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
     </div>
   </div>
 </div>
