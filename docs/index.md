@@ -12,6 +12,7 @@ subtitle: ROS 2 stack for the AKROS platform
 ![GitHub License](https://img.shields.io/github/license/adityakamath/akros2)
 ![Project Status](https://img.shields.io/badge/Status-Archived-red)
 
+---
 
 <div style="display: flex; flex-direction: column; gap: 0.9em; margin: 2em 0;">
   <div style="display: flex; align-items: flex-start; gap: 1em; background: #ffffff; padding: 0.9em 1.1em; border-left: 3px solid #a855f7; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
@@ -48,28 +49,28 @@ subtitle: ROS 2 stack for the AKROS platform
       <strong>Modular Architecture</strong><br/>
       <span style="font-size: 0.95em;">Separate packages for description, base control, teleoperation, and system integration.</span>
       <br/><br/>
-      <div style="display: flex; flex-direction: column; gap: 0.6em; align-items: center;">
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6em;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>akros2_description</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">URDF/Xacro robot models, meshes, kinematics definitions</span>
         </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>akros2_base</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">Motor controllers, sensor drivers, EKF localization</span>
         </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>akros2_teleop</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">Joy node, teleop_twist_joy node, velocity command multiplexing</span>
         </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>akros2_bringup</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">Launch file hierarchies, parameter configurations</span>
         </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>akros2_msgs</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">Custom messages/interfaces</span>
         </div>
-        <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px; max-width: 80%;">
+        <div style="flex: 1 1 calc(50% - 0.3em); min-width: 200px; background: #f8f9fa; padding: 0.6em 0.8em; border-left: 2px solid #f59e0b; border-radius: 4px;">
           <strong style="font-size: 0.9em;"><code>setup</code></strong><br/>
           <span style="font-size: 0.85em; color: #666;">System configuration, systemd services, development tools, Steamdeck configuration</span>
         </div>
