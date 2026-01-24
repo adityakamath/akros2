@@ -13,17 +13,7 @@ title: AKROS2 - Interactive 3D Visualization
 
 ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
-## Interactive 3D Visualization
-
-Try out the AKROS2 mecanum drive kinematics in your browser:
-
-<div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-    See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
-  </iframe>
-</div>
-
-## About AKROS2
+## System Capabilities
 
 AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled mobile robots. It provides:
 
@@ -34,12 +24,17 @@ AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled
 - **micro-ROS Integration** - Low-level control via serial communication with Teensy microcontroller
 - **Modular Architecture** - Independent packages for easy customization and extension
 
-## Documentation
+## Interactive Kinematics Model
 
-- [Architecture Documentation](architecture.md) - Complete system architecture and technical details
-- [GitHub Repository](https://github.com/adityakamath/akros2) - Source code and installation instructions
+Try out the AKROS2 mecanum drive kinematics in your browser:
 
-## Hardware
+<div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%;">
+  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" title="AKROS2 - 3D Robot Visualization" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+    See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">AKROS2 - 3D Robot Visualization</a> by Aditya Kamath (<a href="https://codepen.io/adityakamath">@adityakamath</a>) on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+</div>
+
+## Technical Specifications
 
 - **Microcontroller:** Teensy with [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware)
 - **Wheels:** 4x Mecanum wheels with encoders
@@ -47,8 +42,10 @@ AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled
 - **LIDAR:** LD06 or compatible (optional)
 - **Camera:** USB camera (optional)
 
-## Links
+## Documentation & Source
 
+- [Architecture Documentation](architecture.md) - Complete system architecture and technical details
+- [GitHub Repository](https://github.com/adityakamath/akros2) - Source code and installation instructions
 - [Kamath Robotics](https://kamathrobotics.com)
 - [GitHub: @adityakamath](https://github.com/adityakamath)
 - [Twitter: @kamathsblog](https://twitter.com/kamathsblog)
