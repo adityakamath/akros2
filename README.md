@@ -30,6 +30,7 @@ AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled
 | **akros2_teleop** | Teleoperation nodes and command mixing |
 | **akros2_msgs** | Custom ROS 2 message definitions |
 | **akros2_bringup** | System-level launch files and integration |
+| **akros2_firmware** | micro-ROS firmware for Teensy microcontroller |
 | **setup** | System configuration, services, and development tools |
 
 ## Quick Start
@@ -110,9 +111,10 @@ This provides convenient aliases:
 
 ### Minimum Configuration
 - **Computer:** Raspberry Pi 4 (4GB) or equivalent
-- **Microcontroller:** Teensy with [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware)
-- **Wheels:** 4x Mecanum wheels and DC motors with encoders
-- **IMU:** 9-DOF inertial measurement unit
+- **Microcontroller:** Teensy 4.1 with [expansion board](https://www.tindie.com/products/cburgess129/arduino-teensy41-teensy-41-expansion-board/) running [akros2_firmware](akros2_firmware/)
+- **Wheels:** 4x Mecanum wheels and DC motors with quadrature encoders
+- **IMU:** 9-DOF inertial measurement unit (accelerometer, gyroscope, magnetometer)
+- **Motor Drivers:** 2x Cytron MDD3A motor drivers
 - **Power:** Appropriate power system for motors and electronics
 
 ### Recommended Sensors
@@ -180,7 +182,53 @@ Apache License 2.0
 - **Twitter:** [@kamathsblog](https://twitter.com/kamathsblog)
 - **GitHub:** [adityakamath](https://github.com/adityakamath)
 
+## Firmware
+
+The [akros2_firmware](akros2_firmware/) package contains micro-ROS firmware for the Teensy 4.1 microcontroller. Based on [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware), it provides low-level control for mecanum drive kinematics, motor control, and sensor data acquisition.
+
+### Key Features
+
+- **Dual Transport Support** - Configurable serial (USB/UART) or native ethernet (UDP4) communication
+- **ROS Domain ID Configuration** - Set ROS_DOMAIN_ID for multi-robot deployments
+- **Visual Status Indicators** - Neopixel LEDs show system status and operating mode using FastLED
+- **Custom Message Support** - Implements `akros2_msgs/Mode` for operating mode control (stop/auto/teleop)
+- **Dual Joint State Publishing** - Separate topics for measured vs. required joint states (velocities and positions)
+- **Runtime PID Tuning** - Parameter server allows tuning PID gains (`kp`, `ki`, `kd`, `scale`) without recompilation
+- **Coordinate Frame Conversion** - Optional NED to ENU IMU coordinate conversion (REP-103 compliant)
+
+### Hardware Configuration
+
+- **Microcontroller:** Teensy 4.1 with expansion board
+- **Motors:** 4x DC motors with quadrature encoders (mecanum wheels)
+- **Motor Drivers:** 2x Cytron MDD3A motor drivers
+- **IMU:** 9-DOF sensor (accelerometer, gyroscope, magnetometer)
+- **Connectivity:** Native ethernet or USB serial
+
+### Communication
+
+The firmware communicates with ROS 2 via micro-ROS agent:
+
+**Published Topics:**
+
+- `/joint_states` - Measured wheel positions and velocities
+- `/req_states` - Required (commanded) wheel positions and velocities
+- `/imu` - Raw IMU measurements
+- `/odometry` - Wheel-based odometry
+
+**Subscribed Topics:**
+
+- `/cmd_vel` - Velocity commands (converted to individual wheel velocities)
+- `/mode_status` - Operating mode commands (akros2_msgs/Mode)
+
+**Parameters:**
+
+- `kp`, `ki`, `kd` - PID gain values for motor control
+- `scale` - Global velocity scaling factor [0.0-1.0]
+- `ned_to_enu` - Enable IMU coordinate conversion (default: false)
+
+See [akros2_firmware/README.md](akros2_firmware/README.md) for detailed firmware documentation and setup instructions.
+
 ## Related Repositories
 
-- [akros2_firmware](https://github.com/adityakamath/akros2_firmware) - micro-ROS firmware for Teensy microcontroller
+- [akros2_firmware](https://github.com/adityakamath/akros2_firmware) - Upstream micro-ROS firmware repository
 - [akros_3d_assets](https://github.com/adityakamath/akros_3d_assets) - 3D models and meshes

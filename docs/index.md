@@ -126,7 +126,7 @@ subtitle: ROS 2 stack for the AKROS platform
 - Teensy microcontroller running [micro-ROS firmware](https://github.com/adityakamath/akros2_firmware) and connected to the computer via serial (UART/USB)
 - 4x mecanum wheels with quadrature encoders
 - 9-DOF IMU (accelerometer, gyroscope, magnetometer)
-- 2x Cytron MD33A motor drivers
+- 2x Cytron MDD3A motor drivers
 
 **Optional Sensors:**
 - LDLidar LD06 (or compatible 2D laser scanner)

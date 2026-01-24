@@ -12,13 +12,13 @@ AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot
 │                    (System Integration)                          │
 └───────────┬─────────────────────────────────────────────────────┘
             │
-    ┌───────┴───────┬──────────┬──────────┬──────────┬───────────┐
-    │               │          │          │          │           │
-┌───▼────┐  ┌───────▼──┐  ┌───▼─────┐ ┌─▼──────┐ ┌─▼──────┐ ┌──▼──────┐
-│akros2_ │  │ akros2_  │  │akros2_  │ │akros2_ │ │akros2_ │ │ akros2_ │
-│descrip-│  │   base   │  │teleop   │ │ msgs   │ │ setup  │ │firmware │
-│tion    │  │          │  │         │ │        │ │        │ │(ext)    │
-└────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └─────────┘
+    ┌───────┴───────┬──────────┬──────────┬──────────┬───────────┬──────────┐
+    │               │          │          │          │           │          │
+┌───▼────┐  ┌───────▼──┐  ┌───▼─────┐ ┌─▼──────┐ ┌─▼──────┐ ┌──▼──────┐ ┌─▼──────┐
+│akros2_ │  │ akros2_  │  │akros2_  │ │akros2_ │ │akros2_ │ │ akros2_ │ │ akros2_│
+│descrip-│  │   base   │  │teleop   │ │ msgs   │ │firmware│ │ setup  │ │ 3d     │
+│tion    │  │          │  │         │ │        │ │(Teensy)│ │        │ │ assets │
+└────────┘  └──────────┘  └─────────┘ └────────┘ └────────┘ └────────┘ └────────┘
 ```
 
 ## Package Details
@@ -252,6 +252,196 @@ Remote base station launch file for off-board control and visualization.
 
 **Usage:**
 Run on remote device while running `bringup_launch.py` on robot with `joy_config:=none`.
+
+### akros2_firmware
+
+**Purpose:** micro-ROS firmware for Teensy 4.1 microcontroller providing low-level robot control
+
+**Based On:** [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware) MECANUM configuration
+
+**Hardware Platform:**
+
+- Teensy 4.1 microcontroller
+- [Teensy 4.1 expansion board](https://www.tindie.com/products/cburgess129/arduino-teensy41-teensy-41-expansion-board/)
+- 4x DC motors with quadrature encoders (mecanum wheels)
+- 2x Cytron MDD3A motor drivers
+- 9-DOF IMU (accelerometer, gyroscope, magnetometer)
+
+**Key Features:**
+
+1. **Dual Transport Support**
+   - Configurable serial (USB/UART, default) or native ethernet (UDP4)
+   - Ethernet provides higher bandwidth and reliability vs. serial
+   - Transport selected via TRANSPORT_SERIAL or TRANSPORT_ETHERNET in config
+
+2. **ROS Domain ID Configuration**
+   - Set `ROS_DOMAIN_ID` via firmware configuration
+   - Enables multi-robot deployments
+   - Network isolation for different robot systems
+
+3. **Neopixel Status Indicators**
+   - Visual feedback using FastLED library
+   - System status display (connected, error, running)
+   - Operating mode indication (stop, auto, teleop)
+
+4. **Arduino IDE Compilation**
+   - Compiles using Arduino IDE instead of PlatformIO
+   - Uses modified [micro_ros_arduino](https://github.com/adityakamath/micro_ros_arduino/tree/akros2_galactic) libraries
+   - Simplified development workflow
+
+5. **Custom Message Support**
+   - Mode subscriber using `akros2_msgs/Mode` message type
+   - Receives operating mode commands (estop/auto/teleop)
+   - Integrates with twist_mixer command routing
+
+6. **Dual Joint State Publishing**
+   - `/joint_states` - Measured wheel positions and velocities from encoders
+   - `/req_states` - Required (commanded) wheel positions and velocities
+   - Enables monitoring of command tracking performance
+
+7. **Runtime PID Tuning**
+   - Parameter server reads PID gains: `kp`, `ki`, `kd`, `scale`
+   - No firmware recompilation needed for tuning
+   - Initial values from configuration, re-applied on reconnection
+   - `scale` parameter limited to [0.0, 1.0] with 0.01 step size
+
+8. **Coordinate Frame Conversion**
+   - Optional NED to ENU conversion for IMU data
+   - Controlled by `ned_to_enu` boolean parameter (default: false)
+   - REP-103 compliant coordinate frame handling
+   - Sensor-specific conversion in IMU interface layer
+
+**ROS 2 Interface:**
+
+**Published Topics:**
+
+- `/joint_states` (sensor_msgs/JointState) - Measured wheel states
+- `/req_states` (sensor_msgs/JointState) - Required wheel states
+- `/imu` (sensor_msgs/Imu) - Raw IMU measurements
+- `/odometry` (nav_msgs/Odometry) - Wheel-based odometry
+
+**Subscribed Topics:**
+
+- `/cmd_vel` (geometry_msgs/Twist) - Velocity commands
+- `/mode_status` (akros2_msgs/Mode) - Operating mode
+
+**Parameters:**
+
+- `kp` (double) - Proportional gain for PID controller
+- `ki` (double) - Integral gain for PID controller
+- `kd` (double) - Derivative gain for PID controller
+- `scale` (double) - Global velocity scaling [0.0-1.0]
+- `ned_to_enu` (bool) - Enable IMU coordinate conversion
+
+**Mecanum Kinematics:**
+
+The firmware implements forward and inverse kinematics for mecanum drive:
+
+**Inverse Kinematics** (Twist → Wheel Velocities):
+```
+wheel_lf = (vx - vy - ωz × wheelbase) / wheel_radius
+wheel_rf = (vx + vy + ωz × wheelbase) / wheel_radius
+wheel_lb = (vx + vy - ωz × wheelbase) / wheel_radius
+wheel_rb = (vx - vy + ωz × wheelbase) / wheel_radius
+```
+
+**Forward Kinematics** (Wheel Velocities → Odometry):
+```
+vx = (wheel_lf + wheel_rf + wheel_lb + wheel_rb) × wheel_radius / 4
+vy = (-wheel_lf + wheel_rf + wheel_lb - wheel_rb) × wheel_radius / 4
+ωz = (-wheel_lf + wheel_rf - wheel_lb + wheel_rb) × wheel_radius / (4 × wheelbase)
+```
+
+**Motor Control:**
+
+Each motor uses a PID controller:
+
+- Input: Required wheel velocity (from inverse kinematics)
+- Feedback: Measured wheel velocity (from encoders)
+- Output: PWM duty cycle to motor driver
+- Update rate: Configurable (typically 50-100 Hz)
+
+**Configuration Files:**
+
+Primary configuration in `akros2_base_config.h`:
+
+- Robot physical dimensions (wheelbase, wheel radius)
+- Encoder counts per revolution (CPR)
+- Motor driver PWM pins and channels
+- IMU sensor I2C address and settings
+- Network configuration (IP, domain ID)
+- PID initial values
+- Maximum velocities and accelerations
+
+**Development:**
+
+The firmware is compiled and uploaded using Arduino IDE:
+
+1. Install Teensy support in Arduino IDE
+2. Install required libraries (FastLED, micro_ros_arduino)
+3. Configure robot parameters in `akros2_base_config.h`
+4. Compile and upload to Teensy 4.1
+5. Tune PID parameters via ROS 2 parameter server
+
+**Communication Architecture:**
+
+```
+┌──────────────────────────────────────────────────┐
+│              ROS 2 Host (Raspberry Pi)           │
+│                                                  │
+│  ┌────────────────────────────────────────┐     │
+│  │      micro-ROS Agent                   │     │
+│  │      (Serial or Ethernet)              │     │
+│  └─────────────────┬──────────────────────┘     │
+│                    │                             │
+└────────────────────┼─────────────────────────────┘
+                     │ Serial (USB/UART)
+                     │ or Ethernet (UDP4)
+┌────────────────────▼─────────────────────────────┐
+│              Teensy 4.1 Microcontroller          │
+│                                                  │
+│  ┌────────────────────────────────────────┐     │
+│  │      akros2_firmware                   │     │
+│  │                                        │     │
+│  │  ┌──────────────────────────────┐     │     │
+│  │  │  Mecanum Kinematics          │     │     │
+│  │  └──────────┬───────────────────┘     │     │
+│  │             │                          │     │
+│  │  ┌──────────▼───────────────────┐     │     │
+│  │  │  PID Controllers (4x)        │     │     │
+│  │  └──────────┬───────────────────┘     │     │
+│  │             │                          │     │
+│  │  ┌──────────▼───────────────────┐     │     │
+│  │  │  Motor Drivers Interface     │     │     │
+│  │  └──────────────────────────────┘     │     │
+│  │                                        │     │
+│  │  ┌──────────────────────────────┐     │     │
+│  │  │  Encoder Readers (4x)        │     │     │
+│  │  └──────────────────────────────┘     │     │
+│  │                                        │     │
+│  │  ┌──────────────────────────────┐     │     │
+│  │  │  IMU Interface               │     │     │
+│  │  └──────────────────────────────┘     │     │
+│  └────────────────────────────────────────┘     │
+│                                                  │
+└──────────────────────────────────────────────────┘
+         │           │              │
+         ▼           ▼              ▼
+    Motor Drivers  Encoders       IMU
+```
+
+**Status Indicators:**
+
+Neopixel LED states:
+
+- **Red Solid** - Disconnected from micro-ROS agent
+- **Green Solid** - Connected, idle
+- **Green Blinking** - Connected, receiving commands
+- **Blue** - Auto mode active
+- **Yellow** - Teleop mode active
+- **Red Blinking** - Emergency stop (estop)
+
+See [akros2_firmware/README.md](../akros2_firmware/README.md) for complete firmware documentation.
 
 ### setup
 
