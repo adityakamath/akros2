@@ -188,7 +188,7 @@ subtitle: A mecanum-wheel robot platform using ROS 2
     <tr style="background: #f0f0f0;">
       <td style="padding: 0.6em; border: none;">Teensy Microcontroller</td>
       <td style="text-align: center; padding: 0.6em; border: none;">1</td>
-      <td style="padding: 0.6em; border: none;">Running <a href="https://github.com/adityakamath/akros2_firmware" target="_blank">micro-ROS firmware</a> connected via serial (UART/USB)</td>
+      <td style="padding: 0.6em; border: none;">Running micro-ROS firmware connected via serial (UART/USB)</td>
     </tr>
     <tr style="background: #ffffff;">
       <td style="padding: 0.6em; border: none;">Mecanum Wheels</td>
