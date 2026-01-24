@@ -168,62 +168,62 @@ subtitle: A mecanum-wheel robot platform using ROS 2
 
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); padding-left: 5%; padding-right: 5%; box-sizing: border-box;">
 
-<table style="width: 100%; border-collapse: collapse; margin: 2em auto;">
+<table style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 2em auto; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
   <thead>
     <tr>
-      <th colspan="3" style="text-align: center; padding: 0.8em; background: #f8f9fa; font-size: 1.3em; border: 1px solid #dee2e6;">Hardware Configuration</th>
+      <th colspan="3" style="text-align: center; padding: 0.8em; background: #f8f9fa; font-size: 1.3em; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">Hardware Configuration</th>
     </tr>
     <tr>
-      <th style="text-align: left; padding: 0.6em; background: #e9ecef; border: 1px solid #dee2e6;">Component</th>
-      <th style="text-align: center; padding: 0.6em; background: #e9ecef; border: 1px solid #dee2e6;">Qty</th>
-      <th style="text-align: left; padding: 0.6em; background: #e9ecef; border: 1px solid #dee2e6;">Description</th>
+      <th style="text-align: left; padding: 0.6em; background: #e9ecef;">Component</th>
+      <th style="text-align: center; padding: 0.6em; background: #e9ecef;">Qty</th>
+      <th style="text-align: left; padding: 0.6em; background: #e9ecef;">Description</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Raspberry Pi 4</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">1</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">4GB minimum or equivalent ARM64/x86_64 system</td>
+    <tr style="background: #ffffff;">
+      <td style="padding: 0.6em;">Raspberry Pi 4</td>
+      <td style="text-align: center; padding: 0.6em;">1</td>
+      <td style="padding: 0.6em;">4GB minimum or equivalent ARM64/x86_64 system</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Teensy Microcontroller</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">1</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Running <a href="https://github.com/adityakamath/akros2_firmware" target="_blank">micro-ROS firmware</a> connected via serial (UART/USB)</td>
+    <tr style="background: #f8f9fa;">
+      <td style="padding: 0.6em;">Teensy Microcontroller</td>
+      <td style="text-align: center; padding: 0.6em;">1</td>
+      <td style="padding: 0.6em;">Running <a href="https://github.com/adityakamath/akros2_firmware" target="_blank">micro-ROS firmware</a> connected via serial (UART/USB)</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Mecanum Wheels</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">4</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Omnidirectional drive wheels</td>
+    <tr style="background: #ffffff;">
+      <td style="padding: 0.6em;">Mecanum Wheels</td>
+      <td style="text-align: center; padding: 0.6em;">4</td>
+      <td style="padding: 0.6em;">Omnidirectional drive wheels</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">DC Motors with Encoders</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">4</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Quadrature encoders for odometry</td>
+    <tr style="background: #f8f9fa;">
+      <td style="padding: 0.6em;">DC Motors with Encoders</td>
+      <td style="text-align: center; padding: 0.6em;">4</td>
+      <td style="padding: 0.6em;">Quadrature encoders for odometry</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">9-DOF IMU</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">1</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Accelerometer, gyroscope, magnetometer</td>
+    <tr style="background: #ffffff;">
+      <td style="padding: 0.6em;">9-DOF IMU</td>
+      <td style="text-align: center; padding: 0.6em;">1</td>
+      <td style="padding: 0.6em;">Accelerometer, gyroscope, magnetometer</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Cytron MDD3A Motor Drivers</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">2</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Dual channel motor controllers</td>
+    <tr style="background: #f8f9fa;">
+      <td style="padding: 0.6em;">Cytron MDD3A Motor Drivers</td>
+      <td style="text-align: center; padding: 0.6em;">2</td>
+      <td style="padding: 0.6em;">Dual channel motor controllers</td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">LDLidar LD06</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">1</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Or compatible 2D laser scanner <em>(Optional)</em></td>
+    <tr style="background: #ffffff;">
+      <td style="padding: 0.6em;">LDLidar LD06</td>
+      <td style="text-align: center; padding: 0.6em;">1</td>
+      <td style="padding: 0.6em;">Or compatible 2D laser scanner <em>(Optional)</em></td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">USB Camera</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">1</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">v4l2 compatible <em>(Optional)</em></td>
+    <tr style="background: #f8f9fa;">
+      <td style="padding: 0.6em;">USB Camera</td>
+      <td style="text-align: center; padding: 0.6em;">1</td>
+      <td style="padding: 0.6em;">v4l2 compatible <em>(Optional)</em></td>
     </tr>
-    <tr>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Additional Sensors</td>
-      <td style="text-align: center; padding: 0.6em; border: 1px solid #dee2e6;">-</td>
-      <td style="padding: 0.6em; border: 1px solid #dee2e6;">Custom sensors via ROS 2 integration <em>(Optional)</em></td>
+    <tr style="background: #ffffff;">
+      <td style="padding: 0.6em;">Additional Sensors</td>
+      <td style="text-align: center; padding: 0.6em;">-</td>
+      <td style="padding: 0.6em;">Custom sensors via ROS 2 integration <em>(Optional)</em></td>
     </tr>
   </tbody>
 </table>
