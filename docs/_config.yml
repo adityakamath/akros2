@@ -1,6 +1,6 @@
 # Site settings
 title: AKROS
-description: A mecanum-wheeled holonomic robot platform using ROS 2
+description: A mecanum-wheeled robot platform using ROS 2
 author: Aditya Kamath
 
 # Beautiful Jekyll theme
