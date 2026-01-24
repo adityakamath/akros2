@@ -28,7 +28,7 @@ AKROS2 is a comprehensive ROS 2 Humble-based system designed for mecanum-wheeled
 | **akros2_teleop** | Teleoperation nodes and command mixing |
 | **akros2_msgs** | Custom ROS 2 message definitions |
 | **akros2_bringup** | System-level launch files and integration |
-| **akros2_setup** | System configuration, services, and development tools |
+| **setup** | System configuration, services, and development tools |
 
 ## Quick Start
 
@@ -81,9 +81,9 @@ ros2 launch akros2_bringup basestation_launch.py \
 
 ### Configuration
 
-Copy the bash configuration from akros2_setup:
+Copy the bash configuration from setup:
 ```bash
-cat src/akros2/akros2_setup/.bashrc >> ~/.bashrc
+cat src/akros2/setup/.bashrc >> ~/.bashrc
 source ~/.bashrc
 ```
 

@@ -273,7 +273,7 @@ Visualization package launcher.
 - Includes AKROS2 URDF visualization layer
 - URDF URL: `https://raw.githubusercontent.com/adityakamath/akros_3d_assets/akros2_urdf/akros2_mecanum/robot.urdf`
 
-### akros2_setup
+### setup
 
 **Purpose:** System configuration, services, and development tools
 
@@ -500,7 +500,7 @@ Located in `akros2_base/config/`:
 - LIDAR filter chains
 
 ### System Configuration
-Located in `akros2_setup/`:
+Located in `setup/`:
 - ROS environment variables
 - Build and launch aliases
 - Development tool shortcuts
@@ -547,7 +547,7 @@ Located in `akros2_setup/`:
 
 ## Recommended Setup
 
-1. Clone akros2_setup to `~/Setup`
+1. Clone setup to `~/Setup`
 2. Append `.bashrc` contents to `~/.bashrc`
 3. Copy udev rules to `/etc/udev/rules.d/`
 4. Build workspace with `build_all`
