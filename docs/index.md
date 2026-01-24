@@ -28,7 +28,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">🧭</span>
     <div style="flex: 1;">
       <strong>Holonomic Drive Control</strong><br/>
-      <span style="font-size: 0.95em;">Mecanum wheel kinematics for omnidirectional motion with motor controllers, sensor drivers, and EKF-based odometry.</span>
+      <span style="font-size: 0.95em;">Mecanum wheel kinematics for motion with motor controllers, IMU drivers, and EKF-based odometry.</span>
       <br/><br/>
       <a href="https://github.com/adityakamath/akros2/tree/main/akros2_base" target="_blank" style="text-decoration: none; color: inherit;">
         <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
@@ -96,7 +96,7 @@ subtitle: ROS 2 stack for the AKROS platform
     <span style="font-size: 1.8em;">⚙️</span>
     <div style="flex: 1;">
       <strong>System Configuration</strong><br/>
-      <span style="font-size: 0.95em;">Systemd services, development tools, environment setup, and Steamdeck configurations.</span>
+      <span style="font-size: 0.95em;">Services, configs, scripts, and misc. development tools.</span>
       <br/><br/>
       <a href="https://github.com/adityakamath/akros2/tree/main/setup" target="_blank" style="text-decoration: none; color: inherit;">
         <div style="background: #f8f9fa; padding: 0.6em 0.8em; border-radius: 4px; width: 100%; cursor: pointer;">
