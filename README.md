@@ -7,7 +7,7 @@
 
 > **⚠️ This project is archived and no longer in active development.**
 
-ROS 2 software stack for the AKROS mecanum-wheeled mobile robot platform, inspired by Linorobot2.
+ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Overview
 
