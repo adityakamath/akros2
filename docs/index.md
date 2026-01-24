@@ -54,7 +54,7 @@ subtitle: ROS 2 stack for the AKROS platform
 
 ---
 
-<iframe height="300" style="width: 100%;" scrolling="no" title="AKROS" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true">
+<iframe height="600" style="width: 100%;" scrolling="no" title="AKROS" src="https://codepen.io/adityakamath/embed/qENNvxe?default-tab=result&theme-id=dark" frameborder="no" loading="lazy" allowtransparency="true">
   See the Pen <a href="https://codepen.io/adityakamath/pen/qENNvxe">
   AKROS</a> by Kamath Robotics (<a href="https://codepen.io/adityakamath">@adityakamath</a>)
   on <a href="https://codepen.io">CodePen</a>.
