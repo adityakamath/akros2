@@ -9,8 +9,6 @@
 [![Ask DeepWiki (Experimental)](https://deepwiki.com/badge.svg)](https://deepwiki.com/adityakamath/akros2)
 ![License](https://img.shields.io/github/license/adityakamath/akros2?label=License)
 
-> **⚠️ This project is archived and no longer in active development.**
-
 ROS 2 stack for the AKROS mecanum-wheeled mobile robot
 
 ## Overview
