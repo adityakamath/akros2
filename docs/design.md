@@ -1,10 +1,8 @@
-# AKROS2 Design Documentation
-
-## 1. Overview
+# 1. Overview
 
 AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot platform. The architecture is organized into six primary packages, each handling specific aspects of robot functionality.
 
-### Key Capabilities
+## 1.1 Key Capabilities
 
 - **Holonomic Drive Control** - Four-wheeled mecanum platform with independent motor control
 - **Sensor Fusion** - IMU and wheel odometry fusion using Extended Kalman Filter
@@ -15,7 +13,7 @@ AKROS2 is a ROS 2 Humble-based software stack for a mecanum-wheeled mobile robot
 
 ---
 
-## 2. System Architecture
+# 2. System Architecture
 
 The AKROS2 system consists of multiple interconnected components forming a complete robot control stack:
 
@@ -23,7 +21,7 @@ The AKROS2 system consists of multiple interconnected components forming a compl
   <img src="assets/img/system_architecture.svg" alt="System Architecture" width="600"/>
 </div>
 
-### Architecture Overview
+## 2.1 Architecture Overview
 
 The system follows a layered architecture:
 
@@ -34,7 +32,7 @@ The system follows a layered architecture:
 5. **Control Layer** - Command mixing, twist multiplexing, mode management
 6. **Visualization Layer** - Robot state publishing, URDF description
 
-### Component Relationships
+## 2.2 Component Relationships
 
 - **akros2_firmware** (Teensy) publishes raw sensor data (`/imu`, `/odometry`, `/joint_states`)
 - **akros2_base** fuses sensors into `/odometry/filtered` and `/imu/filtered`
@@ -42,7 +40,7 @@ The system follows a layered architecture:
 - **akros2_description** provides robot model for visualization tools (RViz2, Foxglove)
 - **akros2_bringup** orchestrates all components with configurable launch arguments
 
-### Data Flow
+## 2.3 Data Flow
 
 The system processes data through three primary pipelines:
 
@@ -54,21 +52,21 @@ Detailed diagrams for each pipeline are provided in their respective sections be
 
 ---
 
-## 3. Core Components
+# 3. Core Components
 
-### 3.1 Robot Description (akros2_description)
+## 3.1 Robot Description (akros2_description)
 
 **Purpose:** Provides URDF/Xacro models defining the robot's physical structure, kinematics, and visualization meshes.
 
-#### URDF Structure
+### 3.1.1 URDF Structure
 
 <div align="center">
   <img src="assets/img/urdf_structure.svg" alt="URDF Structure" width="500"/>
 </div>
 
-#### Components
+### 3.1.2 Components
 
-**Meshes:**
+#### Meshes
 - `base_module.stl` - Robot base platform
 - `navigation_module.stl` - Top navigation/sensor platform
 - `wheel_lf.stl`, `wheel_rf.stl`, `wheel_lb.stl`, `wheel_rb.stl` - Four mecanum wheels
@@ -76,23 +74,23 @@ Detailed diagrams for each pipeline are provided in their respective sections be
 - `cam_module.stl` - Camera module
 - `wireless_charger_tx.stl` - Wireless charging transmitter
 
-**Joints:**
+#### Joints
 - `joint_lf` - Left front wheel (continuous, revolute)
 - `joint_rf` - Right front wheel (continuous, revolute)
 - `joint_lb` - Left back wheel (continuous, revolute)
 - `joint_rb` - Right back wheel (continuous, revolute)
 
-#### Topics
+### 3.1.3 Topics
 
-- **Published:**
+#### Published
   - `/robot_description` (std_msgs/String) - Robot URDF
 
-- **Subscribed:**
+#### Subscribed
   - `/joint_states` or `/req_states` (sensor_msgs/JointState) - Joint state messages for visualization
 
-#### Launch Files
+### 3.1.4 Launch Files
 
-**description_launch.py**
+#### description_launch.py
 
 Launches robot state publisher and optionally joint state publisher.
 
@@ -106,7 +104,7 @@ Launches robot state publisher and optionally joint state publisher.
 ros2 launch akros2_description description_launch.py js_ext:=True js_topic:=joint_states
 ```
 
-#### URDF Generation
+### 3.1.5 URDF Generation
 
 For visualization in Unity or other external tools, convert xacro to URDF:
 
@@ -117,7 +115,7 @@ xacro urdf/robot.urdf.xacro nopath:=False > urdf/robot.urdf
 
 The `nopath` argument fixes mesh paths for external applications.
 
-#### Remote Mesh Paths
+### 3.1.6 Remote Mesh Paths
 
 Meshes can be referenced from remote repositories:
 
@@ -128,15 +126,15 @@ ros2 launch akros2_description description_launch.py \
 
 ---
 
-### 3.2 Base System (akros2_base)
+## 3.2 Base System (akros2_base)
 
 **Purpose:** Core robot functionality including drivers, sensors, and sensor fusion.
 
-#### Key Nodes
+### 3.2.1 Key Nodes
 
 **motion_detector** - Detects robot motion from IMU angular velocity data.
 
-#### Sensor Fusion Pipeline
+### 3.2.2 Sensor Fusion Pipeline
 
 The sensor fusion pipeline combines raw IMU and wheel odometry data to produce filtered, fused estimates:
 
@@ -144,16 +142,16 @@ The sensor fusion pipeline combines raw IMU and wheel odometry data to produce f
   <img src="assets/img/sensor_fusion_pipeline.svg" alt="Sensor Fusion Pipeline" width="600"/>
 </div>
 
-**Pipeline Flow:**
+#### Pipeline Flow
 
 1. Raw `/imu` data → Madgwick filter → `/imu/filtered`
 2. `/imu/filtered` → motion_detector → `/in_motion` (bool)
 3. `/imu/filtered` + `/odometry` → EKF → `/odometry/filtered`
 4. EKF publishes `odom` → `base_footprint` transform
 
-#### Launch Files
+### 3.2.3 Launch Files
 
-**sensor_fusion_launch.py**
+#### sensor_fusion_launch.py
 
 Launches the sensor fusion pipeline.
 
@@ -180,7 +178,7 @@ ros2 launch akros2_base sensor_fusion_launch.py
 
 ---
 
-**laser_launch.py**
+#### laser_launch.py
 
 Launches LIDAR driver and optional filter chain.
 
@@ -198,7 +196,7 @@ ros2 launch akros2_base laser_launch.py laser_filter:=True
 
 ---
 
-**camera_launch.py**
+#### camera_launch.py
 
 Launches USB camera driver.
 
@@ -215,7 +213,7 @@ ros2 launch akros2_base camera_launch.py
 
 ---
 
-**control_launch.py**
+#### control_launch.py
 
 Launches micro-ROS agent for serial communication with Teensy microcontroller.
 
@@ -229,7 +227,7 @@ ros2 launch akros2_base control_launch.py
 
 ---
 
-**teleop_launch.py**
+#### teleop_launch.py
 
 Launches teleoperation-related nodes (joy, teleop_twist_joy, joy_mode_handler).
 
@@ -243,7 +241,7 @@ ros2 launch akros2_base teleop_launch.py joy_config:=ps4
 
 ---
 
-**twist_mixer_launch.py**
+#### twist_mixer_launch.py
 
 Launches the `twist_mixer` executable for command velocity mixing. No launch arguments.
 
@@ -254,7 +252,7 @@ ros2 launch akros2_base twist_mixer_launch.py
 
 ---
 
-#### Configuration Files
+### 3.2.4 Configuration Files
 
 Located in `config/` directory:
 
@@ -267,24 +265,24 @@ Located in `config/` directory:
 
 ---
 
-### 3.3 Teleoperation (akros2_teleop)
+## 3.3 Teleoperation (akros2_teleop)
 
 **Purpose:** Robot teleoperation and command mixing based on operating mode.
 
-#### Teleoperation Flow
+### 3.3.1 Teleoperation Flow
 
 <div align="center">
   <img src="assets/img/teleoperation_flow.svg" alt="Teleoperation Flow" width="600"/>
 </div>
 
-**Flow Overview:**
+#### Flow Overview:
 
 1. Joystick input → `joy` node → `/joy` topic
 2. `/joy` → `joy_mode_handler` → `/mode_status` (Mode message)
 3. `/joy` → `teleop_twist_joy` → `/joy_vel` (Twist)
 4. `/joy_vel` + `/nav_vel` + `/mode_status` → `twist_mixer` → `/cmd_vel`
 
-#### Key Nodes
+### 3.3.2 Key Nodes
 
 **joy_mode_handler** - Subscribes to `/joy`, publishes `Mode` messages based on button presses.
 
@@ -292,16 +290,16 @@ Located in `config/` directory:
 
 **teleop_node** - Composed multi-threaded executable running both nodes.
 
-#### Supported Controllers
+### 3.3.3 Supported Controllers
 
 - [PS4 DualShock4](https://www.playstation.com/nl-nl/accessories/dualshock-4-wireless-controller/)
 - [Google Stadia](https://stadia.google.com/controller/)
 - [8BitDo SN30 Pro](https://www.8bitdo.com/sn30-pro-g-classic-or-sn30-pro-sn/)
 - [Valve Steam Deck](https://store.steampowered.com/steamdeck)
 
-#### Launch Files
+### 3.3.4 Launch Files
 
-**teleop_launch.py**
+#### teleop_launch.py
 
 Main teleoperation launch file.
 
@@ -329,7 +327,7 @@ ros2 launch akros2_teleop teleop_launch.py joy_config:=steamdeck executor:=True
 
 ---
 
-**joy_launch.py**
+#### joy_launch.py
 
 Launches `joy` and `teleop_twist_joy` nodes.
 
@@ -345,7 +343,7 @@ Launches `joy` and `teleop_twist_joy` nodes.
 
 ---
 
-#### Configuration Files
+### 3.3.5 Configuration Files
 
 Located in `config/` directory (per controller):
 
@@ -361,11 +359,11 @@ Example files:
 
 ---
 
-### 3.4 Messages (akros2_msgs)
+## 3.4 Messages (akros2_msgs)
 
 **Purpose:** Custom ROS 2 message definitions.
 
-#### Mode.msg
+### 3.4.1 Mode.msg
 
 Robot operation mode status message.
 
@@ -378,13 +376,13 @@ bool auto_t     # Autonomous mode (True) vs Teleop mode (False)
 
 ---
 
-### 3.5 System Integration (akros2_bringup)
+## 3.5 System Integration (akros2_bringup)
 
 **Purpose:** System-level launch files integrating all packages.
 
-#### Launch Files
+### 3.5.1 Launch Files
 
-**bringup_launch.py**
+#### bringup_launch.py
 
 Main robot bringup launch file integrating all subsystems.
 
@@ -417,7 +415,7 @@ ros2 launch akros2_bringup bringup_launch.py control:=False camera:=False
 
 ---
 
-**basestation_launch.py**
+#### basestation_launch.py
 
 Remote base station launch file for off-board control and visualization.
 
@@ -436,7 +434,7 @@ ros2 launch akros2_bringup basestation_launch.py joy_config:=steamdeck
 
 ---
 
-**mqtt_client_launch.py**
+#### mqtt_client_launch.py
 
 Launches MQTT client for remote monitoring and control.
 
@@ -457,13 +455,13 @@ ros2 launch akros2_bringup mqtt_client_launch.py broker_host:=localhost broker_p
 
 ---
 
-## 4. Firmware Architecture (akros2_firmware)
+# 4. Firmware Architecture (akros2_firmware)
 
 The [akros2_firmware](../akros2_firmware/) package contains micro-ROS firmware for the Teensy 4.1 microcontroller. Based on [linorobot2_hardware](https://github.com/linorobot/linorobot2_hardware), it provides low-level control for mecanum drive kinematics, motor control, and sensor data acquisition.
 
 See [akros2_firmware/README.md](../akros2_firmware/README.md) for complete firmware documentation and setup instructions.
 
-### Hardware Platform
+## 4.1 Hardware Platform
 
 - Teensy 4.1 microcontroller
 - [Teensy 4.1 expansion board](https://www.tindie.com/products/cburgess129/arduino-teensy41-teensy-41-expansion-board/)
@@ -471,24 +469,24 @@ See [akros2_firmware/README.md](../akros2_firmware/README.md) for complete firmw
 - 2x Cytron MDD3A motor drivers
 - 9-DOF IMU (accelerometer, gyroscope, magnetometer)
 
-### Key Features
+## 4.2 Key Features
 
-#### 1. Dual Transport Support
+### 4.2.1 Dual Transport Support
 - Configurable serial (USB/UART, default) or native ethernet (UDP4)
 - Ethernet provides higher bandwidth and reliability vs. serial
 - Transport selected via `TRANSPORT_SERIAL` or `TRANSPORT_ETHERNET` in config
 
-#### 2. ROS Domain ID Configuration
+### 4.2.2 ROS Domain ID Configuration
 - Set `ROS_DOMAIN_ID` via firmware configuration
 - Enables multi-robot deployments
 - Network isolation for different robot systems
 
-#### 3. Neopixel Status Indicators
+### 4.2.3 Neopixel Status Indicators
 - Visual feedback using FastLED library
 - System status display (connected, error, running)
 - Operating mode indication (stop, auto, teleop)
 
-**LED States:**
+#### LED States
 - **Red Solid** - Disconnected from micro-ROS agent
 - **Green Solid** - Connected, idle
 - **Green Blinking** - Connected, receiving commands
@@ -496,40 +494,40 @@ See [akros2_firmware/README.md](../akros2_firmware/README.md) for complete firmw
 - **Yellow** - Teleop mode active
 - **Red Blinking** - Emergency stop (estop)
 
-#### 4. Arduino IDE Compilation
+### 4.2.4 Arduino IDE Compilation
 - Compiles using Arduino IDE instead of PlatformIO
 - Uses modified [micro_ros_arduino](https://github.com/adityakamath/micro_ros_arduino) libraries
 - Simplified development workflow
 
-#### 5. Custom Message Support
+### 4.2.5 Custom Message Support
 - Mode subscriber using `akros2_msgs/Mode` message type
 - Receives operating mode commands (estop/auto/teleop)
 - Integrates with twist_mixer command routing
 
-#### 6. Dual Joint State Publishing
+### 4.2.6 Dual Joint State Publishing
 - `/joint_states` - Measured wheel positions and velocities from encoders
 - `/req_states` - Required (commanded) wheel positions and velocities
 - Enables monitoring of command tracking performance
 
-#### 7. Runtime PID Tuning
+### 4.2.7 Runtime PID Tuning
 - Parameter server reads PID gains: `kp`, `ki`, `kd`, `scale`
 - No firmware recompilation needed for tuning
 - Initial values from configuration, re-applied on reconnection
 - `scale` parameter limited to [0.0, 1.0] with 0.01 step size
 
-#### 8. Coordinate Frame Conversion
+### 4.2.8 Coordinate Frame Conversion
 - Optional NED to ENU conversion for IMU data
 - Controlled by `ned_to_enu` boolean parameter (default: false)
 - REP-103 compliant coordinate frame handling
 - Sensor-specific conversion in IMU interface layer
 
-### Communication Architecture
+## 4.3 Communication Architecture
 
 ![Communication Architecture](assets/img/communication_architecture.svg)
 
 The firmware communicates with ROS 2 via micro-ROS agent over serial (default) or ethernet.
 
-### Mecanum Kinematics
+## 4.4 Mecanum Kinematics
 
 The firmware implements forward and inverse kinematics for mecanum drive:
 
@@ -548,7 +546,7 @@ vy = (-wheel_lf + wheel_rf + wheel_lb - wheel_rb) × wheel_radius / 4
 ωz = (-wheel_lf + wheel_rf - wheel_lb + wheel_rb) × wheel_radius / (4 × wheelbase)
 ```
 
-### Motor Control
+## 4.5 Motor Control
 
 Each motor uses a PID controller:
 
@@ -557,21 +555,21 @@ Each motor uses a PID controller:
 - **Output:** PWM duty cycle to motor driver
 - **Update rate:** Configurable (typically 50-100 Hz)
 
-### ROS 2 Interface
+## 4.6 ROS 2 Interface
 
-**Published Topics:**
+### 4.6.1 Published Topics
 
 - `/joint_states` (sensor_msgs/JointState) - Measured wheel states
 - `/req_states` (sensor_msgs/JointState) - Required wheel states
 - `/imu` (sensor_msgs/Imu) - Raw IMU measurements
 - `/odometry` (nav_msgs/Odometry) - Wheel-based odometry
 
-**Subscribed Topics:**
+### 4.6.2 Subscribed Topics
 
 - `/cmd_vel` (geometry_msgs/Twist) - Velocity commands
 - `/mode_status` (akros2_msgs/Mode) - Operating mode
 
-**Parameters:**
+### 4.6.3 Parameters
 
 - `kp` (double) - Proportional gain for PID controller
 - `ki` (double) - Integral gain for PID controller
@@ -579,7 +577,7 @@ Each motor uses a PID controller:
 - `scale` (double) - Global velocity scaling [0.0-1.0]
 - `ned_to_enu` (bool) - Enable IMU coordinate conversion
 
-### Configuration
+## 4.7 Configuration
 
 Primary configuration in `akros2_base_config.h`:
 
@@ -591,7 +589,7 @@ Primary configuration in `akros2_base_config.h`:
 - PID initial values
 - Maximum velocities and accelerations
 
-### Development
+## 4.8 Development
 
 The firmware is compiled and uploaded using Arduino IDE:
 
@@ -603,33 +601,33 @@ The firmware is compiled and uploaded using Arduino IDE:
 
 ---
 
-## 5. Hardware Integration
+# 5. Hardware Integration
 
-### Microcontroller Communication
+## 5.1 Microcontroller Communication
 
 - **Interface:** micro-ROS over serial (`/dev/ttyTEENSY`) or ethernet (UDP4)
 - **Direction:** Bidirectional
   - **To MCU:** `/cmd_vel` commands, `/mode_status`
   - **From MCU:** `/joint_states`, `/req_states`, `/imu`, `/odometry`
 
-### Sensors
+## 5.2 Sensors
 
 - **LIDAR:** LD06 (via ldlidar driver)
 - **Camera:** USB camera (via v4l2_camera)
 - **IMU:** On-board IMU (via micro-ROS firmware)
 - **Wheel Encoders:** Integrated with motors (via micro-ROS firmware)
 
-### Actuators
+## 5.3 Actuators
 
 - **4x Mecanum Wheels** with independent motor control via Cytron MDD3A drivers
 
-### Control Flow
+## 5.4 Control Flow
 
 <div align="center">
   <img src="assets/img/control_flow.svg" alt="Control Flow" width="600"/>
 </div>
 
-**Flow Overview:**
+#### Flow Overview
 
 1. Joystick/Nav → Twist commands → `/cmd_vel`
 2. `/cmd_vel` → Teensy firmware → Inverse kinematics
@@ -639,21 +637,21 @@ The firmware is compiled and uploaded using Arduino IDE:
 
 ---
 
-## 6. System Setup & Configuration
+# 6. System Setup & Configuration
 
-### 6.1 Development Tools
+## 6.1 Development Tools
 
-#### Bash Aliases (.bashrc)
+### 6.1.1 Bash Aliases (.bashrc)
 
 ROS 2 environment configuration and convenience aliases.
 
-**Environment Variables:**
+#### Environment Variables
 ```bash
 ROS_DISTRO=humble
 ROS_VERSION=2
 ```
 
-**Build Aliases:**
+#### Build Aliases
 - `rosws` - Navigate to workspace
 - `srs` - Source ROS setup
 - `sls` - Source local setup
@@ -662,14 +660,14 @@ ROS_VERSION=2
 - `build_resume` - Resume interrupted build
 - `dep_install` - Install rosdep dependencies
 
-**Launch Aliases:**
+#### Launch Aliases
 - `bringup` - Main robot bringup (minimal sensors)
 - `bringup_local` - Robot bringup with local control
 - `basestation` - Base station control
 - `control` - Low-level control only
 - `unity` - Unity ROS TCP endpoint
 
-**Usage:**
+#### Usage
 
 Copy setup to `~/Setup` and append to `~/.bashrc`:
 
@@ -680,28 +678,32 @@ source ~/.bashrc
 
 ---
 
-### 6.2 Hardware Permissions
+## 6.2 Hardware Permissions
 
-#### udev Rules
+### 6.2.1 udev Rules
 
 Located in `setup/rules/` directory:
 
-**00-teensy.rules** - Teensy board USB permissions
+#### 00-teensy.rules 
+- Teensy board USB permissions
 - Sets permissions for Teensy USB devices (vendor ID 16c0)
 - Allows non-root access to Teensy serial ports
 
-**50-ds4drv.rules** - PS4 DualShock4 controller permissions
+#### 50-ds4drv.rules
+- PS4 DualShock4 controller permissions
 - Enables HID access for PS4 controllers (vendor ID 054c)
 - Prevents touchpad from being a separate input device
 
-**99-i2c.rules** - I2C device permissions
+#### 99-i2c.rules 
+- I2C device permissions
 - Allows user access to I2C devices (`/dev/i2c-*`)
 - Required for OLED display and other I2C peripherals
 
-**99-usb-serial.rules** - USB serial device permissions
+#### 99-usb-serial.rules
+- USB serial device permissions
 - General USB serial device permissions
 
-**Installation:**
+#### Installation
 
 ```bash
 sudo cp src/akros2/setup/rules/*.rules /etc/udev/rules.d/
@@ -709,7 +711,7 @@ sudo udevadm control --reload-rules
 sudo udevadm trigger
 ```
 
-**WSL2 Configuration:**
+#### WSL2 Configuration
 
 Update `/etc/wsl.conf` for udev service:
 ```
@@ -720,25 +722,26 @@ command="sudo service udev start"
 
 ---
 
-### 6.3 System Services
+## 6.3 System Services
 
-#### OLED Display Service
+### 6.3.1 OLED Display Service
 
-**oled.service** - Systemd service for Raspberry Pi OLED display
+#### oled.service
+- Systemd service for Raspberry Pi OLED display
+- Script: `setup/oled.py`
 
-**Script:** `setup/oled.py`
-
-**Purpose:** Displays system information on SSD1306 128x32 OLED display
+#### Purpose 
+- Displays system information on SSD1306 128x32 OLED display
 - CPU usage, memory, IP address
 - Fan control for cooling hat
 - RGB LED effects
 
-**Dependencies:**
+#### Dependencies
 - `Adafruit_SSD1306` library
 - `smbus` for I2C communication
 - `PIL` (Pillow) for image rendering
 
-**Installation:**
+#### Installation:
 
 ```bash
 sudo cp src/akros2/setup/services/oled.service /etc/systemd/system/
@@ -748,11 +751,11 @@ sudo systemctl start oled.service
 
 ---
 
-### 6.4 Steam Deck Integration
+## 6.4 Steam Deck Integration
 
 The Steam Deck integration provides desktop application shortcuts and shell scripts for running ROS 2 tools within a Distrobox Ubuntu container.
 
-#### Desktop Applications
+### 6.4.1 Desktop Applications
 
 Located in `setup/steamdeck_desktop/desktop_apps/`:
 
@@ -763,7 +766,7 @@ Located in `setup/steamdeck_desktop/desktop_apps/`:
 - `rqt.desktop` - Launch RQt tools
 - `foxglove.desktop` - Launch Foxglove Studio
 
-#### Shell Scripts
+### 6.4.2 Shell Scripts
 
 Located in `setup/steamdeck_desktop/shell_scripts/`:
 
@@ -772,11 +775,11 @@ Located in `setup/steamdeck_desktop/shell_scripts/`:
 - `rqt.sh`, `rqt_app.sh` - RQt launch
 - `foxglove_app.sh` - Foxglove launch
 
-#### Icons
+### 6.4.3 Icons
 
 Located in `setup/steamdeck_desktop/icons/` - Application icons for desktop shortcuts
 
-#### Installation
+### 6.4.4 Installation
 
 Copy desktop files to applications directory:
 
@@ -792,25 +795,25 @@ cp src/akros2/setup/steamdeck_desktop/desktop_apps/*.desktop ~/.local/share/appl
 
 ---
 
-### 6.5 Network Configuration
+## 6.5 Network Configuration
 
 AKROS2 supports distributed deployment across multiple devices using ROS 2's DDS networking.
 
-#### ROS 2 DDS Configuration
+### 6.5.1 ROS 2 DDS Configuration
 
 Configure network settings for multi-device setups:
 
-**Domain ID:**
+#### Domain ID
 ```bash
 export ROS_DOMAIN_ID=42  # Change to isolate from other robots
 ```
 
-**RMW Implementation:**
+#### RMW Implementation
 ```bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp  # or rmw_fastrtps_cpp
 ```
 
-**DDS Configuration:**
+#### DDS Configuration
 
 Create `cyclonedds.xml` for network tuning:
 
@@ -830,14 +833,14 @@ Set path:
 export CYCLONEDDS_URI=file:///path/to/cyclonedds.xml
 ```
 
-#### Multi-Device Deployment
+### 6.5.2 Multi-Device Deployment
 
-**On Robot:**
+#### On Robot
 ```bash
 ros2 launch akros2_bringup bringup_launch.py joy_config:=none
 ```
 
-**On Base Station:**
+#### On Base Station
 ```bash
 ros2 launch akros2_bringup basestation_launch.py joy_config:=steamdeck
 ```
@@ -846,11 +849,11 @@ Ensure both devices are on the same network and have the same `ROS_DOMAIN_ID`.
 
 ---
 
-## 7. Development Guide
+# 7. Development Guide
 
-### 7.1 Dependencies & Building
+## 7.1 Dependencies & Building
 
-#### ROS 2 Packages
+### 7.1.1 ROS 2 Packages
 
 Required ROS 2 packages:
 
@@ -865,7 +868,7 @@ Required ROS 2 packages:
 - `teleop_twist_joy`
 - `ldlidar`
 
-#### Installation
+### 7.1.2 Installation
 
 ```bash
 # Install dependencies
@@ -873,7 +876,7 @@ cd ~/ros2_ws
 rosdep install --from-paths src --ignore-src -r -y
 ```
 
-#### Building
+### 7.1.3 Building
 
 ```bash
 # Build all packages
@@ -908,45 +911,45 @@ sls
 
 ---
 
-### 7.2 Testing & Running
+## 7.2 Testing & Running
 
-#### Testing Individual Subsystems
+### 7.2.1 Testing Individual Subsystems
 
-**Description Only:**
+#### Description Only
 ```bash
 ros2 launch akros2_description description_launch.py
 ```
 
-**Sensor Fusion:**
+#### Sensor Fusion
 ```bash
 ros2 launch akros2_base sensor_fusion_launch.py
 ```
 
-**Teleoperation:**
+#### Teleoperation
 ```bash
 ros2 launch akros2_teleop teleop_launch.py joy_config:=steamdeck
 ```
 
-**Control:**
+#### Control
 ```bash
 ros2 launch akros2_base control_launch.py
 ```
 
-**LIDAR:**
+#### LIDAR
 ```bash
 ros2 launch akros2_base laser_launch.py
 ```
 
-**Camera:**
+#### Camera
 ```bash
 ros2 launch akros2_base camera_launch.py
 ```
 
 ---
 
-#### Full System Launch
+### 7.2.2 Full System Launch
 
-**On Robot:**
+#### On Robot
 
 ```bash
 # Recommended: Launch without camera and control
@@ -969,7 +972,7 @@ bringup
 control
 ```
 
-**On Base Station:**
+#### On Base Station
 
 ```bash
 ros2 launch akros2_bringup basestation_launch.py joy_config:=steamdeck
@@ -983,32 +986,32 @@ basestation
 
 ---
 
-### 7.3 Configuration Reference
+## 7.3 Configuration Reference
 
-#### Controller Configurations
+### 7.3.1 Controller Configurations
 
 Located in `akros2_teleop/config/`:
 
-**PS4 DualShock4:**
+#### PS4 DualShock4
 - `ps4_mapping.md`
 - `ps4_mode_config.yaml`
 - `ps4_twist_config.yaml`
 
-**Google Stadia:**
+#### Google Stadia
 - `stadia_mode_config.yaml`
 - `stadia_twist_config.yaml`
 
-**8BitDo SN30 Pro:**
+#### 8BitDo SN30 Pro
 - `sn30pro_mode_config.yaml`
 - `sn30pro_twist_config.yaml`
 
-**Valve Steam Deck:**
+#### Valve Steam Deck
 - `steamdeck_mode_config.yaml`
 - `steamdeck_twist_config.yaml`
 
 ---
 
-#### Sensor Configurations
+### 7.3.2 Sensor Configurations
 
 Located in `akros2_base/config/`:
 
@@ -1021,7 +1024,7 @@ Located in `akros2_base/config/`:
 
 ---
 
-#### MQTT Configuration
+### 7.3.3 MQTT Configuration
 
 Located in `akros2_bringup/config/`:
 
@@ -1029,25 +1032,25 @@ Located in `akros2_bringup/config/`:
 
 ---
 
-## 8. Reference
+# 8. Reference
 
-### 8.1 Platform Support
+## 8.1 Platform Support
 
-**Tested Platforms:**
+#### Tested Platforms
 - Raspberry Pi 4 (4GB/8GB)
 - Raspberry Pi Zero 2 W
 - Valve Steam Deck (Ubuntu 22.04 via Distrobox)
 - WSL2 (partial support)
 
-**Operating System:**
+#### Operating System
 - Ubuntu 22.04 LTS (primary)
 
-**ROS 2 Distribution:**
+#### ROS 2 Distribution
 - Humble Hawksbill (recommended)
 
 ---
 
-### 8.2 Launch Files Quick Reference
+## 8.2 Launch Files Quick Reference
 
 | Package | Launch File | Key Arguments | Description |
 |---------|-------------|---------------|-------------|
@@ -1066,7 +1069,7 @@ Located in `akros2_bringup/config/`:
 
 ---
 
-### 8.3 Configuration Files Index
+## 8.3 Configuration Files Index
 
 | Package | Config File | Purpose |
 |---------|-------------|---------|
@@ -1088,7 +1091,7 @@ Located in `akros2_bringup/config/`:
 
 ---
 
-## Notes
+# Notes
 
 - Launch `control` and `camera` separately due to timing issues with main bringup
 - Use `js_ext:=True` when micro-ROS firmware is running
