@@ -1,4 +1,7 @@
-# AKROS2 Design
+---
+layout: page
+title: AKROS2 Design
+---
 
 # 1. Overview
 
