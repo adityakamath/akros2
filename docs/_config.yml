@@ -23,6 +23,8 @@ social-network-links:
 url: "https://adityakamath.github.io"
 baseurl: "/akros2"
 
+url-pretty: "kamathrobotics.com"
+
 # Markdown and syntax highlighting
 markdown: kramdown
 kramdown:
