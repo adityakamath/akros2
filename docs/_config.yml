@@ -29,14 +29,5 @@ markdown: kramdown
 kramdown:
   input: GFM
 
-# Timezone
-timezone: America/Vancouver
-
-# Permalink structure
-permalink: /:year-:month-:day-:title/
-
-# Excerpt settings
-excerpt_length: 50
-
 plugins:
   - jekyll-sitemap
