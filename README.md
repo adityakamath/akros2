@@ -7,7 +7,6 @@
 [![Ask DeepWiki (Experimental)](https://deepwiki.com/badge.svg)](https://deepwiki.com/adityakamath/akros2)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/C++-17-blue?style=flat&logo=cplusplus&logoColor=white)
-
 ![License](https://img.shields.io/github/license/adityakamath/akros2?label=License)
 
 ROS 2 stack for the AKROS mecanum-wheeled mobile robot
