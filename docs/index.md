@@ -247,4 +247,11 @@ subtitle: A mecanum-wheel robot platform using ROS 2
   </tbody>
 </table>
 
+<div style="display: flex; flex-wrap: wrap; gap: 0.6em; margin: 2em 0;">
+  <a href="design" class="capability-box" style="flex: 1; box-sizing: border-box; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 0.5em; background: #ffffff; padding: 0.6em 1em; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); cursor: pointer;">
+    <span style="font-size: 1.3em;">⚙️</span>
+    <strong>System Design</strong>
+  </a>
+</div>
+
 </div>

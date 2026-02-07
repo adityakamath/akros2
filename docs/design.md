@@ -1,6 +1,6 @@
 ---
 layout: page
-title: AKROS2 Design
+title: System Design
 ---
 
 # 1. Overview
